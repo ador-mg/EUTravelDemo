@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<InterfaceModel Model_Name="GraphsAPI" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador" Model_RefApplication="" Model_RefVersion="" BinFile="CLMS.EUTravel.Graphs.dll;">
+  <ImplementationDetails APIType="DLL" Namespace="CLMS.EUTravel.Graphs.GraphWrapper" />
+  <Classes>
+    <Class Name="GraphWrapper" Path="CLMS.EUTravel.Graphs" id="id3bdWwHcCCJ" />
+  </Classes>
+  <Methods>
+    <Function DataType="bool" Name="AddElement" Description="" id="idLvAdUFC0Y6">
+      <Arguments id="iduxQP8O41fq">
+        <ArgumentPair Name="type" DataType="string" id="idv2jq6DrIoz" />
+        <ArgumentPair Name="id" DataType="long" id="idrZ0K98mXNh" />
+        <ArgumentPair Name="name" DataType="string" id="id9nVBsMdhkN" />
+        <ArgumentPair Name="latitude" DataType="decimal" id="idaC7kOFcDFA" />
+        <ArgumentPair Name="longitude" DataType="decimal" id="idYkDVloGK1a" />
+      </Arguments>
+    </Function>
+    <Function DataType="bool" Name="AddRelation" Description="" id="idIwXrLs4enT">
+      <Arguments id="idnWIgJjE2Py">
+        <ArgumentPair Name="relType" DataType="string" id="idEg4v4WpemI" />
+        <ArgumentPair Name="elType" DataType="string" id="idlG9QGCsWN5" />
+        <ArgumentPair Name="relid" DataType="long" id="idckWDdTdYuD" />
+        <ArgumentPair Name="fromid" DataType="long" id="idlrzu6dLe89" />
+        <ArgumentPair Name="toid" DataType="long" id="idgLiCCLo8ZJ" />
+        <ArgumentPair Name="weight" DataType="decimal" id="idKu7aaqgZha" />
+      </Arguments>
+    </Function>
+    <Function DataType="DomainModel.Itinerary" Name="FindItinerary" Description="" id="idV2Va4an7ZW">
+      <Arguments id="idJjFb57QeUm">
+        <ArgumentPair Name="from" DataType="DomainModel.GeoCoordinates" id="id2xwPte5FJo" />
+        <ArgumentPair Name="to" DataType="DomainModel.GeoCoordinates" id="idmqExuQinfh" />
+      </Arguments>
+    </Function>
+    <Function DataType="string" Name="GetAllGraphElements" Description="" id="idXDtV5ynmiN">
+      <Arguments id="id4cUyT0Tshi" />
+    </Function>
+    <Function DataType="string" Name="GetAllGraphRelations" Description="" id="iddEkSVaTVKH">
+      <Arguments id="idqHjIcjCnt7" />
+    </Function>
+    <Function DataType="void" Name="DestroyGraph" Description="" id="id60mQtSmSHI">
+      <Arguments id="idwkisn9QEH0" />
+    </Function>
+    <Function DataType="void" Name="InitializeGraph" Description="" id="idO8SQvORjVv">
+      <Arguments id="idNNLtdjyWO4" />
+    </Function>
+    <Function DataType="bool" Name="Precompile" Description="" id="idDywqjgVHni">
+      <Arguments id="idLNDSZhl12z">
+        <ArgumentPair Name="roadcost" DataType="bool" id="idjuBoJKAePl" />
+        <ArgumentPair Name="autoConnectTrainStations" DataType="bool" id="idPjmSB79NKD" />
+      </Arguments>
+    </Function>
+  </Methods>
+</InterfaceModel>

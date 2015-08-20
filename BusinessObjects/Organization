@@ -1,0 +1,197 @@
+<BusinessObjectModel Model_Name="Organization" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="kfilippakos">
+  <SoftwareModel>
+    <Datastores>
+      <Database id="ogld0mqf0nv" Name="Database" ModelName="Organization">
+        <Entity id="ki0ntsghg1e" Name="Organizations" Schema="dbo" Type="T" Value="Organizations" ModelName="Organization">
+          <Column id="idPndTDbglqU2L9qe6HK691g" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id8F1GWurT7U6ChDDRxXEFjA" Name="Name" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idBnGySeSSmkm8QMjmC7Qesw" Name="Description" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idf5QA1w4VpUiGsi7MbQZPXw" Name="Url" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idP186nQcLm0GvpPsRxDdBXQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idcArmxHB25EyvkSgAhvefcA" Name="DepartmentOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="ovu0ncrcaoe" Name="ContactInformationTbl" Schema="dbo" Type="T" Value="ContactInformationTbl" ModelName="Organization" open="true">
+          <Column id="idq537MbKWEECvWwNPbMey9A" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idChJP6NbbqEuj2izu4UzxyQ" Name="Phone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idb5NHDTScx0iODdJdAGVCvA" Name="Fax" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idALnNDhRw0kerBOkgpKfZ2A" Name="Email" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idqmasgoUCpUCg5rs3vJauZg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idwB62kiaBcUCNHkPhRZk4ag" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idDdtwvoLJzEyQ2QBnOUv2cg" Name="PersonId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaSJSBZapPkqI8Fg90yvGrQ" Name="AddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="quikjzle5ar" Name="OrganizationsToRepresentativesTbl" Schema="dbo" Type="T" Value="OrganizationsToRepresentativesTbl" ModelName="Organization">
+          <Column id="idHZMvtNzcg02pIaaCuitOnw" Name="dbo.OrganizationsToRepresentativesTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idUoJST5QBaUucZh922ZZj5w" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idL7pNpDP5d0i9R4aUYjInaQ" Name="RepresentativesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="lzdbiuwkl5j" Name="People" Schema="dbo" Type="T" Value="People" ModelName="Organization">
+          <Column id="id4Ds2I7IfDEGfMgC3HTQL1w" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idKaiRu4LBl0Sqbw4dGhv7vw" Name="FristName" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idiMpiHHnkrEu2Y8Hji9ajMg" Name="LastName" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id8vpFmiwvE0qOpC0RXU7VTQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="zw0pqrx51lq" Name="Places" Schema="dbo" Type="T" Value="Places" ModelName="Organization">
+          <Column id="idX9B6HWsqBUWYsaFQeQtkaA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idwaw5Unb7Q0u4NW2O40LmJw" Name="MapURI" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idmZS91yshwkGTNQsqbi7LZg" Name="ISICRev4" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idWV9IaD4T5kyO3cDoSLEuuQ" Name="LocationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LocationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idbk4pZltypkANy7vZSsICxA" Name="Timezone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idPkzcyFMj30Az4mrxuWEBZQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idz2e9nR2R00Su5wZN6Dsvbw" Name="ContainedInId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Places" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id3RiBXL4JekSGr3U2FinIgA" Name="PostalAddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idMu8n9AngLUq1rCckj3EIRw" Name="GeoCoordinatesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoCoordinatesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaBdcovBtpEK1BasD5XRZtw" Name="GeoboundariesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoBoundariesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idKebgG3QBJkmdX2dF2rADXQ" Name="Name" DataType="nvarchar" Length="200" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="w3jpre2ruvw" Name="PostalAddresses" Schema="dbo" Type="T" Value="PostalAddresses" open="true" ModelName="Organization">
+          <Column id="idB8x5hNUT4keeCowJCVGywg" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id3WCUrmaqr0AahAg8KuaZ0A" Name="Country" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpdSWq0Gd902ma6NqbXnf2g" Name="CountryISO3166" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idILtcPqTG60u6k1FetDzqOw" Name="Province" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id4FBl8wLX0kq0TBIGRicE4Q" Name="City" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idrqGI1CIFg0WppZAM8RkOgA" Name="CityCode" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idTBNhMcwTME6bVnAKV9q1aw" Name="Locality" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idW0pZg4hUKEilEiub9TXamg" Name="StreetAddress" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idM8QNmPSwZUyWTtqPLzywXQ" Name="PostalCode" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idlkPOikwRNkO7GvRr5lDyVw" Name="PostOfficeBoxNumber" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaEqmhVe2DUS53VWvjgBQSg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+      </Database>
+    </Datastores>
+    <Associations>
+      <Association Class1="ContactInformation" Class2="Organization" Percent1="0.5" Percent2="0.5422535211267606" Edge1="b" Edge2="t" Role1="Contact" Role2="Organization" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="delete" Multiplicity1="0..1" Multiplicity2="1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="" id="EoVczfOali" Path="M 237 267 L 237 305" ModelName="Organization" open="false">
+        <Mappings>
+          <Database id="a4i03dgnvfp" Name="Database">
+            <Entity id="fv12e34imzn" Name="ContactInformationTbl" Schema="dbo" open="true">
+              <Mapping id="wcmoslwzhe2" Attribute="Contact" Column="Id" />
+              <Mapping id="1an1tleinoo" Attribute="Organization" Column="OrganizationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Organization" Class2="Organization" Percent1="0.08274647887323944" Percent2="0.5" Edge1="t" Edge2="b" Role1="Departments" Role2="DepartmentOf" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="delete" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="v5eAUOCmxC" Path="M 106.5 304.980010986328 L 106.5 276 L 65 276 L 65 581 L 225 581 L 225 563.268400192261" ModelName="Organization" open="true">
+        <Mappings>
+          <Database id="1tkwysfnd4y" Name="Database">
+            <Entity id="e5xnqedqzse" Name="Organizations" Schema="dbo" open="true">
+              <Mapping id="h50eb0azgoz" Attribute="Departments" Column="Id" />
+              <Mapping id="nmixjnvia5q" Attribute="DepartmentOf" Column="DepartmentOfId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Person" Class2="ContactInformation" Percent1="0.4977973568281938" Percent2="0.5" Edge1="t" Edge2="r" Role1="Person" Role2="Contact" Navigable1="true" Navigable2="true" OnDelete1="delete" OnDelete2="disassociate" Multiplicity1="1" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="" id="kAOCHILZZC" Path="M 624 361 L 624 148 L 344 148" ModelName="Organization" open="true">
+        <Mappings>
+          <Database id="lbctlc4krub" Name="Database">
+            <Entity id="hbcrlql0y2f" Name="ContactInformationTbl" Schema="dbo" open="true">
+              <Mapping id="2xc5r4bfads" Attribute="Person" Column="PersonId" />
+              <Mapping id="d5qruxqzzaw" Attribute="Contact" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Organization" Class2="Person" Percent1="0.5658914728682171" Percent2="0.5056179775280899" Edge1="r" Edge2="l" Role1="Organization" Role2="Representatives" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="TanuGHQ6mp" Path="M 367.255004882813 451 L 510.720001220703 451" ModelName="Organization" open="true">
+        <Mappings>
+          <Database id="mqgwff4ydop" Name="Database">
+            <Entity id="5pybbbir05p" Name="OrganizationsToRepresentativesTbl" Schema="dbo" open="true">
+              <Mapping id="vorrjdbcbhe" Attribute="Organization" Column="OrganizationId" />
+              <Mapping id="10bwhtaqnr4" Attribute="Representatives" Column="RepresentativesId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="ContactInformation" Class2="PostalAddress" Percent1="0.20588235294117646" Percent2="0.16352201257861634" Edge1="r" Edge2="l" Role1="ContactInformation" Role2="Address" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="c6HdHSPzr0" Path="M 344 78 L 550 78 L 550 57 L 751 57" ModelName="Organization" open="true">
+        <Mappings>
+          <Database id="idSTfYH9bDvK" Name="Database">
+            <Entity id="iduxMe7bWLQ4" Name="ContactInformationTbl" Schema="dbo" open="true">
+              <Mapping id="m47Kf0j62P" Attribute="Address" Column="AddressId" />
+              <Mapping id="U7YopVzNkb" Attribute="ContactInformation" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+    </Associations>
+    <Classes>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="284" Height="258" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Organization" Stereotype="StateClass" Left="83" Top="305" Name="Organization" id="idXnU1Uo4800O1DFqDaQ8Vyw" HasMappings="true">
+        <Attributes>
+          <Attribute Name="Id" id="bKfQXRAjm6" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="P6OTaA33kE" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="AVFG8XxneH" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="f2Azhitw1u" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="lew0zqnddnj" Name="Database">
+            <Entity id="22uh53shg1u" Name="Organizations" Schema="dbo">
+              <Mapping id="c4it5ukr3ko" Attribute="Id" Column="Id" />
+              <Mapping id="hdrs2gqzr5e" Attribute="Name" Column="Name" />
+              <Mapping id="xtmocdjyhy5" Attribute="Description" Column="Description" />
+              <Mapping id="zwzhzxnwfnb" Attribute="Url" Column="Url" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="214" Height="238" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Organization" Stereotype="StateClass" Left="130" Top="29" Name="ContactInformation" id="idwMCE5EaC5UyVL4HphaBN4Q" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="CJYBySMdgi" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="v7E0KoFDwx" Name="Phone" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="UqKXSOULYO" Name="Fax" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="VpepJFJ88F" Name="Email" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="anc1co3nglk" Name="Database">
+            <Entity id="w34za4ixeth" Name="ContactInformationTbl" Schema="dbo">
+              <Mapping id="4uceoyewhly" Attribute="Id" Column="Id" />
+              <Mapping id="20npesn0ynb" Attribute="Phone" Column="Phone" />
+              <Mapping id="tlewyqyachq" Attribute="Fax" Column="Fax" />
+              <Mapping id="0d00ygsldsq" Attribute="Email" Column="Email" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="227" Height="178" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Organization" Stereotype="StateClass" Left="511" Top="361" Name="Person" id="idJAyLXWaANUKNf7M9J0wCHA" HasMappings="true">
+        <Attributes>
+          <Attribute Name="Id" id="ddmYH81NQ6" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="dxLHbgbZVM" Name="FristName" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="Z71mJKrb5e" Name="LastName" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="joauvhfeo0t" Name="Database">
+            <Entity id="1v2ikt4pz0k" Name="People" Schema="dbo">
+              <Mapping id="yxbwfhooi4p" Attribute="Id" Column="Id" />
+              <Mapping id="wjpmdpp4mvn" Attribute="FristName" Column="FristName" />
+              <Mapping id="utfzqapocxl" Attribute="LastName" Column="LastName" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="PostalAddress" ShadowIsDependent="false" PK="Id" Width="220" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Location" Stereotype="StateClass" Left="751" Top="5" Name="PostalAddress" id="id7TUoCiqvSp" open="false" HasMappings="true" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="idO1d6VxM8y3">
+        </Attributes>
+        <Mappings id="idFYyEFgrX0x">
+          <Database id="idiAy43uEDdX" Name="Database">
+            <Entity id="idNvgMD3MNT0" Name="PostalAddresses" Schema="dbo">
+              <Mapping id="idnsqf1B1hOv" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="idan2UA9ZVGU" Attribute="Country" Column="Country" IsShadow="true" />
+              <Mapping id="idozSBzK2e9r" Attribute="CountryISO3166" Column="CountryISO3166" IsShadow="true" />
+              <Mapping id="id3wMSf0Zxi0" Attribute="Province" Column="Province" IsShadow="true" />
+              <Mapping id="idhOSNLhaBmG" Attribute="City" Column="City" IsShadow="true" />
+              <Mapping id="idSJEDexjAF9" Attribute="CityCode" Column="CityCode" IsShadow="true" />
+              <Mapping id="idp58gOEDngj" Attribute="Locality" Column="Locality" IsShadow="true" />
+              <Mapping id="idNVQbeOL3as" Attribute="StreetAddress" Column="StreetAddress" IsShadow="true" />
+              <Mapping id="id3m7ss8Fq2V" Attribute="PostalCode" Column="PostalCode" IsShadow="true" />
+              <Mapping id="idoTrEve9aS0" Attribute="PostOfficeBoxNumber" Column="PostOfficeBoxNumber" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+    </Classes>
+  </SoftwareModel>
+  <BusinessRules LocalReferences="" GlobalReferences="mscorlib.dll;System.dll;System.Xml.dll;System.Core.dll">
+    <Definitions />
+    <Vocabularies />
+    <RuleSet id="idvBs6AhOfa0y2vd77EN1vWw" Class="Organization" Stereotype="StateClass" open="false" _open="false" ModelName="Organization" />
+    <RuleSet id="idFK7aXqKqpUKUfRUXAfwj8A" Class="ContactInformation" Stereotype="StateClass" open="false" _open="false" ModelName="Organization" />
+    <RuleSet id="idSJkYyJYn7EA3NppJRuSlsg" Class="Person" Stereotype="StateClass" open="false" _open="false" ModelName="Organization" />
+  </BusinessRules>
+  <Resources />
+</BusinessObjectModel>

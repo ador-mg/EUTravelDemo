@@ -1,0 +1,136 @@
+<InterfaceModel Model_Name="GraphOperations" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador" Model_RefApplication="" Model_RefVersion="">
+  <ImplementationDetails APIType="EXPOSE_REST" />
+  <Classes />
+  <Methods>
+    <Function DataType="string" Name="GetGraphElements" Description="" id="idSvZghMfYRl">
+      <Arguments id="id2zZ8xFd0gq" />
+      <ImplementationDetails ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="" Path="elements" HttpType="GET">
+        <Implementation><![CDATA[function string GetGraphElements()
+{
+	return Interfaces.GraphsAPI.API.GetAllGraphElements();
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="string" Name="GetGraphRelations" Description="" id="idKtOYsX8qU9">
+      <Arguments id="idZNKRSGMLux" />
+      <ImplementationDetails Path="relations" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function string GetAllGraphRelations()
+{
+	return Interfaces.GraphsAPI.API.GetAllGraphRelations();
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="void" Name="DestroyGraph" Description="" id="idBQHrLusa9t">
+      <Arguments id="idmYQPAVJU8R" />
+      <ImplementationDetails Path="destroygraph" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function void DestroyGraph()
+{
+	Interfaces.GraphsAPI.API.DestroyGraph();
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="void" Name="InitializeGraph" Description="" id="id02qnhwHqcz">
+      <Arguments id="idkOuVPly9kd" />
+      <ImplementationDetails Path="initializegraph" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function void InitializeGraph()
+{
+	/*Enter function logic here*/
+ 	DomainModel.Application.InitializeGraph();
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="void" Name="Precompile" Description="" id="idsAPhpooqzK">
+      <Arguments id="idUHWjwQxYe0">
+        <ArgumentPair Name="roadcost" DataType="bool" id="id7s1GijdrS6" />
+        <ArgumentPair Name="autoConnectTrainStations" DataType="bool" id="idYhxR6N9sZ9" />
+      </Arguments>
+      <ImplementationDetails Path="precompile" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function void Precompile(
+	bool roadcost,
+	bool autoConnectTrainStations
+)
+{
+	/*Enter function logic here*/
+ Interfaces.GraphsAPI.API.Precompile(roadcost, autoConnectTrainStations);
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="void" Name="DeleteLatestFlights" Description="" id="idqsQsPqnIZz">
+      <Arguments id="id5jdUoLcukW" />
+      <ImplementationDetails Path="deleteflights" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function void DeleteLatestFlights()
+{
+	Collection[DomainModel.Flight] flights
+		= DomainModel.Flight.Find(a=>a.DataSource == "SabreFlights");
+		
+	foreach DomainModel.Flight: flight in flights {
+		flight.Delete();
+	}
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="string" Name="UpdateCityPairs" Description="" id="idlCpenIrJEM">
+      <Arguments id="idZ6rFUqEuDg" />
+      <ImplementationDetails Path="citypairs" HttpType="GET" ExecutionType="IDEF0" ExecutingClass="" ExecutingMethod="" ExecutingIdef="SabreAPIOrchestration" ExecutingActivity="RetrieveCityPairs">
+        <Implementation><![CDATA[function string UpdateCityPairs()
+{
+	/*Enter function logic here*/
+ 
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="Collection[DomainModel.Airport]" Name="GetRelatedAirports" Description="" id="ido2p8fbbxzN">
+      <Arguments id="idcT1V5yj0Cp">
+        <ArgumentPair Name="airportcode" DataType="string" id="idOoXBoGHYHZ" />
+      </Arguments>
+      <ImplementationDetails Path="relatedairports" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function Collection[DomainModel.Airport] GetRelatedAirports(
+	string airportcode
+)
+{
+    Collection[DomainModel.Airport] relatedairports;
+ 
+ 	if(!string.IsNullOrWhiteSpace(airportcode) && airportcode != "all"){
+	    DomainModel.Airport airport = DomainModel.Airport.Find(a=>a.IATA == airportcode).First();
+		relatedairports = airport == null ? relatedairports : airport.RelatedAirports;
+	}
+	else {
+		relatedairports = DomainModel.Airport.Find(a => !string.IsNullOrWhiteSpace(a.IATA) && a.RelatedAirports.Length > 0).OrderBy(a=>a.IATA);
+	}
+
+	return relatedairports;
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="string" Name="RefreshToken" Description="" id="idNqZlq4E2E6">
+      <Arguments id="idfgInvwZ0ni" />
+      <ImplementationDetails Path="refreshsabretoken" HttpType="GET" ExecutionType="BO" ExecutingClass="Application" ExecutingMethod="GetSabreAPIToken" ExecutingIdef="SabreAPIOrchestration" ExecutingActivity="RetrieveCityPairs" id="idWq4TpuuXBG">
+        <Implementation><![CDATA[function string UpdateCityPairs()
+{
+	/*Enter function logic here*/
+ 
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+  </Methods>
+  <DataContracts id="idZYCeGrAEjC">
+    <DataContract editMode="true" Type="DomainModel.Airport" id="idqdlJlZrNtN" open="true" serverRefreshed="true">
+      <Attribute id="idvarGzm5J4k" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="long" />
+      <Attribute id="idP6dEIq38mP" Name="Name" IsRequired="false" Length="200" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="idMifZIzEDn0" Name="MapURI" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idC8HZg4bnTL" Name="ISICRev4" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idh8Pc8MOYbE" Name="Timezone" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="string" />
+      <Attribute id="idTLfAvqB8pX" Name="IATA" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="id6b2yln7wYb" Name="ICAO" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Class Name="ContainedIn" PseydoName="ContainedIn" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idrM9heWnW5D" checked="false" Type="DomainModel.Place" />
+      <Class Name="PostalAddress" PseydoName="PostalAddress" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idcbz78Q7Z2Q" checked="false" Type="DomainModel.PostalAddress" />
+      <Class Name="LocationType" PseydoName="LocationType" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idNJCMtrxsRi" checked="false" Type="DomainModel.LocationType" />
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Multiplicity1="1" id="idX6dkkfbfqE" checked="false" Type="DomainModel.Place" />
+      <Class Name="GeoCoordinates" PseydoName="GeoCoordinates" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id32lqUoqkR5" checked="false" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Geoboundaries" PseydoName="Geoboundaries" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idNeKOpJldsx" checked="false" Type="DomainModel.GeoBoundaries" />
+      <Class Name="RelatedAirports" PseydoName="RelatedAirports" Stereotype="Collection" Multiplicity2="1" id="id8r71pyk3ZL" checked="false" Type="DomainModel.Airport" />
+      <Class Name="OutboundFlights" PseydoName="OutboundFlights" Stereotype="Collection" Multiplicity1="1" id="id74XkMw9hwH" checked="false" Type="DomainModel.Flight" />
+      <Class Name="InboundFlights" PseydoName="InboundFlights" Stereotype="Collection" Multiplicity1="1" id="iduLFKWIhxmb" checked="false" Type="DomainModel.Flight" />
+    </DataContract>
+  </DataContracts>
+</InterfaceModel>

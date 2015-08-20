@@ -1,0 +1,341 @@
+<BusinessObjectModel Model_Name="RailTransport" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" ShowExternalAssociations="false" Model_Creator="kfilippakos">
+  <SoftwareModel>
+    <Datastores>
+      <Database id="1kk4jmj3ftc" Name="Database" ModelName="RailTransport">
+        <Entity id="ovu0ncrcaoe" Name="ContactInformationTbl" Schema="dbo" Type="T" Value="ContactInformationTbl" ModelName="RailTransport">
+          <Column id="idr8imp0ZClUizS0c8SCDSag" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id2FFgji0hakaUIbrty15Ocw" Name="Phone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idMLUfcPzIgUulrFWAxjafLw" Name="Fax" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idVWTOakes4USoChFxLCxVdg" Name="Email" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idvLj2x4VldEaqHJ5IndJBcQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idYWAKvra5D0KWhB1x5AK12g" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idWKOcWIbGQ0eOmZwv8QBAPg" Name="PersonId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ido2sIORAFUkW2eweO6okSKQ" Name="AddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="ki0ntsghg1e" Name="Organizations" Schema="dbo" Type="T" Value="Organizations" ModelName="RailTransport">
+          <Column id="idEBfFboUTvEyxFMNvMY3EHA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id2muYba0G0UeIoijXtQi2EA" Name="Name" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1a1s4qDzvUKt81dRNmkWsQ" Name="Description" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1SZGgCTKwkiWuKu82Fl2jw" Name="Url" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id2M7n0xB2jki9mhcaJkawpg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idAUSEcbZItUGL0lk993ZMKw" Name="DepartmentOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="quikjzle5ar" Name="OrganizationsToRepresentativesTbl" Schema="dbo" Type="T" Value="OrganizationsToRepresentativesTbl" ModelName="RailTransport">
+          <Column id="idLRFDl6SMVkyZv6sBEGk1zA" Name="dbo.OrganizationsToRepresentativesTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idkLRuILcC2EGoKpxy9FAOwQ" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idVrtPPU0ikk6x84uriTpUIw" Name="RepresentativesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="3sbywok3f5o" Name="ItinerarySegments" Schema="dbo" Type="T" Value="ItinerarySegments" ModelName="RailTransport">
+          <Column id="ida36F64ab50uRJlTxrZcTYw" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idviaKvJlAf02wIFG09h7HRA" Name="Duration" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idM4SA7s5cbUa25ZlWZdYCPA" Name="Distance" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idB6avqA2eHUygQstAaO7dXQ" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1BXeSwai4UCoWHnxRNzA7Q" Name="Type" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegmentTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idGGUVfaaqFUi0EHegJHhbPA" Name="Departure" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idA2vlMsdIf02tJzMt2sccHQ" Name="Arrival" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idFsZXPkVeckqxiTjv5ZWXOQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idmlOasJjzj0iipTX6dLbQ1A" Name="PartOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Itineraries" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idbS7V71P3lU6dQoPUnAH2eA" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idMOOsP6ZRz0iaL5ABMxzMJw" Name="BaseOriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idOUlz2keRmkW1lnfMAZ7SjQ" Name="BaseDestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="3qtulg2111u" Name="Vehicles" Schema="dbo" Type="T" Value="Vehicles" ModelName="RailTransport">
+          <Column id="idct7JYi3rQEmJA73V9UJ8VA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id43AdyYcCTEWCcC1Z83cgcQ" Name="Model" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idFLnVyenFqEA2vGZsOg5UqA" Name="Manifacturer" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ide5ej2ECLUEW2jixpAlZDTQ" Name="Capacity" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1n2O3A87akuSatwYeZaLzA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="5gf3b2kiyqf" Name="Trains" Schema="dbo" Type="T" Value="Trains" ModelName="RailTransport">
+          <Column id="id3chrfWlHsUKf61JkG5AsnQ" Name="Name" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idmoFmfa9ChEKPXKZ6etaMYQ" Name="TrainId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="a0l2cfwah0o" Name="RailLines" Schema="dbo" Type="T" Value="RailLines" ModelName="RailTransport" open="true">
+          <Column id="id5FPbeqmnBUKMhNacItdq6g" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idB19IhxoJhEetekRtqO96NQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idirugnEKhrU6zYAeLPkWRgA" Name="TrainId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Trains" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idcSnXySNArUuWo5un8B2a8g" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="f5s3kw4k55v" Name="TrainStations" Schema="dbo" Type="T" Value="TrainStations" ModelName="RailTransport">
+          <Column id="idZAkw6MZ4aEqDDWLuUcVQ7A" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idaGdR98LnfEORgOeDhsASeQ" Name="Code" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="omadw0crf0w" Name="RailLinesTblToTrainStationsTbl" Schema="dbo" Type="T" Value="RailLinesTblToTrainStationsTbl" ModelName="RailTransport">
+          <Column id="idW0XYWazBdkAdTNHr7e9gqg" Name="dbo.RailLinesTblToTrainStationsTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idvG7any2NAEGEU0Xmq4HvaQ" Name="RailLinesId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.RailLines" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ids6qbS2cT1Eya5aoE89U8vw" Name="TrainStationsId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.TrainStations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="f1ygac10b2t" Name="RailSegments" Schema="dbo" Type="T" Value="RailSegments" ModelName="RailTransport" open="false">
+          <Column id="id8fvGC4y7KE6Bg619zJPN0w" Name="RailSegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idV5CK6SnkwUiHuORneVK5hw" Name="LineId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.RailLines" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idi6i4q5AOzkuPExApoHeEvw" Name="OriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.TrainStations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idZO4YyqCCJ0iUopNMC7n9Cg" Name="DestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.TrainStations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="wxycg4p13wb" Name="RailLinesToConnectsWiths" Schema="dbo" Type="T" Value="RailLinesToConnectsWiths" ModelName="RailTransport">
+          <Column id="idboMMePKFhkeAIvemoYyJSQ" Name="dbo.RailLinesToConnectsWithsId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idHnA9iQKqWECYCpinzbVwtg" Name="RailLineId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.RailLines" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id9M4NaGRJakOwE2gBSxWkFw" Name="ConnectsWithId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.RailLines" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="54ecc0vtcey" Name="RailAgencies" Schema="dbo" Type="T" Value="RailAgencies" ModelName="RailTransport">
+          <Column id="idy5ktLWUcxUGappCK3ojaDQ" Name="RailAgencyId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="zw0pqrx51lq" Name="Places" Schema="dbo" Type="T" Value="Places" ModelName="RailTransport">
+          <Column id="idZznSRDwKJ0KWAA82RVYx3g" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idebXxAI7jLkufaILdU4GvbA" Name="MapURI" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idPkseh5A2zEaAcDNhF1laCA" Name="ISICRev4" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idM08aqK7g0E2M6ipuevyFyQ" Name="LocationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LocationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idVPA3ksUerkumKIDQ2Oab6w" Name="Timezone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idCh1211FqmkyLfvFupoQyJQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idg2tgXitoRUOa5kgtGRaSyQ" Name="ContainedInId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Places" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idQZafWbtdn0KpD9vfg5Yepw" Name="PostalAddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idHAQNl1DfyEmABViaAd6xNg" Name="GeoCoordinatesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoCoordinatesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpS97EJahKUCam20GM0aE9Q" Name="GeoboundariesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoBoundariesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idlM98S77M606UiA8XdOFneQ" Name="Name" DataType="nvarchar" Length="200" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="vmajl1bkeam" Name="GeoCoordinatesTbl" Schema="dbo" Type="T" Value="GeoCoordinatesTbl" ModelName="RailTransport" open="false">
+          <Column id="id82RIu4tTV0qAyN0iYvIIhQ" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idn0c26cVsN02oOzvVyHy7NQ" Name="Latitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idvg9m0WJulU6UAtrS9rk9qA" Name="Longitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idr9BWSTVKa06W2GcCk2iXfQ" Name="Elevation" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idhg5Hlx6Bn0WAehwjAZhEkg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idzBVcZ4FkskGGaIs7KhKmcg" Name="SegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegments" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="pupnmtbyfpt" Name="FaresToTaxesTbl" Schema="dbo" Type="T" Value="FaresToTaxesTbl" ModelName="Trip" open="false">
+          <Column id="idNAm0PjtJAEA9l0h4168GJg" Name="dbo.FaresToTaxesTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idbKVN96TtLUGZVIdmZDvv1g" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idgjM2ugD4K0O2oVujIs72TA" Name="TaxesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="qua1jdyosza" Name="Fares" Schema="dbo" Type="T" Value="Fares" ModelName="Trip" open="false">
+          <Column id="idYYJ0PU8BM0GviwSmPMcZhg" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idH9xET7e7f0qlc2PiwMsN0g" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idruFVnANENEyarcRmGtOCxg" Name="Description" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ideVpAjwbfs0yw40OqA4Zu2Q" Name="SeatNumber" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idAXgxwmavdEGanVs3bJZlrg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+      </Database>
+    </Datastores>
+    <Associations>
+      <Association Class1="RailLine" Class2="Train" Percent1="0.3838383838383838" Percent2="0.5" Edge1="l" Edge2="r" Role1="RailLine" Role2="Train" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="uHj0EJIhne" Path="M 746 344 L 600 344 L 600 337 L 464 337" ModelName="RailTransport">
+        <Mappings>
+          <Database id="lcmngplx5nv" Name="Database">
+            <Entity id="aimlxjlpiho" Name="RailLines" Schema="dbo">
+              <Mapping id="tcys3ylzvud" Attribute="RailLine" Column="Id" />
+              <Mapping id="5u2jfannf2x" Attribute="Train" Column="TrainId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailLine" Class2="TrainStation" Percent1="0.1978798586572438" Percent2="0.7768924302788844" Edge1="t" Edge2="b" Role1="RailLines" Role2="TrainStations" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="hGTGra7bOq" Path="M 802 268 L 802 266.5 L 802 266.5 L 802 265" ModelName="RailTransport">
+        <Mappings>
+          <Database id="eyoyf1ojcmm" Name="Database">
+            <Entity id="hwiue4idsmb" Name="RailLinesTblToTrainStationsTbl" Schema="dbo">
+              <Mapping id="0ecvnre53rl" Attribute="RailLines" Column="RailLinesId" />
+              <Mapping id="yxjot4odrye" Attribute="TrainStations" Column="TrainStationsId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailLine" Class2="RailLine" Percent1="0.696113074204947" Percent2="0.8162544169611308" Edge1="t" Edge2="b" Role1="RailLine" Role2="ConnectsWith" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="sbr2Z5mrto" Path="M 943 268 L 943 220 L 1040 220 L 1040 360 L 1060 360 L 1060 470 L 977 470 L 977 466" ModelName="RailTransport">
+        <Mappings>
+          <Database id="5rcq0u3wnet" Name="Database">
+            <Entity id="z0xpo1bamlv" Name="RailLinesToConnectsWiths" Schema="dbo">
+              <Mapping id="d4yqqouqak0" Attribute="RailLine" Column="RailLineId" />
+              <Mapping id="ryvr4l0kkot" Attribute="ConnectsWith" Column="ConnectsWithId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailSegment" Class2="RailLine" Percent1="0.8729096989966555" Percent2="0.8636363636363636" Edge1="t" Edge2="l" Role1="RailSegment" Role2="Line" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="qmyBkOIFVD" Path="M 711 533 L 711 439 L 746 439" ModelName="RailTransport">
+        <Mappings>
+          <Database id="qksobqnylvn" Name="Database">
+            <Entity id="5ndszoehaiz" Name="RailSegments" Schema="dbo">
+              <Mapping id="ifcowlu4t4d" Attribute="RailSegment" Column="RailSegmentId" />
+              <Mapping id="z1ng32glqdf" Attribute="Line" Column="LineId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailSegment" Class2="TrainStation" Percent1="0.7558528428093646" Percent2="0.2749003984063745" Edge1="t" Edge2="b" Role1="RailSegment" Role2="Origin" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="aFMehY4VAY" Path="M 676 533 L 676 265" ModelName="RailTransport">
+        <Mappings>
+          <Database id="brbp4jtg2my" Name="Database">
+            <Entity id="b40jtmsnxas" Name="RailSegments" Schema="dbo">
+              <Mapping id="zu5zcqeail3" Attribute="RailSegment" Column="RailSegmentId" />
+              <Mapping id="jxstksog3mt" Attribute="Origin" Column="OriginId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailSegment" Class2="TrainStation" Percent1="0.6387959866220736" Percent2="0.13545816733067728" Edge1="t" Edge2="b" Role1="RailSegment" Role2="Destination" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="MFyX7CoUVh" Path="M 641 533 L 641 265" ModelName="RailTransport">
+        <Mappings>
+          <Database id="jbmxl3bwss5" Name="Database">
+            <Entity id="pye40d5jwh2" Name="RailSegments" Schema="dbo">
+              <Mapping id="qfm5jyahord" Attribute="RailSegment" Column="RailSegmentId" />
+              <Mapping id="cdculr3wzqn" Attribute="Destination" Column="DestinationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="RailLine" Class2="Fare" Percent1="0.28975265017667845" Percent2="0.2617801047120419" Edge1="b" Edge2="t" Role1="RailLine" Role2="Fare" Navigable1="false" Navigable2="true" OnDelete1="delete" OnDelete2="disassociate" Multiplicity1="0..1" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="" id="dpqX4klfpT" Path="M 828 466 L 828 520 L 840 520 L 840 571" ModelName="RailTransport" open="true">
+        <Mappings>
+          <Database id="idmGiTna6dbI" Name="Database">
+            <Entity id="idybVxCScorj" Name="RailLines" Schema="dbo" open="true">
+              <Mapping id="sSnJH8ilTt" Attribute="RailLine" Column="Id" />
+              <Mapping id="T5UVjcqnno" Attribute="Fare" Column="FareId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+    </Associations>
+    <Classes>
+      <Class BaseModel="Trip" BaseClass="Vehicle" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="235" Height="120" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Vehicle;" ModelName="RailTransport" Stereotype="StateClass" Left="229" Top="277" Name="Train" id="idIvENUpODoU63BUUn9R1BGQ" HasMappings="true">
+        <Attributes>
+          <Attribute id="t4D9wKCRjR" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="xcv5fxcwqqb" Name="Database">
+            <Entity id="nyqw1f3sihr" Name="Vehicles" Schema="dbo">
+            </Entity>
+            <Entity id="5eog4xmdsda" Name="Trains" Schema="dbo">
+              <Mapping id="qnlgokiaran" Attribute="Id" Column="TrainId" />
+              <Mapping id="b0nt1m3yaay" Attribute="Name" Column="Name" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="Vehicle" ShadowIsDependent="false" PK="Id" Width="190" Height="180" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="142" Top="34" Name="Vehicle" id="idG3fCr5FVaN" HasMappings="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="id5wfhPxW7zP">
+        </Attributes>
+        <Mappings id="idCKF5x6ZrlF">
+          <Database id="kzpocb5sseq" Name="Database">
+            <Entity id="kyhxbvldx12" Name="Vehicles" Schema="dbo">
+              <Mapping id="xkq1iydkphu" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="sehqwezz3cw" Attribute="Model" Column="Model" IsShadow="true" />
+              <Mapping id="bpnsuhqwint" Attribute="Manifacturer" Column="Manifacturer" IsShadow="true" />
+              <Mapping id="haevl03zmac" Attribute="Capacity" Column="Capacity" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Location" BaseClass="Place" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="251" Height="240" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Place;" ModelName="RailTransport" Stereotype="StateClass" Left="607" Top="25" Name="TrainStation" id="idcAluZrJRx0mqhnkInUBEHg" HasMappings="true" open="true">
+        <Attributes>
+        </Attributes>
+        <Mappings>
+          <Database id="3vd3kb4ma4b" Name="Database">
+            <Entity id="xyymlr0hq5y" Name="TrainStations" Schema="dbo" open="true">
+              <Mapping id="hz4goryu03p" Attribute="Id" Column="Id" />
+            </Entity>
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo" open="true">
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="Place" ShadowIsDependent="false" PK="Id" Width="250" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="1073" Top="26" Name="Place" id="idAdGdLA39Ua" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="idP6ZGdutHwB">
+        </Attributes>
+        <Mappings id="idf6DBAKKiKJ">
+          <Database id="d2fz35yvrvz" Name="Database">
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo">
+              <Mapping id="5qdxaetv24k" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="hwc1sgzkoma" Attribute="MapURI" Column="MapURI" IsShadow="true" />
+              <Mapping id="xwynvtwunnc" Attribute="ISICRev4" Column="ISICRev4" IsShadow="true" />
+              <Mapping id="xpaees3wi4x" Attribute="Timezone" Column="Timezone" IsShadow="true" />
+              <Mapping id="akTgX39RFQ" Attribute="Name" Column="Name" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="283" Height="198" ShowInherited="" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="RailTransport" Stereotype="StateClass" Left="746" Top="268" Name="RailLine" id="idsAYgiUmMq0mAfbG6AaFsgg" HasMappings="true">
+        <Attributes>
+          <Attribute id="e6r4RlmuzW" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="xdr0y1ztagp" Name="Database">
+            <Entity id="pcffmbfymfg" Name="RailLines" Schema="dbo">
+              <Mapping id="fdqxswbgx00" Attribute="Id" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Organization" BaseClass="Organization" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="321" Height="182" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Organization;" ModelName="RailTransport" Stereotype="StateClass" Left="925" Top="497" Name="RailAgency" id="id6WazEdLnDEehwTYPlcssZg" HasMappings="true">
+        <Attributes>
+        </Attributes>
+        <Mappings>
+          <Database id="pfezqzeozpi" Name="Database">
+            <Entity id="a1kk1dbfrwo" Name="Organizations" Schema="dbo">
+            </Entity>
+            <Entity id="5l3fm2ulpzx" Name="RailAgencies" Schema="dbo">
+              <Mapping id="iityy5qkbnx" Attribute="Id" Column="RailAgencyId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Organization" ShadowClass="Organization" ShadowIsDependent="false" PK="Id" Width="284" Height="258" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="1357" Top="338" Name="Organization" id="idaVToqUg7CW" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="iduIdUCSev4y">
+        </Attributes>
+        <Mappings id="idFN4gllS8TV">
+          <Database id="lew0zqnddnj" Name="Database">
+            <Entity id="22uh53shg1u" Name="Organizations" Schema="dbo">
+              <Mapping id="c4it5ukr3ko" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="hdrs2gqzr5e" Attribute="Name" Column="Name" IsShadow="true" />
+              <Mapping id="xtmocdjyhy5" Attribute="Description" Column="Description" IsShadow="true" />
+              <Mapping id="zwzhzxnwfnb" Attribute="Url" Column="Url" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="ItinerarySegment" ShadowIsDependent="false" PK="Id" Width="259" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="137" Top="462" Name="ItinerarySegment" id="id7fJr1YODBp" HasMappings="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="idPe2oGEhaol">
+        </Attributes>
+        <Mappings id="idwCTljhprXK">
+          <Database id="skuvftmvusp" Name="Database">
+            <Entity id="nbeixt5tmee" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="sz2yyt1sjot" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="sn5ru2mimfs" Attribute="Duration" Column="Duration" IsShadow="true" />
+              <Mapping id="0mhtyacrnb0" Attribute="Distance" Column="Distance" IsShadow="true" />
+              <Mapping id="1jnnppgm00l" Attribute="Price" Column="Price" IsShadow="true" />
+              <Mapping id="2pbx0scsylg" Attribute="Departure" Column="Departure" IsShadow="true" />
+              <Mapping id="23uygy4faly" Attribute="Arrival" Column="Arrival" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Trip" BaseClass="ItinerarySegment" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="299" Height="259" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="ItinerarySegment;" ModelName="RailTransport" Stereotype="StateClass" Left="450" Top="533" Name="RailSegment" id="idBl42mC6YMUeO2qic6zXszg" HasMappings="true">
+        <Attributes>
+        </Attributes>
+        <Mappings>
+          <Database id="iqsog42rjph" Name="Database">
+            <Entity id="u5qhqq3b0wd" Name="ItinerarySegments" Schema="dbo">
+            </Entity>
+            <Entity id="mcftep4kwhz" Name="RailSegments" Schema="dbo">
+              <Mapping id="qmtrpa21uwy" Attribute="Id" Column="RailSegmentId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="Fare" ShadowIsDependent="false" PK="Id" Width="191" Height="198" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="790" Top="571" Name="Fare" id="id7EtDNgqdvB" HasMappings="true" open="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="idQXjAmboxS0">
+        </Attributes>
+        <Mappings id="idMKFCbPzLtb">
+          <Database id="ide8R8IlrHT2" Name="Database">
+            <Entity id="idBSVpqGBCei" Name="Fares" Schema="dbo">
+              <Mapping id="idTINk45B2Go" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="idrKp9jVescY" Attribute="Price" Column="Price" IsShadow="true" />
+              <Mapping id="idUV6Asd7olX" Attribute="Description" Column="Description" IsShadow="true" />
+              <Mapping id="idJkTNyV0XjL" Attribute="SeatNumber" Column="SeatNumber" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+    </Classes>
+  </SoftwareModel>
+  <BusinessRules LocalReferences="" GlobalReferences="mscorlib.dll;System.dll;System.Xml.dll;System.Core.dll">
+    <Definitions />
+    <Vocabularies />
+    <RuleSet id="idKalhV6Kx90mGzgFMzSKsMg" Class="Train" Stereotype="StateClass" open="false" _open="false" ModelName="RailTransport" />
+    <RuleSet id="idzRGVadMi5Eq4UkoM7RbxDg" Class="TrainStation" Stereotype="StateClass" open="false" _open="false" ModelName="RailTransport" />
+    <RuleSet id="idgJGweAfQm0aLD2pcLw1a1A" Class="RailLine" Stereotype="StateClass" open="false" _open="false" ModelName="RailTransport" />
+    <RuleSet id="idMju4SqhvwEAF0elTajwmOQ" Class="RailAgency" Stereotype="StateClass" open="false" _open="false" ModelName="RailTransport" />
+    <RuleSet id="id3Hc0CKMZx0GjrQ2t8KTaRw" Class="RailSegment" Stereotype="StateClass" open="false" _open="false" ModelName="RailTransport" />
+  </BusinessRules>
+  <Resources />
+</BusinessObjectModel>

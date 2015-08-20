@@ -1,0 +1,520 @@
+<FormModel id="idsyhTEtVTby" Model_Name="FlightForm" Model_BasedOn="AirTransport" Model_BasedOn_Class="Flight" Model_Description="" IsMasterPage="false" MasterPage="MasterPage" Model_DateTimeBuild="" idef0="" Model_Creator="ador">
+  <Controller id="idZ19PyX7UoM">
+    <Action Name="AddFlight" Title="LocalResources.RES_PAGETITLE_AddFlight" SuccessMessage="" Permissions="" NoPermissionsRequired="true" IsPublic="false" ActionMethod="GET" SubmitChanges="true" EventName="undefined" id="idDS2Ncyyyhm">
+      <ViewActionBody ViewActionType="RENDER_VIEW" id="idjEf9DJtlJx"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="none" id="idVSGJiOMJPh"><![CDATA[]]></ActionBody>
+    </Action>
+    <Action Name="EditFlight" Title="LocalResources.RES_PAGETITLE_EditFlight" SuccessMessage="" Permissions="" NoPermissionsRequired="true" IsPublic="false" ActionMethod="GET" SubmitChanges="true" EventName="undefined" id="idhZTkItdANG">
+      <ViewActionBody ViewActionType="RENDER_VIEW" id="idhpgUjrIZOn"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT" id="idpzE0LvUFVH"><![CDATA[<Invoke ServiceId="" BusinessObject="AirTransport" Class="Flight" Method="GetByKey">
+        <Inputs><Input Name="Id" DataType="long" Assignment=""/></Inputs>
+        <Outputs><Output Name="Return" DataType="DomainModel.Flight" Assignment="Flight"/></Outputs>
+    </Invoke>]]></ActionBody>
+    </Action>
+    <Action Name="SaveFlight" Title="LocalResources.RES_PAGETITLE_SaveFlight" SuccessMessage="" Permissions="" NoPermissionsRequired="true" IsPublic="false" ActionMethod="POST" SubmitChanges="true" EventName="undefined" id="idCQcj9EcZ8V">
+      <ViewActionBody ViewActionType="CLOSE" id="idzekGOrWEzn"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT" id="idc0OfiAGF07"><![CDATA[<Invoke ServiceId="" WorkItemId="" BusinessObject="AirTransport" Class="Flight" Method="Save"><Inputs /><Outputs /></Invoke>]]></ActionBody>
+    </Action>
+    <Action Name="DeleteFlight" Title="LocalResources.RES_PAGETITLE_DeleteFlight" SuccessMessage="" Permissions="" NoPermissionsRequired="true" IsPublic="false" ActionMethod="POST" SubmitChanges="true" EventName="undefined" id="idrsr3B7FHwQ">
+      <ViewActionBody ViewActionType="CLOSE" id="idKw4VGaMoFD"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT" id="idLvAAy0pPsg"><![CDATA[<Invoke ServiceId="" WorkItemId="" BusinessObject="AirTransport" Class="Flight" Method="Delete"><Inputs /><Outputs /></Invoke>]]></ActionBody>
+    </Action>
+  </Controller>
+  <DataSource>
+    <Class level="1" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="1" id="6550d14672c00f92" _open="true">
+      <Attribute Name="Id" id="db67819370e18f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="1c8fdb246dc50f92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="4e161d4601c00f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="65cdf721ddd00f92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="4c06b4c2b3000f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="ada95a2423180f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+      <Attribute id="c025cf69d2f47da2" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      <Attribute id="349bcc655c080f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      <Attribute id="86fb8e109d000f92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      <Class level="3" Name="Airport" PseydoName="Origin" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="2dc35525a32c0f92" _open="true">
+        <Attribute Name="Id" id="e347e90ee6070f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="93b55cc2790d8f92" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="6956d4a800400f92" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="f7bfb172ac169b92" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="88e0233159000f92" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="59a2113ffb7c992" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="8f77de83f41cf92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Class Name="OutboundFlights" PseydoName="OutboundFlights" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="ce45aa14a9380f92">
+          <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="d05ba8f43c000f92">
+            <Attribute Name="Id" id="a536bab6e588ac92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="3eed9cfead6273d2" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="2c88372f05a4c492" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="d2b7813a765fe792" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="a5d6fa39bd980f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="920d338250c14f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="db904343d2348f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="4feea9b75ede0f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="47467aa640280f92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+        <Class Name="InboundFlights" PseydoName="InboundFlights" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="252e809090f99192">
+          <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="c264ce12e54d0f92">
+            <Attribute Name="Id" id="59f133a94780f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="cdf461e4f3ff4392" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="721bdee9f37b2592" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="d9417788e0c00f92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="e11728e630600f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="cdc22f9e896b0e92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="8a8de29d400f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="96160153c93a8f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="47e9464e75989d12" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="Airport" PseydoName="Destination" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="4cfeb855fc574f92">
+        <Attribute Name="Id" id="f417dbce8c137f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="98342cadebf47c92" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="6c07aeba06d94f92" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="c89f8b8e1c7ef92" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="a40d18e589b80f92" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+        <Attribute id="22faefdec6a20f92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="f6882f5465e80f92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Class Name="OutboundFlights" PseydoName="OutboundFlights" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="21a311e9a7740f92">
+          <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="e1bc55e2b5050f92">
+            <Attribute Name="Id" id="5e2e6bfb8d0c2b92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="80ca7c64ea9af92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="fc39fb3773b00f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="a8649c8df1538f92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="30d7c2469b800f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="77935039dcca4f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="e1415701c4200f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="ca6c8712aa054f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="62feaffd52b44f92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+        <Class Name="InboundFlights" PseydoName="InboundFlights" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="764d824871cc0f92">
+          <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="51fbc05fcd000f92">
+            <Attribute Name="Id" id="b4d36ed734101992" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="a664b0e753f00f92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="7e8e7941ad9f7f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="3268afdbe21f6292" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="6fb9a696c2840f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="c76357a1c3643672" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="7986754f3c100f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="1c037c8ec3c80f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="af84c16065427f92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="Airline" PseydoName="Airline" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Organization" BaseClass="Organization" Multiplicity="1" id="ca1d6488282b0f92">
+        <Attribute Name="Id" id="8cffb71638865592" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Organization:Organization" />
+        <Attribute id="59a64c852ba0f92" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+        <Attribute id="f5ae2df9dd000f92" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+        <Attribute id="afe825944a61dd12" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+        <Attribute id="b887aeeecba80f92" Name="CallSign" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="dab3c63d0d000f92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="ad3a4f5d0e000f92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Class Name="Flights" PseydoName="Flights" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="2cb618ba78400f92">
+          <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="d89b68308b4eae92">
+            <Attribute Name="Id" id="8b42c1f14c81f72" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="90b7b7c60f000f92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="f988a61692000f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="2a079dc539100f92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="da6025522488f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="eaeaecab48e40f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+            <Attribute id="6e1ffef1b9ac0f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="a15429d5ec50f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="97d2a23529827792" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+        <Class level="5" Name="Organization" PseydoName="DepartmentOf" PK="Id" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="590cd29e8db6bf92">
+          <Attribute Name="Id" id="694e96fb4ed70f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="76df02947e871792" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="f481dc65c7000f92" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="9b7ad18e1eb0af92" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Class>
+        <Class Name="Representatives" PseydoName="Representatives" Stereotype="Collection" Model="" Multiplicity="1" id="7e9aa8a393198f92">
+          <Class level="5" Name="Person" PseydoName="Person" PK="Id" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="4e0833b3730e0f92">
+            <Attribute Name="Id" id="5803c7695b800f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="56118324d4a33f92" Name="FristName" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="748ed5d5802e3c92" Name="LastName" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+        <Class level="5" Name="ContactInformation" PseydoName="Contact" PK="Id" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="cc893db994bc0f92">
+          <Attribute Name="Id" id="c46be4550c5f0f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="446d4c6a3ae80f92" Name="Phone" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="29635039af54e92" Name="Fax" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="7ab98309bad78f92" Name="Email" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Class>
+        <Class Name="Departments" PseydoName="Departments" Stereotype="Collection" Model="" Multiplicity="1" id="3fcf783460c0f92">
+          <Class level="5" Name="Organization" PseydoName="Organization" PK="Id" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="f75d02a81a980f92">
+            <Attribute Name="Id" id="63ee4ba0e1400f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="a9c5cc78b018a292" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="2ce9750c571cf092" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="a19bf9e25a240f92" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="Aircraft" PseydoName="Aircraft" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="e9d47676e4400f92">
+        <Attribute Name="Id" id="1c6c052d32e0f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="2e703140efd49792" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="dff6c7d3ce3f4f92" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="ae33a0fb621c0f92" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="2e3fb819763ecf92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      </Class>
+      <Class Name="Legs" PseydoName="Legs" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="c664f8768ced0f92">
+        <Class level="3" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="886a6f2d3677cf92">
+          <Attribute Name="Id" id="7caef90fd500f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="15eaf1950800f92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="86791914fa0f0f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="5b854fa66479bf92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="d3da61499ea64f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="c3ac105c3eeb8f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+          <Attribute id="aee8f47bc3016f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="4952639be5d00f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="ac0cc54610770f92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Class level="5" Name="Airport" PseydoName="Origin" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="6f14f7296a980f92">
+            <Attribute Name="Id" id="37f4356dad000f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="a27d8bbeb5ff8f92" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="afbc003bd1c5ff92" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="d1be13759310ff92" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="3ff6a849207203d2" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="62abfcb1e9d2c792" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="d101f5ee140e8f92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="Airport" PseydoName="Destination" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="2f9ba04caf150f92">
+            <Attribute Name="Id" id="e78e7bda74080f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="1e24a0cb17a60f92" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="4ec9f5c72b8c0f92" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="a75e97d15369b74a" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="8496b38f65000f92" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            <Attribute id="6d7932cfcc000f92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="64829a4651252f92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="Airline" PseydoName="Airline" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Organization" BaseClass="Organization" Multiplicity="1" id="28a25871c4000f92">
+            <Attribute Name="Id" id="7470cffeb1980f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="ea7bf7cd0a2a8f92" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="9ba62ec4ed890f92" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="d4f25628fbc00f92" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="b8d7d51c6fb8ff92" Name="CallSign" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="a127c630d6840f92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="60e5a509d000f92" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="Aircraft" PseydoName="Aircraft" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="86efb9946bc11792">
+            <Attribute Name="Id" id="a42a383b8549df92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="c37f62669e8cd892" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="2564861cbd000f92" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="627b623e0e7e0f92" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="63b8b50ad1600f92" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class Name="Legs" PseydoName="Legs" Stereotype="Collection" Model="AirTransport" Multiplicity="1" id="36602911f0e7cf92">
+            <Class level="5" Name="Flight" PseydoName="Flight" PK="Id" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="ItinerarySegment" Multiplicity="*" id="f3149924d5c80f92">
+              <Attribute Name="Id" id="60bbf3a7ea950f92" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="7569be033520cf92" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="3deec13db3800f92" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="12c0424aac573192" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="5a6e6535e6000f92" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="19ab37b6bb000f92" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:ItinerarySegment" />
+              <Attribute id="25641e17eaf54f92" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="347784be6d920f92" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="2b49a9c4b2b3cf92" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            </Class>
+          </Class>
+          <Class level="5" Name="ItinerarySegmentType" PseydoName="Type" PK="Id" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="6aeddf9eea000f92">
+            <Attribute Name="Id" id="2ba56905ee1bf792" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+            <Attribute Name="Value" id="ab47c4e3ed000f92" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+          </Class>
+          <Class level="5" Name="Fare" PseydoName="Fare" PK="Id" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="f92ca4cf49dca712">
+            <Attribute Name="Id" id="c6f77c8c293f0f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="a6b641eb0d640f92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="700c4a20bec28f92" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="8d326078748b0f92" Name="SeatNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class Name="Route" PseydoName="Route" Stereotype="Collection" Model="" Multiplicity="1" id="ab38cd343de3f92">
+            <Class level="5" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="bf7ad051d8f00f92">
+              <Attribute Name="Id" id="d2177b2401aa5992" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+              <Attribute id="d9c8e94b33500f92" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+              <Attribute id="17ae2eaf61ce4f92" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+              <Attribute id="50e06acbfd928f92" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="ItinerarySegmentType" PseydoName="Type" PK="Id" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="10faf92e0e83792" _open="true">
+        <Attribute Name="Id" id="554b683e940e8f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+        <Attribute Name="Value" id="6a2a805b06000f92" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+      </Class>
+      <Class level="3" Name="Fare" PseydoName="Fare" PK="Id" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="ff35bdf906104f92">
+        <Attribute Name="Id" id="1613c01038fbeb92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        <Attribute id="f0cbe173d2c5bf92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        <Attribute id="b8a19277ad134f92" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="76e4af1333a80f92" Name="SeatNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Class Name="Taxes" PseydoName="Taxes" Stereotype="Collection" Model="" Multiplicity="1" id="f174f25a6f4a0f92">
+          <Class level="5" Name="Fare" PseydoName="Fare" PK="Id" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="826489eb8b218f92">
+            <Attribute Name="Id" id="87aa573117780f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="e0cb36097deccf92" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="cd5587f6589f0792" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="468aec1b0956cf92" Name="SeatNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Model="" Multiplicity="1" id="77df9530486ab792">
+        <Class level="3" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="8ecc84aa34eccf92">
+          <Attribute Name="Id" id="330723bd2cd00f92" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="a5bae0f4fc27b392" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="ee84d5a143f04f92" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="6c1d6a87c35bdd92" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+      </Class>
+    </Class>
+  </DataSource>
+  <Body id="canvas" CssStyle="">
+    <Control id="idfu7IUraaLl" Name="cmdFlightSave" IsDefaultButton="true" Value="Save" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;this&amp;quot; Action=&amp;quot;SaveFlight&amp;quot; TargetFrame=&amp;quot;_self&amp;quot;&amp;gt;&amp;#xD;&amp;#xA; &amp;lt;Parameters&amp;gt;&amp;#xD;&amp;#xA; &amp;lt;/Parameters&amp;gt;&amp;lt;/ControllerAction&amp;gt;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" CausesValidation="true">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" id="idNvw0z9Ufua" Name="LabelcmdFlightSave" Value="Save" TooltipPosition="Top" />
+    </Control>
+    <Control id="idEiGSA1w1z6" Name="cmdDeleteFlight" Value="Delete" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;this&amp;quot; Action=&amp;quot;DeleteFlight&amp;quot; TargetFrame=&amp;quot;_self&amp;quot;&amp;gt;&amp;#xD;&amp;#xA; &amp;lt;Parameters&amp;gt;&amp;#xD;&amp;#xA; &amp;lt;/Parameters&amp;gt;&amp;lt;/ControllerAction&amp;gt;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" ShowConfirmation="true" CausesValidation="false">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="LabelcmdDeleteFlight" Value="Delete" id="idfh54kara4S" TooltipPosition="Top" />
+    </Control>
+    <Control id="idPk7q8N5BrM" Name="cmdExit" IsEscapeButton="true" Value="Exit" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CLOSE&quot; ActionDescription=&quot;Close the form&quot; Controller-Action=&quot;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" CausesValidation="false">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="LabelcmdExit" Value="Exit" id="idolDvnwde7S" TooltipPosition="Top" />
+    </Control>
+    <table Name="FlightTable" Type="Table" CssStyle="" id="idR5Gcwge4KT" IsResponsive="true" TooltipPosition="Top">
+      <colgroup id="idKJGQX1Ovtr">
+        <col CssStyle="" id="idfaZ7o6StpP" />
+        <col CssStyle="" id="idQEKXDyqqMJ" />
+        <col CssStyle="" id="idQ1SI5zRdgu" />
+        <col CssStyle="" id="idZSR4nrV9pq" />
+        <col CssStyle="" id="idEmFu86yiCT" />
+        <col CssStyle="" id="idtMiLzql8Co" />
+        <col CssStyle="" id="idjKHbVm5Tp8" />
+        <col CssStyle="" id="idiU1Ql1gdBm" />
+        <col CssStyle="" id="idKELxwMcE5i" />
+        <col CssStyle="" id="idOrCcBxqefc" />
+        <col CssStyle="" id="idCArqbWFiN1" />
+        <col CssStyle="" id="ider9f7hd3V3" />
+      </colgroup>
+      <tbody id="idATXTPe8G1p">
+        <tr id="iddoBuqymFkM" CssStyle="">
+          <td CssStyle="" cnt="9" pos="1" id="idRf1W5elXAz" colspan="2">
+            <Control id="id0iR8i1use8" Value="Id:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idiF80CPaL4A" colspan="3">
+            <Control id="idJhzp7UW1Sl" Value="" DataSource="Flight.Id" ControlType="TextBox" Required="false" ReadOnly="true" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtId" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idtZ62ovM3Ao" colspan="2" />
+          <td CssStyle="" cnt="9" pos="2" id="id3uaadCX1Kf" colspan="2">
+          </td>
+          <td CssStyle="" id="idUtOtF895BG" colspan="3">
+          </td>
+        </tr>
+        <tr id="idWvRWpPU6hA" CssStyle="" Name="">
+          <td CssStyle="" cnt="9" pos="3" id="idb2GMJypgdJ" colspan="2" Name="Cell1">
+            <Control id="idfBJAR6IV5V" Value="Origin:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId7" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idpw4Gpe4Z8I" colspan="3" Name="Cell2">
+            <Control id="idFVMZ3umFFy" DataSourceType="" DataSource="Flight.Origin.Id" Attribute="" ControlType="ComboBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;Airport&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;[Name]&quot; ValueMember=&quot;[Id]&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;         &lt;Arguments/&gt;         &lt;ManualOptions/&gt;              &lt;DataBindings/&gt;                 &lt;/LookupValues&gt;" CssStyle="" CausesValidation="false" Name="btnSelectOrigin" Value="" ButtonAction="" TooltipPosition="TOP">
+              <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" id="idPfci8E8sZe" TooltipPosition="Top" Name="LabelbtnSelectOrigin1" Value="Select Origin" />
+              <LookupValuesFilter id="id62nwYRwksa">
+                <Function Name="Filter" Description="" _open="true" id="idzaVlEFZAaK"><![CDATA[function bool Filter(
+	 DomainModel.Airport DataItem
+)
+{
+	return true;
+}]]></Function>
+              </LookupValuesFilter>
+            </Control>
+          </td>
+          <td CssStyle="" id="idjQEezuA96K" colspan="2" Name="Cell3" />
+          <td CssStyle="" cnt="9" pos="4" id="idLDysUB0Ub2" colspan="2" Name="Cell4">
+            <Control id="id3PT0eHib1E" Value="Duration:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblDuration" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idcRqEEsPPje" colspan="3" Name="Cell5">
+            <Control id="id3XAG6P6OAu" Value="" DataSource="Flight.Duration" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtDuration" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="idwVgngS55NW" CssStyle="">
+          <td CssStyle="" cnt="9" pos="3" id="idBk2wIAUhKU" colspan="2">
+            <Control id="idfZlTKBuQEA" Value="Destination:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId71" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idAKQ6HzBbBm" colspan="3">
+            <Control id="idGr7S6fIoC7" Value="" DataSource="Flight.Destination.Id" ControlType="ComboBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;Airport&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;[Name]&quot; ValueMember=&quot;[Id]&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;         &lt;Arguments/&gt;         &lt;ManualOptions/&gt;              &lt;DataBindings/&gt;                 &lt;/LookupValues&gt;" ButtonAction="" CssStyle="" Name="txtId21" TooltipPosition="Top">
+              <LookupValuesFilter id="idNNXD5NAQ06">
+                <Function Name="Filter" Description="" _open="true" id="idxnxVndYKAN"><![CDATA[function bool Filter(
+	 DomainModel.Airport DataItem
+)
+{
+	return true;
+}]]></Function>
+              </LookupValuesFilter>
+            </Control>
+          </td>
+          <td CssStyle="" id="iduO3fqUedAA" colspan="2" />
+          <td CssStyle="" cnt="9" pos="4" id="idDsC7LrIvdJ" colspan="2">
+            <Control id="id3Rq3cVEDtF" Value="Distance:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblDistance" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="id00GwKmGlGn" colspan="3">
+            <Control id="id23he5IVExw" Value="" DataSource="Flight.Distance" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtDistance" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="id9npURbiSMX" CssStyle="" Name="">
+          <td CssStyle="" cnt="9" pos="5" id="idEljFyoHGdu" colspan="2" Name="Cell6">
+            <Control id="idGTqeG9wsdD" Value="Flight Number:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblFlightNumber" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idZFRaLsfYaX" colspan="3" Name="Cell7">
+            <Control id="idEz6HOlgaM6" Value="" DataSource="Flight.FlightNumber" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtFlightNumber" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idLDgMRwHQMo" colspan="2" Name="Cell8" />
+          <td CssStyle="" cnt="9" pos="6" id="idJ0ClbXyEZx" colspan="2" Name="Cell9">
+            <Control id="idytVXR0iBxJ" Value="Price:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblPrice" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idvwUqOcfMk5" colspan="3" Name="Cell10">
+            <Control id="idJXQ1XArZID" Value="" DataSource="Flight.Price" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtPrice" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="idzaacy0tUDq" CssStyle="">
+          <td CssStyle="" cnt="9" pos="5" id="idlTfqADaFmZ" colspan="2">
+            <Control id="idSkIjoxotm0" Value="Airline:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblFlightNumber2" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="id99siJPPdyK" colspan="3">
+            <Control id="idJ13RH3F1yK" Value="" DataSource="Flight.Airline.Id" ControlType="ComboBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;Airline&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;[Name]&quot; ValueMember=&quot;[Id]&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;         &lt;Arguments/&gt;         &lt;ManualOptions/&gt;              &lt;DataBindings/&gt;                 &lt;/LookupValues&gt;" ButtonAction="" CssStyle="" Name="txtId3" TooltipPosition="Top">
+              <LookupValuesFilter id="idCHlvu7bnPF">
+                <Function Name="Filter" Description="" _open="true" id="idjkl73Fy1Sh"><![CDATA[function bool Filter(
+	 DomainModel.Airline DataItem
+)
+{
+	return true;
+}]]></Function>
+              </LookupValuesFilter>
+            </Control>
+          </td>
+          <td CssStyle="" id="idTanicRwlbT" colspan="2" />
+          <td CssStyle="" cnt="9" pos="6" id="idXOUvfbbwVk" colspan="2">
+            <Control id="idaWdq0PSUzH" Value="Departure:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblDeparture" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idWrdehXL86r" colspan="3">
+            <Control id="idslXQ2psaqK" Value="" DataSource="Flight.Departure" ControlType="DateTimeBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="dtDeparture0" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="idCw46WaJL1o" CssStyle="">
+          <td CssStyle="" cnt="9" pos="7" id="idShxQ1flqD8" colspan="2">
+            <Control id="idaG3AEccf2G" Value="Aircraft:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblFlightNumber21" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idTMTNyanW86" colspan="3">
+            <Control id="id2ZWKCWQwxB" Value="" DataSource="Flight.Aircraft.Id" ControlType="ComboBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;Aircraft&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;[Model]&quot; ValueMember=&quot;[Id]&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;         &lt;Arguments/&gt;         &lt;ManualOptions/&gt;              &lt;DataBindings/&gt;                 &lt;/LookupValues&gt;" ButtonAction="" CssStyle="" Name="txtId4" TooltipPosition="Top">
+              <LookupValuesFilter id="idtDxMGOTjpb">
+                <Function Name="Filter" Description="" _open="true" id="idHiE0PUF9aI"><![CDATA[function bool Filter(
+	 DomainModel.Aircraft DataItem
+)
+{
+	return true;
+}]]></Function>
+              </LookupValuesFilter>
+            </Control>
+          </td>
+          <td CssStyle="" id="idhPOb9i6PpM" colspan="2" />
+          <td CssStyle="" cnt="9" pos="8" id="ideQgoE6ETRQ" colspan="2">
+            <Control id="idoxHRgpzDoB" Value="Arrival:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblArrival" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idRKUWV9xsDF" colspan="3">
+            <Control id="idTd1OnTFbkQ" Value="" DataSource="Flight.Arrival" ControlType="DateTimeBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="dtArrival0" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="idW79wDUhHht" CssStyle="">
+          <td CssStyle="" cnt="9" pos="9" id="idMX9KvKv9H5" colspan="2">
+            <Control id="idsMCR6OpIHx" Value="Fare Price:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblPrice2" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idy3UyxJBTJ0" colspan="3">
+            <Control id="idxiAk1Q2eax" Value="" DataSource="Flight.Fare.Price" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtPrice2" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idt80x9Amxzh" colspan="2" />
+          <td CssStyle="" id="idylccvI3AMa" colspan="2">
+            <Control id="idtDh6tGMXGU" Value="Origin Terminal:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblOriginTerminal" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="id8LqHdSC2J0" colspan="3">
+            <Control id="idTMhlQoII2H" Value="" DataSource="Flight.OriginTerminal" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtOriginTerminal" TooltipPosition="Top" />
+          </td>
+        </tr>
+        <tr id="idpCa4CIf5V5" CssStyle="" Name="">
+          <td CssStyle="" cnt="9" pos="9" id="id97Eqzh9LQ3" colspan="2" Name="Cell11">
+            <Control id="idnDkiJH6g6K" Value="Type:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId6" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idwZrFlu9Nbm" colspan="3" Name="Cell12">
+            <Control id="idhfM8btm6nX" Value="" DataSource="Flight.Type.Id" ControlType="ComboBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;ItinerarySegmentType&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;[Value]&quot; ValueMember=&quot;[Id]&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;&#xA;		      &lt;Arguments/&gt;&#xA;		      &lt;ManualOptions/&gt;     &#xA;		      &lt;DataBindings/&gt;           &#xA;	    &lt;/LookupValues&gt;" ButtonAction="" CssStyle="" Name="txtId6" TooltipPosition="Top">
+              <LookupValuesFilter id="idqVK82pj5ax">
+                <Function Name="Filter" Description="" _open="true" id="idqk4tkYLbox"><![CDATA[function bool Filter(
+	 DomainModel.ItinerarySegmentType DataItem
+)
+{
+	return true;
+}]]></Function>
+              </LookupValuesFilter>
+            </Control>
+          </td>
+          <td CssStyle="" id="id7tdclcvqVh" colspan="2" Name="Cell13" />
+          <td CssStyle="" id="idpXxqNMnVuY" colspan="2" Name="Cell14">
+            <Control id="id8MLCwVVwe5" Value="Desrtination Terminal:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblDesrtinationTerminal" TooltipPosition="Top" />
+          </td>
+          <td CssStyle="" id="idpg9NAuLGr8" colspan="3" Name="Cell15">
+            <Control id="idQe9JtvDMq6" Value="" DataSource="Flight.DesrtinationTerminal" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtDesrtinationTerminal" TooltipPosition="Top" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </Body>
+  <Resources>
+    <Res Type="S" Key="RES_PAGETITLE_AddFlight" en-us="Add Flight" />
+    <Res Type="S" Key="RES_PAGETITLE_EditFlight" en-us="Edit Flight" />
+    <Res Type="S" Key="RES_PAGETITLE_SaveFlight" en-us="Save Flight" />
+    <Res Type="S" Key="RES_PAGETITLE_DeleteFlight" en-us="Delete Flight" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdFlightSave" en-us="Save" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdDeleteFlight" en-us="Delete" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdExit" en-us="Exit" />
+    <Res Type="S" Key="RES_LABEL_lblId" en-us="Id:" />
+    <Res Type="S" Key="RES_LABEL_lblId7" en-us="Origin:" />
+    <Res Type="S" Key="RES_LABEL_LabelbtnSelectOrigin1" en-us="Select Origin" />
+    <Res Type="S" Key="RES_LABEL_lblDuration" en-us="Duration:" />
+    <Res Type="S" Key="RES_LABEL_lblId71" en-us="Destination:" />
+    <Res Type="S" Key="RES_LABEL_lblDistance" en-us="Distance:" />
+    <Res Type="S" Key="RES_LABEL_lblFlightNumber" en-us="Flight Number:" />
+    <Res Type="S" Key="RES_LABEL_lblPrice" en-us="Price:" />
+    <Res Type="S" Key="RES_LABEL_lblFlightNumber2" en-us="Airline:" />
+    <Res Type="S" Key="RES_LABEL_lblDeparture" en-us="Departure:" />
+    <Res Type="S" Key="RES_LABEL_lblFlightNumber21" en-us="Aircraft:" />
+    <Res Type="S" Key="RES_LABEL_lblArrival" en-us="Arrival:" />
+    <Res Type="S" Key="RES_LABEL_lblPrice2" en-us="Fare Price:" />
+    <Res Type="S" Key="RES_LABEL_lblOriginTerminal" en-us="Origin Terminal:" />
+    <Res Type="S" Key="RES_LABEL_lblId6" en-us="Type:" />
+    <Res Type="S" Key="RES_LABEL_lblDesrtinationTerminal" en-us="Desrtination Terminal:" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdFlightSave" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdDeleteFlight" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdExit" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelbtnSelectOrigin1" en-us="" />
+    <Res Type="S" Key="RES_BUTTON_cmdFlightSave" en-us="Save" />
+    <Res Type="S" Key="RES_BUTTON_cmdDeleteFlight" en-us="Delete" />
+    <Res Type="S" Key="RES_BUTTON_cmdDeleteFlight_ConfirmationMessage" en-us="Are you sure you want to execute this action?" />
+    <Res Type="S" Key="RES_BUTTON_cmdExit" en-us="Exit" />
+    <Res Type="S" Key="RES_COMBO_btnSelectOrigin_PROMPT" en-us="[Please Select]" />
+    <Res Type="S" Key="RES_COMBO_btnSelectOrigin_NODATA" en-us="[No Data]" />
+    <Res Type="S" Key="RES_COMBO_txtId21_PROMPT" en-us="[Please Select]" />
+    <Res Type="S" Key="RES_COMBO_txtId21_NODATA" en-us="[No Data]" />
+    <Res Type="S" Key="RES_COMBO_txtId3_PROMPT" en-us="[Please Select]" />
+    <Res Type="S" Key="RES_COMBO_txtId3_NODATA" en-us="[No Data]" />
+    <Res Type="S" Key="RES_COMBO_txtId4_PROMPT" en-us="[Please Select]" />
+    <Res Type="S" Key="RES_COMBO_txtId4_NODATA" en-us="[No Data]" />
+    <Res Type="S" Key="RES_COMBO_txtId6_PROMPT" en-us="[Please Select]" />
+    <Res Type="S" Key="RES_COMBO_txtId6_NODATA" en-us="[No Data]" />
+  </Resources>
+  <Logic>
+    <ConditionalFormattings id="iduTbF4eprGO">
+      <ConditionalFormatting Name="HideIfNew" OnEvent="2" id="idHtaQATbPJm">
+        <Condition id="idwkAbIvUAHo">
+          <Function Name="OnConditionalFormatting" Description="" id="idwCTaXq8slT"><![CDATA[
+function bool OnConditionalFormatting() {
+	return Controller.AddFlight.IsActive();
+}
+]]></Function>
+        </Condition>
+        <Actions id="idTEvR5u9nkJ">
+          <Action Controls="cmdDeleteFlight" Type="HIDE" CssStyle="background-color: #8f2525;" CssAddClass="" CssRemoveClass="" id="idJDLKWAOzx9" />
+        </Actions>
+        <ElseActions id="idAdTRR4PztJ" />
+      </ConditionalFormatting>
+    </ConditionalFormattings>
+    <DataValidations id="idKkepDgphWN" />
+  </Logic>
+</FormModel>

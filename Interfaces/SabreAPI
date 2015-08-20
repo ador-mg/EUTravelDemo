@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<InterfaceModel Model_Name="SabreAPI" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador" Model_RefApplication="" Model_RefVersion="">
+  <ImplementationDetails APIType="REST" BasePath="https://api.test.sabre.com" />
+  <Classes>
+    <Class Name="AccessToken" id="ideJNNMIB9uL">
+      <Property OriginalName="access_token" Name="access_token" DataType="string" id="idHi0AVfFJ74" />
+      <Property OriginalName="token_type" Name="token_type" DataType="string" id="idpkLZjNTbHo" />
+      <Property OriginalName="expires_in" Name="expires_in" DataType="int" id="id5YJzSOZLBp" />
+    </Class>
+    <Class Name="CityPairsResult" id="id9apTIiBQPb">
+      <Property OriginalName="OriginDestinationLocations" Name="OriginDestinationLocations" DataType="Array[Interfaces.SabreAPI.OriginDestinationLocations]" id="idpMbyCIBBGj" />
+      <Property OriginalName="Links" Name="Links" DataType="Array[Interfaces.SabreAPI.Links]" id="id92ybk0Whu4" />
+    </Class>
+    <Class Name="OriginDestinationLocations" id="idGGZe3nWBH1">
+      <Property OriginalName="OriginDestinationLocations" Name="IdioOnomaMeKlassi" DataType="string" id="id9e2jGOKezY" />
+      <Property OriginalName="OriginLocation" Name="OriginLocation" DataType="Interfaces.SabreAPI.OriginLocation" id="idSUCjtJ2GLt" />
+      <Property OriginalName="DestinationLocation" Name="DestinationLocation" DataType="Interfaces.SabreAPI.DestinationLocation" id="idG3eqjCe5oB" />
+    </Class>
+    <Class Name="OriginLocation" id="idzXhJ4x4Bdu">
+      <Property OriginalName="AirportCode" Name="AirportCode" DataType="string" id="idSSBBVMVmf0" />
+      <Property OriginalName="AirportName" Name="AirportName" DataType="string" id="id0pduJ60RN2" />
+      <Property OriginalName="CityName" Name="CityName" DataType="string" id="idesC1HFOVjF" />
+      <Property OriginalName="CountryCode" Name="CountryCode" DataType="string" id="idBkWQ4LsoKl" />
+      <Property OriginalName="CountryName" Name="CountryName" DataType="string" id="idk7JWOVBbmZ" />
+      <Property OriginalName="RegionName" Name="RegionName" DataType="string" id="idspumNsGP81" />
+    </Class>
+    <Class Name="DestinationLocation" id="idZh5Z3WNDuC">
+      <Property OriginalName="AirportCode" Name="AirportCode" DataType="string" id="idi4o2Siduhq" />
+      <Property OriginalName="AirportName" Name="AirportName" DataType="string" id="idcof8M6ImRh" />
+      <Property OriginalName="CityName" Name="CityName" DataType="string" id="ida2Z9SnR6G9" />
+      <Property OriginalName="CountryCode" Name="CountryCode" DataType="string" id="idrOXY60dCNH" />
+      <Property OriginalName="CountryName" Name="CountryName" DataType="string" id="id0X8ozsLtgP" />
+      <Property OriginalName="RegionName" Name="RegionName" DataType="string" id="idSm8cv097re" />
+    </Class>
+    <Class Name="Links" id="idZBFZsqAmg3">
+      <Property OriginalName="rel" Name="rel" DataType="string" id="idi1a5C4iwmP" />
+      <Property OriginalName="href" Name="href" DataType="string" id="idyRwxM3yx8w" />
+    </Class>
+    <Class Name="FlightsResult" id="idCuuUVEsDmy">
+      <Property OriginalName="PricedItineraries" Name="PricedItineraries" DataType="Array[Interfaces.SabreAPI.PricedItineraries]" id="id2BlXZ7ekSc" />
+      <Property OriginalName="ReturnDateTime" Name="ReturnDateTime" DataType="string" id="id7JG3Um8M64" />
+      <Property OriginalName="DepartureDateTime" Name="DepartureDateTime" DataType="string" id="idDFUK5mMeP8" />
+      <Property OriginalName="DestinationLocation" Name="DestinationLocation" DataType="string" id="idzYNK6Sd59o" />
+      <Property OriginalName="OriginLocation" Name="OriginLocation" DataType="string" id="idqmX7nHolQx" />
+      <Property OriginalName="Links" Name="Links" DataType="Array[Interfaces.SabreAPI.Links]" id="idQVevESyOND" />
+    </Class>
+    <Class Name="PricedItineraries" id="idz56dAQEK1Y">
+      <Property OriginalName="AirItinerary" Name="AirItinerary" DataType="Interfaces.SabreAPI.AirItinerary" id="iddZSrMMAIWi" />
+      <Property OriginalName="TPA_Extensions" Name="TPA_Extensions" DataType="Interfaces.SabreAPI.TPA_Extensions" id="idkBoPwDsW9c" />
+      <Property OriginalName="SequenceNumber" Name="SequenceNumber" DataType="int" id="idlBsyFY01kV" />
+      <Property OriginalName="AirItineraryPricingInfo" Name="AirItineraryPricingInfo" DataType="Interfaces.SabreAPI.AirItineraryPricingInfo" id="idUR3ED77NWB" />
+      <Property OriginalName="TicketingInfo" Name="TicketingInfo" DataType="Interfaces.SabreAPI.TicketingInfo" id="idfiJ6Amv2m3" />
+    </Class>
+    <Class Name="AirItinerary" id="idjVo3fZNgPq">
+      <Property OriginalName="OriginDestinationOptions" Name="OriginDestinationOptions" DataType="Interfaces.SabreAPI.OriginDestinationOptions" id="idXDhMZxXl2N" />
+      <Property OriginalName="DirectionInd" Name="DirectionInd" DataType="string" id="idE0VrnRvcKQ" />
+    </Class>
+    <Class Name="OriginDestinationOptions" id="idc3HqEi0B7z">
+      <Property OriginalName="OriginDestinationOption" Name="OriginDestinationOption" DataType="Array[Interfaces.SabreAPI.OriginDestinationOption]" id="idGTQtw4uJLC" />
+    </Class>
+    <Class Name="OriginDestinationOption" id="id7NNkWbxy74">
+      <Property OriginalName="FlightSegment" Name="FlightSegment" DataType="Array[Interfaces.SabreAPI.FlightSegment]" id="id21X23bvKXt" />
+      <Property OriginalName="ElapsedTime" Name="ElapsedTime" DataType="int" id="idWDAsfnIEmk" />
+    </Class>
+    <Class Name="FlightSegment" id="idaPyGC9jTmq">
+      <Property OriginalName="DepartureAirport" Name="DepartureAirport" DataType="Interfaces.SabreAPI.DepartureAirport" id="idMiZ4urCtZO" />
+      <Property OriginalName="ArrivalAirport" Name="ArrivalAirport" DataType="Interfaces.SabreAPI.ArrivalAirport" id="id18Y4MV0rnN" />
+      <Property OriginalName="MarketingAirline" Name="MarketingAirline" DataType="Interfaces.SabreAPI.MarketingAirline" id="idrrm9R1sZ6H" />
+      <Property OriginalName="ArrivalTimeZone" Name="ArrivalTimeZone" DataType="Interfaces.SabreAPI.ArrivalTimeZone" id="idrEX9akyQVm" />
+      <Property OriginalName="TPA_Extensions" Name="TPA_Extensions" DataType="Interfaces.SabreAPI.TPA_Extensions" id="idEuoubLmrq8" />
+      <Property OriginalName="StopQuantity" Name="StopQuantity" DataType="int" id="idCrJoxEYX0V" />
+      <Property OriginalName="ElapsedTime" Name="ElapsedTime" DataType="int" id="idNepGdRycNh" />
+      <Property OriginalName="ResBookDesigCode" Name="ResBookDesigCode" DataType="string" id="idzgUd8tOyj4" />
+      <Property OriginalName="MarriageGrp" Name="MarriageGrp" DataType="string" id="id0KfilBXaFv" />
+      <Property OriginalName="Equipment" Name="Equipment" DataType="Interfaces.SabreAPI.Equipment" id="idxZ3jYnPGwl" />
+      <Property OriginalName="DepartureDateTime" Name="DepartureDateTime" DataType="DateTime" id="idJLSKJfbVbK" />
+      <Property OriginalName="ArrivalDateTime" Name="ArrivalDateTime" DataType="DateTime" id="idB67HkdHYlG" />
+      <Property OriginalName="FlightNumber" Name="FlightNumber" DataType="int" id="idfP9yhsJpPc" />
+      <Property OriginalName="OnTimePerformance" Name="OnTimePerformance" DataType="Interfaces.SabreAPI.OnTimePerformance" id="id3fhnkIPxcq" />
+      <Property OriginalName="OperatingAirline" Name="OperatingAirline" DataType="Interfaces.SabreAPI.OperatingAirline" id="idoRc7mOA8i4" />
+      <Property OriginalName="DepartureTimeZone" Name="DepartureTimeZone" DataType="Interfaces.SabreAPI.DepartureTimeZone" id="idtMuCCHmb9Q" />
+    </Class>
+    <Class Name="DepartureAirport" id="idEc2oDqottS">
+      <Property OriginalName="LocationCode" Name="LocationCode" DataType="string" id="idkbdtUaxuHB" />
+    </Class>
+    <Class Name="ArrivalAirport" id="id9tZ2BomUuq">
+      <Property OriginalName="LocationCode" Name="LocationCode" DataType="string" id="idb3CBcX57ek" />
+    </Class>
+    <Class Name="MarketingAirline" id="idPuhCoFI4QS">
+      <Property OriginalName="Code" Name="Code" DataType="string" id="idk1bsifPcTR" />
+    </Class>
+    <Class Name="ArrivalTimeZone" id="idrpeACT8uMg">
+      <Property OriginalName="GMTOffset" Name="GMTOffset" DataType="int" id="idxn7VV3nIuZ" />
+    </Class>
+    <Class Name="TPA_Extensions" id="ideGRtoZwWXP">
+      <Property OriginalName="DivideInParty" Name="DivideInParty" DataType="Interfaces.SabreAPI.DivideInParty" id="idNj93qyVZbn" />
+    </Class>
+    <Class Name="eTicket" id="id8mmlwA4jMp">
+      <Property OriginalName="Ind" Name="Ind" DataType="bool" id="idnz8SdHNGd0" />
+    </Class>
+    <Class Name="Equipment" id="idjCbncsY7gq">
+      <Property OriginalName="AirEquipType" Name="AirEquipType" DataType="string" id="id1He0LZ4ffY" />
+    </Class>
+    <Class Name="OnTimePerformance" id="idacchM4ZeNm">
+      <Property OriginalName="Level" Name="Level" DataType="string" id="idFKPj7iVc3N" />
+    </Class>
+    <Class Name="OperatingAirline" id="idvYj5ijpq43">
+      <Property OriginalName="FlightNumber" Name="FlightNumber" DataType="string" id="idxNas34IMZB" />
+      <Property OriginalName="Code" Name="Code" DataType="string" id="idFM0HNy6Xbu" />
+    </Class>
+    <Class Name="DepartureTimeZone" id="idL8TurkcP9a">
+      <Property OriginalName="GMTOffset" Name="GMTOffset" DataType="string" id="idzRjHu9WCqb" />
+    </Class>
+    <Class Name="ValidatingCarrier" id="idlNZHeTEKi3">
+      <Property OriginalName="Code" Name="Code" DataType="string" id="id6N1WMi1fy6" />
+    </Class>
+    <Class Name="AirItineraryPricingInfo" id="idUK7pfaDDdX">
+      <Property OriginalName="PTC_FareBreakdowns" Name="PTC_FareBreakdowns" DataType="Interfaces.SabreAPI.PTC_FareBreakdowns" id="idubNnvkcrEb" />
+      <Property OriginalName="FareInfos" Name="FareInfos" DataType="Interfaces.SabreAPI.FareInfos" id="idjV2XhFPYkP" />
+      <Property OriginalName="TPA_Extensions" Name="TPA_Extensions" DataType="Interfaces.SabreAPI.TPA_Extensions" id="idr8elJZRQCT" />
+      <Property OriginalName="ItinTotalFare" Name="ItinTotalFare" DataType="Interfaces.SabreAPI.ItinTotalFare" id="idRrS08hDM9y" />
+    </Class>
+    <Class Name="PTC_FareBreakdowns" id="idenwGxpKsln">
+      <Property OriginalName="PTC_FareBreakdown" Name="PTC_FareBreakdown" DataType="Interfaces.SabreAPI.PTC_FareBreakdown" id="idZklhbtd0CI" />
+    </Class>
+    <Class Name="PTC_FareBreakdown" id="idNBwkQynHfq">
+      <Property OriginalName="FareBasisCodes" Name="FareBasisCodes" DataType="Interfaces.SabreAPI.FareBasisCodes" id="idOGsfNIVTwS" />
+      <Property OriginalName="PassengerTypeQuantity" Name="PassengerTypeQuantity" DataType="Interfaces.SabreAPI.PassengerTypeQuantity" id="id0POF6TLavf" />
+      <Property OriginalName="PassengerFare" Name="PassengerFare" DataType="Interfaces.SabreAPI.PassengerFare" id="idqOdcv9EgxQ" />
+    </Class>
+    <Class Name="FareBasisCodes" id="idI09qc2HFTW">
+      <Property OriginalName="FareBasisCode" Name="FareBasisCode" DataType="Array[Interfaces.SabreAPI.FareBasisCode]" id="idi1VSnxaKyM" />
+    </Class>
+    <Class Name="FareBasisCode" id="idHjEeDC3sIl">
+      <Property OriginalName="BookingCode" Name="BookingCode" DataType="string" id="idKiLNPfVIwI" />
+      <Property OriginalName="DepartureAirportCode" Name="DepartureAirportCode" DataType="string" id="idQ4zzFDmGkf" />
+      <Property OriginalName="AvailabilityBreak" Name="AvailabilityBreak" DataType="bool" id="idsbjgV4dqtH" />
+      <Property OriginalName="ArrivalAirportCode" Name="ArrivalAirportCode" DataType="string" id="idIZfMrUSVmG" />
+      <Property OriginalName="content" Name="content" DataType="string" id="idsMqNdMd5mv" />
+    </Class>
+    <Class Name="PassengerTypeQuantity" id="idUgxX77HmtP">
+      <Property OriginalName="Quantity" Name="Quantity" DataType="int" id="idUHIMkw9bhF" />
+      <Property OriginalName="Code" Name="Code" DataType="string" id="idVUOdmCPVX5" />
+    </Class>
+    <Class Name="PassengerFare" id="idFrdJ6Cxgav">
+      <Property OriginalName="FareConstruction" Name="FareConstruction" DataType="Interfaces.SabreAPI.FareConstruction" id="idjGAw4627gZ" />
+      <Property OriginalName="TotalFare" Name="TotalFare" DataType="Interfaces.SabreAPI.TotalFare" id="idzSJp7uDvUd" />
+      <Property OriginalName="Taxes" Name="Taxes" DataType="Interfaces.SabreAPI.Taxes" id="idXHIL2Jfj6c" />
+      <Property OriginalName="BaseFare" Name="BaseFare" DataType="Interfaces.SabreAPI.BaseFare" id="idOw8jq1sqmr" />
+      <Property OriginalName="EquivFare" Name="EquivFare" DataType="Interfaces.SabreAPI.EquivFare" id="idar8cZHApOw" />
+    </Class>
+    <Class Name="FareConstruction" id="idkb6jEYGRRi">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="idmgXFoesNQT" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idZEINZWMv9u" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="idE0KFbZQW4w" />
+    </Class>
+    <Class Name="TotalFare" id="idMs3VdHfwAv">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="id3DLt6nPcP2" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idXvjrNkHaWE" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="idhCvGDD2QHp" />
+    </Class>
+    <Class Name="Taxes" id="idNFY8j6auS7">
+      <Property OriginalName="Tax" Name="Tax" DataType="Array[Interfaces.SabreAPI.Tax]" id="id2apE5eWxfi" />
+    </Class>
+    <Class Name="TotalTax" id="idEshFsVNAbr">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="idddBf4gBYR9" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idk7nYZzpJVp" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="idO2nIU9kfnf" />
+    </Class>
+    <Class Name="Tax" id="idSwLSaQQaE8">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="idRdyFT4eu4j" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idMF0Ij47Pkf" />
+      <Property OriginalName="TaxCode" Name="TaxCode" DataType="string" id="idRAp71a2WA0" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="iddCCMVFs90p" />
+    </Class>
+    <Class Name="BaseFare" id="idVs8gu3uTyF">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="idtxBKyAKHpG" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idUOwyC9Xbci" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="idfmIvICu6k0" />
+    </Class>
+    <Class Name="EquivFare" id="id79qrPIeTGI">
+      <Property OriginalName="CurrencyCode" Name="CurrencyCode" DataType="string" id="idQypRahjViE" />
+      <Property OriginalName="DecimalPlaces" Name="DecimalPlaces" DataType="int" id="idqMH4DBjiV5" />
+      <Property OriginalName="Amount" Name="Amount" DataType="string" id="id0hAfZLRhRM" />
+    </Class>
+    <Class Name="FareInfos" id="idsF3ttXxGOn">
+      <Property OriginalName="FareInfo" Name="FareInfo" DataType="Array[Interfaces.SabreAPI.FareInfo]" id="id3MW3XQwYTj" />
+    </Class>
+    <Class Name="FareInfo" id="idqBfYJbDerq">
+      <Property OriginalName="TPA_Extensions" Name="TPA_Extensions" DataType="Interfaces.SabreAPI.TPA_Extensions" id="idu7KrlIOpHq" />
+      <Property OriginalName="FareReference" Name="FareReference" DataType="string" id="id4YUKt2o8g5" />
+    </Class>
+    <Class Name="Cabin" id="idyQlC8QvJCx">
+      <Property OriginalName="Cabin" Name="Name" DataType="string" id="idqj8ROBc01G" />
+    </Class>
+    <Class Name="SeatsRemaining" id="idQThTrjTfAQ">
+      <Property OriginalName="BelowMin" Name="BelowMin" DataType="bool" id="idinZXMb92L7" />
+      <Property OriginalName="Number" Name="Number" DataType="int" id="idffdBk36PRu" />
+    </Class>
+    <Class Name="DivideInParty" id="id1a8X7S6Y71">
+      <Property OriginalName="Indicator" Name="Indicator" DataType="bool" id="idevrf8YIsNB" />
+    </Class>
+    <Class Name="ItinTotalFare" id="iduxmQEBDsnj">
+      <Property OriginalName="FareConstruction" Name="FareConstruction" DataType="Interfaces.SabreAPI.FareConstruction" id="idCb5vNMS3oU" />
+      <Property OriginalName="TotalFare" Name="TotalFare" DataType="Interfaces.SabreAPI.TotalFare" id="idTLKfRYsowj" />
+      <Property OriginalName="Taxes" Name="Taxes" DataType="Interfaces.SabreAPI.Taxes" id="id363pGyebFz" />
+      <Property OriginalName="BaseFare" Name="BaseFare" DataType="Interfaces.SabreAPI.BaseFare" id="idIBqCSYtU2Y" />
+      <Property OriginalName="EquivFare" Name="EquivFare" DataType="Interfaces.SabreAPI.EquivFare" id="idviASPz1VDB" />
+    </Class>
+    <Class Name="TicketingInfo" id="ida5TrNdIR4g">
+      <Property OriginalName="TicketType" Name="TicketType" DataType="string" id="idQSv1y0HQRo" />
+    </Class>
+  </Classes>
+  <Methods>
+    <Function DataType="Interfaces.SabreAPI.AccessToken" Name="GetAccessToken" Description="" id="idxLlRwsHsVI">
+      <Arguments id="idYcWwXFuv74">
+        <ArgumentPair Name="body" DataType="string" id="idFRoF1FaD55" />
+        <ArgumentPair Name="authorization" DataType="string" id="idzsrBX0CrXL" />
+      </Arguments>
+      <ImplementationDetails HttpType="POST">
+        <HttpHeader Name="Content-Type" Value="&quot;application/x-www-form-urlencoded&quot;" />
+        <HttpHeader Name="Authorization" Value="&quot;Basic &quot; + authorization" />
+        <GetUrlFunction><![CDATA[function string getUrl(
+	string body,
+	string authorization
+)
+{
+	/*Enter function logic here*/
+ return "/v2/auth/token";
+}]]></GetUrlFunction>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="Interfaces.SabreAPI.CityPairsResult" Name="CityPairsLookup" Description="" id="idcNUwMcOsfS">
+      <Arguments id="idhlZZdm8bSf">
+        <ArgumentPair Name="token" DataType="string" id="idZKZ192Vw2y" />
+      </Arguments>
+      <ImplementationDetails HttpType="GET">
+        <HttpHeader Name="Authorization" Value="&quot;Bearer &quot; + token" />
+        <GetUrlFunction><![CDATA[function string getUrl(
+	string token
+)
+{
+	/*Enter function logic here*/
+ return "/v1/lists/supported/shop/flights/origins-destinations";
+}]]></GetUrlFunction>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="Interfaces.SabreAPI.FlightsResult" Name="GetFlights" Description="" id="idySN07PrNMW">
+      <Arguments id="idDCZ3OZRjex">
+        <ArgumentPair Name="origin" DataType="string" id="idxhVQTlFPbX" />
+        <ArgumentPair Name="destination" DataType="string" id="idtiu4BdReiQ" />
+        <ArgumentPair Name="departuredate" DataType="string" id="idWAv37vKqzu" />
+        <ArgumentPair Name="returndate" DataType="string" id="idkpohCelLVt" />
+        <ArgumentPair Name="limit" DataType="int" id="idU2EMXwGZw0" />
+        <ArgumentPair Name="token" DataType="string" id="idnBp93JujOd" />
+      </Arguments>
+      <ImplementationDetails HttpType="GET">
+        <HttpHeader Name="Authorization" Value="&quot;Bearer &quot; + token" />
+        <GetUrlFunction><![CDATA[function string getUrl(
+	string origin,
+	string destination,
+	string departuredate,
+	string returndate,
+	int limit,
+	string token
+)
+{
+ 	return string.Format("/v1/shop/flights?origin={0}&destination={1}&departuredate={2}&returndate={3}&limit={4}", 
+                         origin, destination, departuredate, returndate, limit);
+}]]></GetUrlFunction>
+      </ImplementationDetails>
+    </Function>
+  </Methods>
+</InterfaceModel>

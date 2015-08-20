@@ -1,0 +1,368 @@
+<BusinessObjectModel Model_Name="Trip" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="kfilippakos" ShowExternalAssociations="false">
+  <SoftwareModel>
+    <Datastores>
+      <Database id="33p1nggulxc" Name="Database" ModelName="Trip">
+        <Entity id="mhppcvpxs2k" Name="Itineraries" Schema="dbo" Type="T" Value="Itineraries" ModelName="Trip" open="false">
+          <Column id="idM7IesGAwt0mh9M5ru7Ip6w" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idARgQTEuWykuQb8m6eraNVQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="3sbywok3f5o" Name="ItinerarySegments" Schema="dbo" Type="T" Value="ItinerarySegments" ModelName="Trip" open="true">
+          <Column id="idXfAfHD2AAU2t0RxjBd0cew" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idV2qNSzESKEuohCq7VwIyig" Name="Duration" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id5Hg0uwrJ8EaRVIIB4OkCrw" Name="Distance" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idABU9ZbFA7E2J9iAmkXyE0A" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idPuv2VPrtj02hzghOXqol2A" Name="Type" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegmentTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaMN7jaRKvUqqtWZaoQFKLQ" Name="Departure" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idwVkDk8yhFUA4wQAdk3wa6g" Name="Arrival" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idf4BJtwjioEqmVBMbSeys3A" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idUFeJ84svgkCSkzVilv6Vag" Name="PartOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Itineraries" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idPUeEIeDvz0SagDOsfHboiA" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idHo82w7R6HEONTWRFWxaDzQ" Name="BaseOriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idBvOL0VANaUyHatAt2o22Vw" Name="BaseDestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="3qtulg2111u" Name="Vehicles" Schema="dbo" Type="T" Value="Vehicles" ModelName="Trip" open="false">
+          <Column id="idHsBF8H7UI0SUmGCo9EwMgg" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idYceWFqmZfE6kx8K8oUcNMw" Name="Model" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id5yWAKBB1AUimuWMgXr2KzA" Name="Manifacturer" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idIMkEzfqkn0CWuOzClWsX0w" Name="Capacity" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaAInLpyJgEG4q8y8Ki0fvA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="qua1jdyosza" Name="Fares" Schema="dbo" Type="T" Value="Fares" ModelName="Trip" open="false">
+          <Column id="idkTLPnJuKr0qm3aA34Rulnw" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idZMLlmxwAx0GWThzqKmKOAA" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id2dI2dsICrkqqHdlMfSjBNg" Name="Description" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idDdyweaAtM0aNqBiwIIKZ2g" Name="SeatNumber" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idMYmfzKBApkGBBOhsbAsLaA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="pupnmtbyfpt" Name="FaresToTaxesTbl" Schema="dbo" Type="T" Value="FaresToTaxesTbl" ModelName="Trip" open="false">
+          <Column id="idYTIp3sayP06c2MVFwaAeYQ" Name="dbo.FaresToTaxesTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idSI9qYpucbku4TFma2THUaQ" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ide1eT2BTAVEiFaJpQGtmz8Q" Name="TaxesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="luuq2fsreq1" Name="ItinerarySegmentTypes" Schema="dbo" Type="T" Value="ItinerarySegmentTypes" ModelName="Trip" open="false">
+          <Column id="idQPVFXPOeRU25dwBNEgVemA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idvsnt6TgnI0OHroFDpILlIQ" Name="Value" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="vmajl1bkeam" Name="GeoCoordinatesTbl" Schema="dbo" Type="T" Value="GeoCoordinatesTbl" ModelName="Trip" open="false">
+          <Column id="idSPSOfYAJLkSnzSZZ5B4AAA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idRImO24gmHUK9Rka9lwS5nA" Name="Latitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1IIccMKVbky1cQRIQTvKQQ" Name="Longitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idycxJ07yswEOwAFDj7ySBRA" Name="Elevation" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id6Qz7ZUsjL022qa21AcA2Qw" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idR4XiGXqkTEmmq0cMbKrARw" Name="SegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegments" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="zw0pqrx51lq" Name="Places" Schema="dbo" Type="T" Value="Places" ModelName="Trip">
+          <Column id="idaol3DrFcVEyA8OJNdLs2vA" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idWlKhIOtuakuhlpv0Svfufg" Name="MapURI" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idgAXPc7LsyUyRPNanEKqduQ" Name="ISICRev4" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idcsfMpGncCUWg2Z1LzaPQew" Name="LocationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LocationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id1zyM66zztEWfLkLvZ6I4AQ" Name="Timezone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id4xycQvZ3lkAwxIhpI5HTMg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="id9NrkjBp8eEC2acuB2iY4Ew" Name="ContainedInId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Places" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idHSZ3U5IOj0ewfXsEuwlBpw" Name="PostalAddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id472pPqyJJkSP2OFtOs2Mtg" Name="GeoCoordinatesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoCoordinatesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idjwUIY0ZXpkAUKe4aomXFSw" Name="GeoboundariesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoBoundariesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id9p74d1pfOEG6HLsYOEBqWA" Name="Name" DataType="nvarchar" Length="200" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+      </Database>
+    </Datastores>
+    <Associations>
+      <Association Class1="Itinerary" Class2="ItinerarySegment" Percent1="0.5" Percent2="0.4025157232704403" Edge1="r" Edge2="l" Role1="PartOf" Role2="Segments" Navigable1="false" Navigable2="true" OnDelete1="delete" OnDelete2="disassociate" Multiplicity1="0..1" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="" id="Pons5CNQpf" Path="M 368 188 L 450 188 L 450 220 L 531 220" ModelName="Trip" open="false">
+        <Mappings>
+          <Database id="uijjktwutb3" Name="Database">
+            <Entity id="g210neqnezc" Name="ItinerarySegments" Schema="dbo" open="true">
+              <Mapping id="5rldhh3wjgw" Attribute="PartOf" Column="PartOfId" />
+              <Mapping id="nyd5anbly1f" Attribute="Segments" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="GeoCoordinates" Class2="ItinerarySegment" Percent1="0.7315789473684211" Percent2="0.2625482625482625" Edge1="t" Edge2="b" Role1="Route" Role2="Segment" Navigable1="true" Navigable2="false" OnDelete1="disassociate" OnDelete2="delete" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="XUyT5QjHzo" Path="M 447 482 L 447 450 L 599 450 L 599 410" ModelName="Trip" open="false">
+        <Mappings>
+          <Database id="idso1TZS9M9E" Name="Database">
+            <Entity id="id8CwjuBt6cq" Name="GeoCoordinatesTbl" Schema="dbo" open="true">
+              <Mapping id="V1a7POo3kw" Attribute="Route" Column="Id" />
+              <Mapping id="U6AywrzDee" Attribute="Segment" Column="SegmentId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Fare" Class2="Fare" Percent1="0.5" Percent2="0.5392670157068062" Edge1="t" Edge2="b" Role1="Fare" Role2="Taxes" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="um67ai9Ia4" Path="M 1006.5 180.682006835938 L 1006.5 137 L 1109 137 L 1109 402 L 1014 402 L 1014 379.053009033203" ModelName="Trip" open="false">
+        <Mappings>
+          <Database id="gmfhon012c0" Name="Database">
+            <Entity id="itgftadifre" Name="FaresToTaxesTbl" Schema="dbo">
+              <Mapping id="nj1ve2cdl2y" Attribute="Fare" Column="FareId" />
+              <Mapping id="se024k0yhbr" Attribute="Taxes" Column="TaxesId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Fare" Class2="ItinerarySegment" Percent1="0.4292929292929293" Percent2="0.6698113207547169" Edge1="l" Edge2="r" Role1="Fare" Role2="Segment" Navigable1="true" Navigable2="false" OnDelete1="disassociate" OnDelete2="delete" Multiplicity1="0..1" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="" id="D4lVO6ASxj" Path="M 911 266 L 850 266 L 850 305 L 790 305" ModelName="Trip" open="false">
+        <Mappings>
+          <Database id="dwv1ynwposr" Name="Database">
+            <Entity id="0zmfmdzpf5w" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="woiaj4dych4" Attribute="Fare" Column="FareId" />
+              <Mapping id="2yltxebdoom" Attribute="Segment" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="ItinerarySegment" Class2="ItinerarySegmentType" Percent1="0.8803088803088803" Percent2="0.40714285714285714" Edge1="b" Edge2="l" Role1="ItinerarySegment" Role2="Type" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="naQOd9rb3C" Path="M 759 410 L 759 450 L 820 450 L 820 485 L 926 485" open="false" ModelName="Trip">
+        <Mappings>
+          <Database id="idu50CKm2byF" Name="Database">
+            <Entity id="idVvBgje9vdQ" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="qobKEi7hXn" Attribute="Type" Column="Type" />
+              <Mapping id="lUJZlIuVK6" Attribute="ItinerarySegment" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="ItinerarySegment" Class2="Place" Percent1="0.4942084942084942" Percent2="0.468" Edge1="b" Edge2="t" Role1="ItinerarySegment" Role2="BaseOrigin" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="tJ0bJoYVs3" Path="M 659 410 L 659 460 L 670 460 L 670 504" ModelName="Trip" open="true">
+        <Mappings>
+          <Database id="idrratorKdzJ" Name="Database">
+            <Entity id="idnogL7q6O3Y" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="kaJjd6Lm2S" Attribute="ItinerarySegment" Column="Id" />
+              <Mapping id="eSEgfXItze" Attribute="BaseOrigin" Column="BaseOriginId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="ItinerarySegment" Class2="Place" Percent1="0.7027027027027027" Percent2="0.548" Edge1="b" Edge2="t" Role1="ItinerarySegment1" Role2="BaseDestination" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="bIlc0PLKMR" Path="M 713 410 L 713 450 L 690 450 L 690 504" ModelName="Trip" open="true">
+        <Mappings>
+          <Database id="idlj5sWm01HS" Name="Database">
+            <Entity id="idPyAH8Uis47" Name="ItinerarySegments" Schema="dbo" open="true">
+              <Mapping id="kmiFhLKzEg" Attribute="ItinerarySegment1" Column="Id" />
+              <Mapping id="lPmHozZtnm" Attribute="BaseDestination" Column="BaseDestinationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+    </Associations>
+    <Classes>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="297" Height="138" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="71" Top="119" Name="Itinerary" id="idpsizb0DtfkOiFPGH0YQTMA" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="gRoel5xm3X" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        </Attributes>
+        <Mappings>
+          <Database id="jqt12x1k2cj" Name="Database">
+            <Entity id="o5ewwnug3x3" Name="Itineraries" Schema="dbo">
+              <Mapping id="thunortkbps" Attribute="Id" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="259" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="531" Top="92" Name="ItinerarySegment" id="id34aL2AmA2k2jpSPk7Nxujg" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="ZPeaAWmobx" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+          <Attribute id="pRZzhbxMxn" Name="Duration" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="sqNyxJdWsl" Name="Distance" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="zXmhMisuPQ" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Attribute id="Q5IwDApMig" Name="Departure" DataType="DateTime" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Attribute id="Kps7hiGrBo" Name="Arrival" DataType="DateTime" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="skuvftmvusp" Name="Database">
+            <Entity id="nbeixt5tmee" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="sz2yyt1sjot" Attribute="Id" Column="Id" />
+              <Mapping id="sn5ru2mimfs" Attribute="Duration" Column="Duration" />
+              <Mapping id="0mhtyacrnb0" Attribute="Distance" Column="Distance" />
+              <Mapping id="1jnnppgm00l" Attribute="Price" Column="Price" />
+              <Mapping id="2pbx0scsylg" Attribute="Departure" Column="Departure" />
+              <Mapping id="23uygy4faly" Attribute="Arrival" Column="Arrival" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="GeoCoordinates" ShadowIsDependent="false" PK="Id" Width="190" Height="180" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="308" Top="482" Name="GeoCoordinates" id="idnbnTZ9RQp8" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="idyI1GXdpVzb">
+        </Attributes>
+        <Mappings id="id4qQB0zors0">
+          <Database id="f10uxoy2uxe" Name="Database">
+            <Entity id="njax51ecfpx" Name="GeoCoordinatesTbl" Schema="dbo">
+              <Mapping id="c3dgtopte5q" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="zj0da42nxmx" Attribute="Latitude" Column="Latitude" IsShadow="true" />
+              <Mapping id="krjnxcj1y33" Attribute="Longitude" Column="Longitude" IsShadow="true" />
+              <Mapping id="pcksgeluzir" Attribute="Elevation" Column="Elevation" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="190" Height="180" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="66" Top="315" Name="Vehicle" id="id4lZbAoSa9UuogrHuCKmwmg" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="T9ri72RzTu" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="zdThsv6MWl" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="uSWOF1OP0v" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="td0WIDKzrK" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="kzpocb5sseq" Name="Database">
+            <Entity id="kyhxbvldx12" Name="Vehicles" Schema="dbo">
+              <Mapping id="xkq1iydkphu" Attribute="Id" Column="Id" />
+              <Mapping id="sehqwezz3cw" Attribute="Model" Column="Model" />
+              <Mapping id="bpnsuhqwint" Attribute="Manifacturer" Column="Manifacturer" />
+              <Mapping id="haevl03zmac" Attribute="Capacity" Column="Capacity" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="191" Height="198" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="911" Top="181" Name="Fare" id="ido6WwjTV1zUKzl9WRlHaq6w" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="cwSSOSZi4i" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="qhab3j52f2" Name="Price" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Attribute id="un9vMGtc32" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="cGH0FYNnXB" Name="SeatNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="3gylcn30iy5" Name="Database">
+            <Entity id="hyom0e0rwkk" Name="Fares" Schema="dbo">
+              <Mapping id="hngmvylgdth" Attribute="Id" Column="Id" />
+              <Mapping id="ssfivyixoe4" Attribute="Price" Column="Price" />
+              <Mapping id="qtxquad35d1" Attribute="Description" Column="Description" />
+              <Mapping id="2biuf0lr5ew" Attribute="SeatNumber" Column="SeatNumber" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="209" Height="140" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="926" Top="428" Name="ItinerarySegmentType" id="idGXL8Oa0FBUAVAIGKQht0Og" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute Name="Id" id="fpZM2BIRIA" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+          <Attribute Name="Value" id="YFcSxHy6WY" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+        </Attributes>
+        <Mappings>
+          <Database id="qp1jlbllung" Name="Database">
+            <Entity id="oyohimbcrxx" Name="ItinerarySegmentTypes" Schema="dbo" open="true">
+              <Mapping id="wwnjnfmgy4v" Attribute="Id" Column="Id" />
+              <Mapping id="eij2t11vfnf" Attribute="Value" Column="Value" />
+            </Entity>
+          </Database>
+        </Mappings>
+        <Literals>
+          <Literal id="TzHMWX3Wuk" Name="AirTransport" />
+          <Literal id="h3R3r7s0oB" Name="MarineTransport" />
+          <Literal id="etbyCKzCvc" Name="RailTransport" />
+          <Literal id="xnvzu5VfsH" Name="UrbanTransport" />
+        </Literals>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="Place" ShadowIsDependent="false" PK="Id" Width="250" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Location" Stereotype="StateClass" Left="553" Top="504" Name="Place" id="id2DmBiarA98" open="false" HasMappings="true" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="id9FVTbFwDFB">
+        </Attributes>
+        <Mappings id="idTK45rS5YML">
+          <Database id="id7siGEIlXpk" Name="Database">
+            <Entity id="id3A4OuZAomv" Name="Places" Schema="dbo" open="true">
+              <Mapping id="idEwa5QPxdzc" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="idDPqu5GfoHS" Attribute="MapURI" Column="MapURI" IsShadow="true" />
+              <Mapping id="idtTvCjhgyaf" Attribute="ISICRev4" Column="ISICRev4" IsShadow="true" />
+              <Mapping id="idrfgKV7MAch" Attribute="Timezone" Column="Timezone" IsShadow="true" />
+              <Mapping id="idFMA9Ba5HRn" Attribute="Name" Column="Name" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+    </Classes>
+  </SoftwareModel>
+  <BusinessRules LocalReferences="" GlobalReferences="mscorlib.dll;System.dll;System.Xml.dll;System.Core.dll">
+    <Definitions />
+    <Vocabularies />
+    <RuleSet id="idA9pO5ftpiEOEgjYNyrFo2g" Class="Itinerary" Stereotype="StateClass" open="false" _open="false" ModelName="Trip">
+      <Rule RuleType="Default" ApplyToAttribute="" id="idpfhCAoVpKw">
+        <Function Name="FindItinerary" Description="" IsStatic="true" id="idFfPYduCYS8"><![CDATA[static function DomainModel.Itinerary FindItinerary(DomainModel.GeoCoordinates from, DomainModel.GeoCoordinates to)
+{
+
+	return Interfaces.GraphsAPI.API.FindItinerary(from, to);
+
+	DomainModel.Itinerary dummy = DomainModel.Itinerary.Create();
+	
+    DomainModel.UrbanSegment busSegment = DomainModel.UrbanSegment.Create();
+    DomainModel.Flight airplaneSegment = DomainModel.Flight.Create();
+    DomainModel.UrbanSegment busSegment2 = DomainModel.UrbanSegment.Create();
+    DomainModel.RailSegment railSegment = DomainModel.RailSegment.Create();
+    
+    busSegment.Type = DomainModel.ItinerarySegmentType.Find(a=>a.Value == "Bus").First();
+    airplaneSegment.Type = DomainModel.ItinerarySegmentType.Find(a=>a.Value == "AirTransport").First();
+    busSegment2.Type = DomainModel.ItinerarySegmentType.Find(a=>a.Value == "Bus").First();
+    railSegment.Type = DomainModel.ItinerarySegmentType.Find(a=>a.Value == "RailTransport").First();
+    
+    dummy.Segments.Add(busSegment);
+    dummy.Segments.Add(airplaneSegment);
+    dummy.Segments.Add(busSegment2);
+    dummy.Segments.Add(railSegment);
+    
+    busSegment.Fare = DomainModel.Fare.Create();
+    busSegment.Fare.Price = 1.5;
+    airplaneSegment.Fare = DomainModel.Fare.Create();
+    airplaneSegment.Fare.Price = 70.41;
+    busSegment2.Fare = DomainModel.Fare.Create();
+    busSegment2.Fare.Price = 3.0;
+    railSegment.Fare = DomainModel.Fare.Create();
+    railSegment.Fare.Price = 22.3;
+    
+    busSegment.Origin = DomainModel.Station.Create();
+    busSegment.Destination = DomainModel.Station.Create();
+	
+	busSegment.Origin.Name = "Τερψιθέα, Πειραιάς";
+	busSegment.Destination.Name = "Αεροδρόμιο Ελ. Βενιζέλος, Σπάτα";
+	
+	busSegment.Origin.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	busSegment.Destination.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	
+	busSegment.Origin.GeoCoordinates.Latitude = 37.940044;
+	busSegment.Origin.GeoCoordinates.Longitude = 23.644975;
+	 
+	busSegment.Destination.GeoCoordinates.Latitude = 37.935573;
+	busSegment.Destination.GeoCoordinates.Longitude = 23.948412;
+	
+	airplaneSegment.Origin = DomainModel.Airport.Create();
+    airplaneSegment.Destination = DomainModel.Airport.Create();
+	
+	airplaneSegment.Origin.Name = "Αεροδρόμιο Ελ. Βενιζέλος, Σπάτα";
+	airplaneSegment.Destination.Name = "Αεροδρόμιο Θεσσαλονίκης, Θεσσαλονίκη";
+	
+	airplaneSegment.Origin.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	airplaneSegment.Destination.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	
+	airplaneSegment.Origin.GeoCoordinates.Latitude = 37.935573;
+	airplaneSegment.Origin.GeoCoordinates.Longitude = 23.948412;
+	
+	airplaneSegment.Destination.GeoCoordinates.Latitude = 40.520342;
+	airplaneSegment.Destination.GeoCoordinates.Longitude = 22.971324;
+	
+	busSegment2.Origin = DomainModel.Station.Create();
+    busSegment2.Destination = DomainModel.Station.Create();
+	
+	busSegment2.Origin.Name = "Αεροδρόμιο Θεσσαλονίκης, Θεσσαλονίκη";
+	busSegment2.Destination.Name = "Σιδηροδρομικός Σταθμός Θεσσαλονίκης, Θεσσαλονίκη";
+	
+	busSegment2.Origin.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	busSegment2.Destination.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	
+	busSegment2.Origin.GeoCoordinates.Latitude = 40.520342;
+	busSegment2.Origin.GeoCoordinates.Longitude = 22.971324;
+	
+	busSegment2.Destination.GeoCoordinates.Latitude = 40.643808;
+	busSegment2.Destination.GeoCoordinates.Longitude = 22.930909;
+	
+	railSegment.Origin = DomainModel.TrainStation.Create();
+    railSegment.Destination = DomainModel.TrainStation.Create();
+	
+	railSegment.Origin.Name = "Σιδηροδρομικός Σταθμός Θεσσαλονίκης, Θεσσαλονίκη";
+	railSegment.Destination.Name = "Σιδηροδρομικός Σταθμός Αλεξανδρούπολης, Αλεξανδρούπολη";
+	
+	railSegment.Origin.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	railSegment.Destination.GeoCoordinates = DomainModel.GeoCoordinates.Create();
+	
+	railSegment.Origin.GeoCoordinates.Latitude = 40.643808;
+	railSegment.Origin.GeoCoordinates.Longitude = 22.930909;
+	
+	railSegment.Destination.GeoCoordinates.Latitude = 40.845106;
+	railSegment.Destination.GeoCoordinates.Longitude = 25.878660;
+	
+	return dummy;
+}]]></Function>
+      </Rule>
+    </RuleSet>
+    <RuleSet id="idBKcXyXwP3UCK9LVa5btZjQ" Class="ItinerarySegment" Stereotype="StateClass" open="false" _open="false" ModelName="Trip" />
+    <RuleSet id="id7zsVqerlFU2yBfzaJsT44w" Class="Vehicle" Stereotype="StateClass" open="false" _open="false" ModelName="Trip" />
+    <RuleSet id="idr5NCPwzl2EiIKTVt8nj3pQ" Class="Fare" Stereotype="StateClass" open="false" _open="false" ModelName="Trip" />
+  </BusinessRules>
+  <Resources />
+</BusinessObjectModel>

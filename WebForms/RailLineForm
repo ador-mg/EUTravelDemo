@@ -1,0 +1,417 @@
+<FormModel id="id1bMaeLzGOD" Model_Name="RailLineForm" Model_BasedOn="RailTransport" Model_BasedOn_Class="RailLine" Model_Description="" IsMasterPage="false" MasterPage="MasterPage" Model_DateTimeBuild="" idef0="" Model_Creator="ador">
+  <Controller id="id7UUqlNAdFz">
+    <Action ActionMethod="GET" SubmitChanegs="false" Name="AddRailLine" Title="LocalResources.RES_PAGETITLE_AddRailLine" Roles="*" id="idFpqWl16MsZ" Permissions="" NoPermissionsRequired="true" IsPublic="false">
+      <ViewActionBody ViewActionType="RENDER_VIEW"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="none"><![CDATA[]]></ActionBody>
+    </Action>
+    <Action ActionMethod="GET" SubmitChanegs="false" Name="EditRailLine" Title="LocalResources.RES_PAGETITLE_EditRailLine" Roles="*" id="idI8o12avDtE" Permissions="" NoPermissionsRequired="true" IsPublic="false">
+      <ViewActionBody ViewActionType="RENDER_VIEW"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT"><![CDATA[<Invoke ServiceId="" WorkItemId="" BusinessObject="RailTransport" Class="RailLine" Method="GetByKey"><Inputs><Input Name="Id" DataType="long" Assignment="" GetFromQueryString="true" /></Inputs><Outputs><Output Name="Return" DataType="DomainModel.RailLine" Assignment="RailLine" /></Outputs></Invoke>]]></ActionBody>
+    </Action>
+    <Action ActionMethod="POST" SubmitChanegs="true" Name="SaveRailLine" Title="LocalResources.RES_PAGETITLE_SaveRailLine" Roles="*" id="idrLzdoK10iM" Permissions="" NoPermissionsRequired="true" IsPublic="false">
+      <ViewActionBody ViewActionType="CLOSE"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT"><![CDATA[<Invoke ServiceId="" WorkItemId="" BusinessObject="RailTransport" Class="RailLine" Method="Save"><Inputs /><Outputs /></Invoke>]]></ActionBody>
+    </Action>
+    <Action ActionMethod="POST" SubmitChanegs="true" Name="DeleteRailLine" Title="LocalResources.RES_PAGETITLE_DeleteRailLine" Roles="*" id="idlql8XBlqqc" Permissions="" NoPermissionsRequired="true" IsPublic="false">
+      <ViewActionBody ViewActionType="CLOSE"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="BUSINESSOBJECT"><![CDATA[<Invoke ServiceId="" WorkItemId="" BusinessObject="RailTransport" Class="RailLine" Method="Delete"><Inputs /><Outputs /></Invoke>]]></ActionBody>
+    </Action>
+  </Controller>
+  <DataSource>
+    <Class level="1" Name="RailLine" PseydoName="RailLine" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="1" id="da03836a63722ede" _open="true">
+      <Attribute id="e6a4846b495f3ede" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+      <Class level="3" Name="Train" PseydoName="Train" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="56ab92c6db1a2ede">
+        <Attribute Name="Id" id="2210f05ed3382ede" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="25ac513f98abfe7e" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="fa8902a9fe942ede" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="7d6d132f36e548de" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+        <Attribute id="474267070b1be0de" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      </Class>
+      <Class Name="TrainStations" PseydoName="TrainStations" Stereotype="Collection" Model="RailTransport" Multiplicity="1" id="2e0fb57e54da2ede">
+        <Class level="3" Name="TrainStation" PseydoName="TrainStation" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="*" id="78d124e24dfa2ede">
+          <Attribute Name="Id" id="d0b1224693a72ede" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+          <Attribute id="89a2e3184495dede" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+          <Attribute id="e2fe9f1a1dd8cede" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+          <Attribute id="3bdead5f0cca2ede" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+          <Attribute id="cf0ce4e594782ede" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+          <Class Name="RailLines" PseydoName="RailLines" Stereotype="Collection" Model="RailTransport" Multiplicity="1" id="f10579e9de22ede">
+            <Class level="5" Name="RailLine" PseydoName="RailLine" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="36e4bc43dab1c6de">
+              <Attribute id="485d409340722ede" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+          <Class level="5" Name="Place" PseydoName="ContainedIn" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="f68595ef23cbaede">
+            <Attribute Name="Id" id="6bf2622d2d63cede" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+            <Attribute id="2b3a3e8e7e6de" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="cfbe9fad6a222ede" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="f7d865f0e77bacde" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="7c71664247922ede" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="PostalAddress" PseydoName="PostalAddress" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="2a8c86ede0c587cf">
+            <Attribute Name="Id" id="7316bb0c742207cf" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="c83565798684d7cf" Name="Country" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="9f6ca9db241187cf" Name="CountryISO3166" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="c39e10694eeee7cf" Name="Province" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="34f8b3b09f043cf" Name="City" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="c1e280d7e207cf" Name="CityCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="d16644ccae7be7cf" Name="Locality" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="9732177c3cc287cf" Name="StreetAddress" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="bba04623fe4207cf" Name="PostalCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="a79750a4137837cf" Name="PostOfficeBoxNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="LocationType" PseydoName="LocationType" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="e502b634edc507cf">
+            <Attribute Name="Id" id="cdbe4ec97ada87cf" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+            <Attribute Name="Value" id="46c5793e68672bcf" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+          </Class>
+          <Class level="5" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="c3992c192a7d7cf">
+            <Attribute Name="Id" id="ba19eca6dce207cf" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="65828109cbbd07cf" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+            <Attribute id="aa37f10e90d6178f" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+            <Attribute id="7cdf21aaf33687cf" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="GeoBoundaries" PseydoName="Geoboundaries" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="a89bc94276f1a76f">
+            <Attribute Name="Id" id="4d5826463052ddcf" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          </Class>
+          <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Model="" Multiplicity="1" id="996a45e005f03ecf">
+            <Class level="5" Name="Place" PseydoName="Place" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="864e7051f742ebcf">
+              <Attribute Name="Id" id="4706094bbbec87cf" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+              <Attribute id="e8563dde1c3207cf" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+              <Attribute id="53e3d1dc4e7d87cf" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="4b5d66056d6a07cf" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="179b011f165acbcf" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+        </Class>
+      </Class>
+      <Class Name="ConnectsWith" PseydoName="ConnectsWith" Stereotype="Collection" Model="RailTransport" Multiplicity="1" id="bf55277c46def7cf">
+        <Class level="3" Name="RailLine" PseydoName="RailLine" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="57497325cf707cf">
+          <Attribute id="98e4f5af7a5b87cf" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Class level="5" Name="Train" PseydoName="Train" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="3a422af2c45e7cf">
+            <Attribute Name="Id" id="780ade3651b697cf" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="c6f5a34ae23e07cf" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="c6c66bcc182279cf" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="e286807f87318fcf" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="ac909a198c610fcf" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class Name="TrainStations" PseydoName="TrainStations" Stereotype="Collection" Model="RailTransport" Multiplicity="1" id="4a5649226dfaaacf">
+            <Class level="5" Name="TrainStation" PseydoName="TrainStation" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="*" id="b758f81f005407cf">
+              <Attribute Name="Id" id="3a841a55a2f07cf" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="dd1b7dc73ad9da4f" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="3f11226243c8ffcf" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="e080da02d5e207cf" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="b8a38a52e597c7cf" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+            </Class>
+          </Class>
+          <Class Name="ConnectsWith" PseydoName="ConnectsWith" Stereotype="Collection" Model="RailTransport" Multiplicity="1" id="41c33a686ec2a7cf">
+            <Class level="5" Name="RailLine" PseydoName="RailLine" PK="Id" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="6aa4f07f9879a7cf">
+              <Attribute id="877eee3c499e07cf" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+        </Class>
+      </Class>
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idq3R9ed88wk" _open="true">
+        <Attribute id="idamif75127P" Name="Id" IsRequired="false" DataType="int" Length="100" />
+        <Attribute id="idhg3F5Inwi6" Name="Price" IsRequired="false" DataType="decimal" Length="8" Precision="8" Scale="2" />
+        <Attribute id="idBRWI2JzFAm" Name="Description" IsRequired="false" DataType="string" Length="100" />
+        <Attribute id="idVvNGl1a9Av" Name="SeatNumber" IsRequired="false" DataType="string" Length="100" />
+      </Class>
+    </Class>
+  </DataSource>
+  <Body id="canvas" CssStyle="">
+    <FieldSet id="idJEF9SHF0ET" Name="RailLineMainFieldSet" CssStyle="" HasHeader="true" HasFooter="false" Collapsible="false">
+      <FieldSetHeader id="idBTcmlWiTIf">
+        <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" DataSource="" Name="lblRailLineDetails" Value="Rail Line" id="idfog41iiUTu" Tooltip="" />
+      </FieldSetHeader>
+      <FieldSetContainer id="idllg3lSaM7G">
+        <table Name="RailLineTable" Type="Table" CssStyle="" id="idIEmLFVbXIB" IsResponsive="true">
+          <colgroup id="idnIt1TUXA8k">
+            <col CssStyle="" id="idXlRJhPmT0H" />
+            <col CssStyle="" id="idvMM1NQ2LoU" />
+            <col CssStyle="" id="id7BBM7SsfTF" />
+            <col CssStyle="" id="idvPDMhXmRcq" />
+            <col CssStyle="" id="idi2W0FQwrd2" />
+            <col CssStyle="" id="idZZzKIjHkh2" />
+            <col CssStyle="" id="id48fLwfKJFL" />
+            <col CssStyle="" id="idsES1g1GABU" />
+            <col CssStyle="" id="idjXGkRPbUiX" />
+            <col CssStyle="" id="idPE9h0BnBOI" />
+            <col CssStyle="" id="idh5YrpdsPvt" />
+            <col CssStyle="" id="idvFaI2gDvlJ" />
+          </colgroup>
+          <tbody id="idSBMcbMT4CF">
+            <tr id="idX6zkMV8zJp" CssStyle="">
+              <td CssStyle="" cnt="1" pos="1" id="ideZiyl4dB7g" colspan="2">
+                <Control id="idW02Vni3alL" Value="Id:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId" TooltipPosition="Top" />
+              </td>
+              <td CssStyle="" id="idzgFMHc3nck" colspan="3">
+                <Control id="idIwXoNtSNrX" Value="" DataSource="RailLine.Id" ControlType="TextBox" Required="false" ReadOnly="true" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtId" />
+              </td>
+              <td CssStyle="" id="idhMxViX4Sxd" colspan="2" />
+              <td CssStyle="" id="idRWExqxKLg8" colspan="2">
+                <Control id="idTxVCN9cKno" Value="Price:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId2" TooltipPosition="Top" />
+              </td>
+              <td CssStyle="" id="id1rXNOZSD8t" colspan="3">
+                <Control id="idl7AMonfM5d" Tooltip="" TooltipPosition="TOP" Name="Price" Value="" DataSource="RailLine.Fare.Price" ControlType="TextBox" ButtonType="BUTTON" Required="false" ReadOnly="false" Href="" HrefType="http://" HrefTarget="_blank" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </FieldSetContainer>
+    </FieldSet>
+    <FieldSet id="idFfiCcbkick" Name="TrainMainFieldSet" CssStyle="" HasHeader="true" HasFooter="false" Collapsible="false">
+      <FieldSetHeader id="idTZpzIlgZyP">
+        <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" DataSource="" Name="lblTrainDetails" Value="Train" id="idT6giWrpZ78" Tooltip="" />
+      </FieldSetHeader>
+      <FieldSetContainer id="id4qK3Nmo2KE">
+        <Control id="idDaiwTQ1X4c" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" CssStyle="" CausesValidation="false" Name="btnSelectTrain" Value="Select Train" ButtonAction="&lt;Action ActionType=&quot;PICKLIST&quot; ActionDescription=&quot;Show a pick list dialog&quot; Controller-Action=&quot;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;Train List&quot; PickList-AllowSel=&quot;true&quot; PickList-Behaviour=&quot;PICKLIST&quot; PickList-LookupValues=&quot;&amp;lt;LookupValues DataSource=&amp;quot;BUSINESSOBJECT&amp;quot; Model=&amp;quot;RailTransport&amp;quot; Operation=&amp;quot;Train.GetAll&amp;quot; DisplayMember=&amp;quot;&amp;quot; ValueMember=&amp;quot;&amp;quot; Filter=&amp;quot;&amp;quot; Sorting=&amp;quot;&amp;quot; Criteria=&amp;quot;&amp;quot; Grouping=&amp;quot;&amp;quot;&amp;gt; &amp;#xA; &amp;lt;Arguments&amp;gt; &amp;#xA; &amp;lt;/Arguments&amp;gt;&amp;lt;ManualOptions/&amp;gt; &amp;#xA; &amp;lt;DataBindings&amp;gt; &amp;#xA;&amp;#xA;  &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Id&amp;quot;&amp;#xA;    Member=&amp;quot;[Id]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;[RailLine.Train.Id]&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Model&amp;quot;&amp;#xA;    Member=&amp;quot;[Model]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Manifacturer&amp;quot;&amp;#xA;    Member=&amp;quot;[Manifacturer]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Capacity&amp;quot;&amp;#xA;    Member=&amp;quot;[Capacity]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Name&amp;quot;&amp;#xA;    Member=&amp;quot;[Name]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;  &amp;lt;/DataBindings&amp;gt;&amp;lt;/LookupValues&amp;gt;&quot; PickList-Service=&quot;&quot; /&gt;">
+          <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" id="idtsFhK9y0em" TooltipPosition="Top" Name="LabelbtnSelectTrain1" Value="Select Train" />
+        </Control>
+        <table Name="TrainTable" Type="Table" CssStyle="" id="idmAbTeiElbW" IsResponsive="true">
+          <colgroup id="idweFkCxNk95">
+            <col CssStyle="" id="idpHUTFCZbhE" />
+            <col CssStyle="" id="idnoMXR3yEHq" />
+            <col CssStyle="" id="idCFwXgDcVVM" />
+            <col CssStyle="" id="idlEqZwUe8DR" />
+            <col CssStyle="" id="id8c3Ni8IgH8" />
+            <col CssStyle="" id="id0qGkGm815y" />
+            <col CssStyle="" id="idU3ulShFYQY" />
+            <col CssStyle="" id="idD7zvu1JeAz" />
+            <col CssStyle="" id="idCMzoXUt5Ki" />
+            <col CssStyle="" id="id9wsjS8LL6z" />
+            <col CssStyle="" id="id8MpzKoFfPI" />
+            <col CssStyle="" id="idtorV6C2Ji0" />
+          </colgroup>
+          <tbody id="idz8RItZKwn1">
+            <tr id="idZ46LSXxmbx" CssStyle="">
+              <td CssStyle="" cnt="5" pos="1" id="idNq0phTCTpT" colspan="2">
+                <Control id="idvvDMNcmWfL" Value="Id:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblId1" />
+              </td>
+              <td CssStyle="" id="id9iLCs3VhuB" colspan="3">
+                <Control id="idAV4Kl97baJ" Value="" DataSource="RailLine.Train.Id" ControlType="TextBox" Required="false" ReadOnly="true" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtId1" />
+              </td>
+              <td CssStyle="" id="idMm7D5dqixq" colspan="2" />
+              <td CssStyle="" cnt="5" pos="2" id="idmQ6GneToxd" colspan="2">
+                <Control id="id3UdcNPqtbE" Value="Model:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblModel" />
+              </td>
+              <td CssStyle="" id="idU9wLyNa76D" colspan="3">
+                <Control id="idDmk4OiOoX5" Value="" DataSource="RailLine.Train.Model" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtModel" />
+              </td>
+            </tr>
+            <tr id="ideJewGs8Tpf" CssStyle="">
+              <td CssStyle="" cnt="5" pos="3" id="idox7iLbTkHP" colspan="2">
+                <Control id="id3MhiQGkZDe" Value="Manifacturer:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblManifacturer" />
+              </td>
+              <td CssStyle="" id="id02LVTAUz56" colspan="3">
+                <Control id="idF7HPPGe1in" Value="" DataSource="RailLine.Train.Manifacturer" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtManifacturer" />
+              </td>
+              <td CssStyle="" id="idEeW72HbwU0" colspan="2" />
+              <td CssStyle="" cnt="5" pos="4" id="id7TFAelab9A" colspan="2">
+                <Control id="id7UeAAw5HIA" Value="Capacity:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblCapacity" />
+              </td>
+              <td CssStyle="" id="idbirQPLUDTH" colspan="3">
+                <Control id="idTTT4ygr6ke" Value="" DataSource="RailLine.Train.Capacity" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="text-align:right;" Name="txtCapacity" />
+              </td>
+            </tr>
+            <tr id="ide3rXfkzLx5" CssStyle="">
+              <td CssStyle="" cnt="5" pos="5" id="idCJcKONgplJ" colspan="2">
+                <Control id="idFN7saT0ZCT" Value="Name:" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblName" />
+              </td>
+              <td CssStyle="" id="id4yWdVXsIke" colspan="3">
+                <Control id="idM9FN5Ev9fa" Value="" DataSource="RailLine.Train.Name" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtName" />
+              </td>
+              <td CssStyle="" id="idz2KQOHvzw7" colspan="2" />
+              <td CssStyle="" id="idkO9T1Dnzpq" colspan="2" />
+              <td CssStyle="" id="idVO45x67kmM" colspan="3" />
+            </tr>
+          </tbody>
+        </table>
+      </FieldSetContainer>
+    </FieldSet>
+    <FieldSet id="idcqtaU1c5FD" Name="TrainStationsFieldSet" HasHeader="true" ConditionalFormattings="" CssStyle="" Collapsible="false" InitialState="Expanded" TooltipPosition="Top">
+      <FieldSetHeader id="idcsLbvx0lLs">
+        <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" DataSource="" Name="lblTrainStationsDetails" Value="TrainStations" id="idRwKq4ZyETI" Tooltip="" />
+      </FieldSetHeader>
+      <FieldSetContainer id="id9BCZUtUXz0">
+        <Control ControlType="Button" ButtonType="BUTTON" CssStyle="" Tooltip="" CausesValidation="false" Name="Button1" Value="Button1" id="idldJrGK2Mps" TooltipPosition="TOP" ButtonAction="&lt;Action ActionType=&quot;PICKLIST&quot; ActionDescription=&quot; Retrieve Recordset&quot; Controller-Action=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-AllowSel=&quot;true&quot; PickList-ShowModal=&quot;true&quot; PickList-Behaviour=&quot;PICKLIST&quot; PickList-LookupValues=&quot;&amp;lt;LookupValues DataSource=&amp;quot;BUSINESSOBJECT&amp;quot; Model=&amp;quot;TrainStation&amp;quot; Operation=&amp;quot;GetAll&amp;quot; DisplayMember=&amp;quot;&amp;quot; ValueMember=&amp;quot;&amp;quot; Sorting=&amp;quot;&amp;quot; Criteria=&amp;quot;&amp;quot; Grouping=&amp;quot;undefined&amp;quot; OnSelectSameWithOnChange=&amp;quot;true&amp;quot;&amp;gt;&amp;#xA;     &amp;lt;Arguments/&amp;gt;&amp;#xA;     &amp;lt;ManualOptions/&amp;gt;  &amp;#xA;     &amp;lt;DataBindings&amp;gt;&amp;lt;DataBinding Grouped=&amp;quot;false&amp;quot; CssStyle=&amp;quot;&amp;quot; Visible=&amp;quot;true&amp;quot; Searchable=&amp;quot;true&amp;quot; HasPredefinedFilter=&amp;quot;false&amp;quot; Importable=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot; ItemType=&amp;quot;TEXTBOX&amp;quot; Caption=&amp;quot;Id&amp;quot; Member=&amp;quot;[Id]&amp;quot; DestinationField=&amp;quot;[RailLine.TrainStations.TrainStation.Id]&amp;quot; DataType=&amp;quot;long&amp;quot; id=&amp;quot;idEWk1fdMZTO&amp;quot;/&amp;gt;&amp;lt;DataBinding Grouped=&amp;quot;false&amp;quot; CssStyle=&amp;quot;&amp;quot; Visible=&amp;quot;true&amp;quot; Searchable=&amp;quot;true&amp;quot; HasPredefinedFilter=&amp;quot;false&amp;quot; Importable=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot; ItemType=&amp;quot;TEXTBOX&amp;quot; Caption=&amp;quot;Name&amp;quot; Member=&amp;quot;[Name]&amp;quot; DestinationField=&amp;quot;&amp;quot; DataType=&amp;quot;string&amp;quot; id=&amp;quot;id0N2tjhi6lE&amp;quot;/&amp;gt;&amp;lt;DataBinding Grouped=&amp;quot;false&amp;quot; CssStyle=&amp;quot;&amp;quot; Visible=&amp;quot;true&amp;quot; Searchable=&amp;quot;true&amp;quot; HasPredefinedFilter=&amp;quot;false&amp;quot; Importable=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot; ItemType=&amp;quot;TEXTBOX&amp;quot; Caption=&amp;quot;Map URI&amp;quot; Member=&amp;quot;[MapURI]&amp;quot; DestinationField=&amp;quot;&amp;quot; DataType=&amp;quot;string&amp;quot; id=&amp;quot;idSIrb1VtdR0&amp;quot;/&amp;gt;&amp;lt;DataBinding Grouped=&amp;quot;false&amp;quot; CssStyle=&amp;quot;&amp;quot; Visible=&amp;quot;true&amp;quot; Searchable=&amp;quot;true&amp;quot; HasPredefinedFilter=&amp;quot;false&amp;quot; Importable=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot; ItemType=&amp;quot;TEXTBOX&amp;quot; Caption=&amp;quot;ISIC Rev4&amp;quot; Member=&amp;quot;[ISICRev4]&amp;quot; DestinationField=&amp;quot;&amp;quot; DataType=&amp;quot;string&amp;quot; id=&amp;quot;idVvcNctoDG0&amp;quot;/&amp;gt;&amp;lt;DataBinding Grouped=&amp;quot;false&amp;quot; CssStyle=&amp;quot;&amp;quot; Visible=&amp;quot;true&amp;quot; Searchable=&amp;quot;true&amp;quot; HasPredefinedFilter=&amp;quot;false&amp;quot; Importable=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot; ItemType=&amp;quot;TEXTBOX&amp;quot; Caption=&amp;quot;Timezone&amp;quot; Member=&amp;quot;[Timezone]&amp;quot; DestinationField=&amp;quot;&amp;quot; DataType=&amp;quot;string&amp;quot; id=&amp;quot;idmREvtpkfYE&amp;quot;/&amp;gt;&amp;lt;/DataBindings&amp;gt;     &amp;#xA;  &amp;lt;/LookupValues&amp;gt;&quot; PickList-ExcludeCurrent=&quot;true&quot; PickList-RememberLastState=&quot;true&quot; PickList-IsSearchable=&quot;true&quot; CompactLines=&quot;true&quot; PickList-AutoSelect-ShowRowsAddedMessage=&quot;false&quot; PickList-AutoSelect-MessageOnRecordsReturned=&quot;&quot; PickList-AutoSelect-ShowNoRecordsMessage=&quot;false&quot; PickList-AutoSelect-MessageOnNoRecords=&quot;&quot; PickList-Service=&quot;&quot; /&gt;">
+          <Choices id="idSKMO9vrugY">
+            <OnSelect id="idowDairGqcm" />
+          </Choices>
+          <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="Label1" Value="Select" id="id7Bu27ReTcD" TooltipPosition="Top" />
+          <LookupValuesFilter id="idS8KAYkKvcl">
+            <Function Name="Filter" Description="" _open="true" id="idsG1ZVOmp5G"><![CDATA[function bool Filter(
+	 DomainModel.TrainStation DataItem
+)
+{
+	return true;
+}]]></Function>
+          </LookupValuesFilter>
+        </Control>
+        <table id="idZgiaDc2RA0" Type="Grid" Name="TrainStationGrid" DataSource="RailLine.TrainStations" CssStyle="" GridButtons="" DeleteMultiRowPermitted="false" showMultiWarningPermitted="false" AddRowPermitted="true" DeleteRowPermitted="true" IncludeAlternateRowsStyle="true" IncludePaging="false" showWarningPermitted="true" IncludeNumbering="true" ReadOnly="false" isResponsive="true">
+          <colgroup>
+            <col CssStyle="" id="id5LNuugV3Wu" />
+            <col CssStyle="" id="id3Nbx4Rem71" />
+            <col CssStyle="" id="idRSmLHlCkcQ" />
+            <col CssStyle="" id="idWV4TConIfo" />
+          </colgroup>
+          <thead id="idyGJ9TcZ1b9">
+            <tr id="idTmQ5MWJ7kF" CssStyle="">
+              <td CssStyle="" id="iddM6JdzRgO6">
+                <Control id="ideQDrSGBuvZ" Value="Name" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblName1" />
+              </td>
+              <td CssStyle="" id="idElfWJa1vhP">
+                <Control id="idrx1F7aAzVT" Value="Map URI" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblMapURI" />
+              </td>
+              <td CssStyle="" id="idAtcVT2TTb6">
+                <Control id="idKOC91sfZz2" Value="ISIC Rev4" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblISICRev4" />
+              </td>
+              <td CssStyle="" id="idyVyyFgOxir">
+                <Control id="id6BOMOK8A2G" Value="Timezone" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lblTimezone" />
+              </td>
+            </tr>
+          </thead>
+          <tbody id="id2RJb5RlrEF">
+            <tr id="idvazSZeudFm" CssStyle="">
+              <td CssStyle="" id="iddaqkz80plg">
+                <Control id="idkVWhzWBMtn" Value="" DataSource="RailLine.TrainStations.TrainStation.Name" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtName1" />
+              </td>
+              <td CssStyle="" id="idwWiTwUCwmk">
+                <Control id="idQTuGcQaTbw" Value="" DataSource="RailLine.TrainStations.TrainStation.MapURI" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtMapURI" />
+              </td>
+              <td CssStyle="" id="idRv6WVO3GT2">
+                <Control id="idSXlSq6sLnU" Value="" DataSource="RailLine.TrainStations.TrainStation.ISICRev4" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtISICRev4" />
+              </td>
+              <td CssStyle="" id="idw330FFaG5X">
+                <Control id="idvckxK0PByW" Value="" DataSource="RailLine.TrainStations.TrainStation.Timezone" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="txtTimezone" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </FieldSetContainer>
+    </FieldSet>
+    <FieldSet id="idRvSiHshRPW" Name="ConnectsWithFieldSet" HasHeader="true" ConditionalFormattings="" CssStyle="" Collapsible="false">
+      <FieldSetHeader id="idXFm7zNs6HF">
+        <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" DataSource="" Name="lblConnectsWithDetails" Value="ConnectsWith" id="idonBv7qno7q" Tooltip="" />
+      </FieldSetHeader>
+      <FieldSetContainer id="idggNF21aJiM">
+        <Control id="idW9qTzfrcxx" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" CssStyle="" CausesValidation="false" Name="btnSelectTrain2" Value="Select Train" ButtonAction="&lt;Action ActionType=&quot;PICKLIST&quot; ActionDescription=&quot;Show a pick list dialog&quot; Controller-Action=&quot;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;Train List&quot; PickList-AllowSel=&quot;true&quot; PickList-Behaviour=&quot;PICKLIST&quot; PickList-LookupValues=&quot;&amp;lt;LookupValues DataSource=&amp;quot;BUSINESSOBJECT&amp;quot; Model=&amp;quot;RailTransport&amp;quot; Operation=&amp;quot;Train.GetAll&amp;quot; DisplayMember=&amp;quot;&amp;quot; ValueMember=&amp;quot;&amp;quot; Filter=&amp;quot;&amp;quot; Sorting=&amp;quot;&amp;quot; Criteria=&amp;quot;&amp;quot; Grouping=&amp;quot;&amp;quot;&amp;gt; &amp;#xA; &amp;lt;Arguments&amp;gt; &amp;#xA; &amp;lt;/Arguments&amp;gt;&amp;lt;ManualOptions/&amp;gt; &amp;#xA; &amp;lt;DataBindings&amp;gt; &amp;#xA;&amp;#xA;  &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;false&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Id&amp;quot;&amp;#xA;    Member=&amp;quot;[Id]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;[RailLine.ConnectsWith.RailLine.Train.Id]&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Model&amp;quot;&amp;#xA;    Member=&amp;quot;[Model]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Manifacturer&amp;quot;&amp;#xA;    Member=&amp;quot;[Manifacturer]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Capacity&amp;quot;&amp;#xA;    Member=&amp;quot;[Capacity]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;     &amp;lt;DataBinding Grouped=&amp;quot;0&amp;quot;&amp;#xA;    Visible=&amp;quot;true&amp;quot; FormatStr=&amp;quot;&amp;quot;&amp;#xA;    Caption=&amp;quot;Name&amp;quot;&amp;#xA;    Member=&amp;quot;[Name]&amp;quot; &amp;#xA;   &amp;#xA;    DestinationField=&amp;quot;&amp;quot;/&amp;gt; &amp;#xA;&amp;#xA;     &amp;#xA;  &amp;lt;/DataBindings&amp;gt;&amp;lt;/LookupValues&amp;gt;&quot; PickList-Service=&quot;&quot; /&gt;">
+          <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" id="id7JtiidiWbQ" TooltipPosition="Top" Name="LabelbtnSelectTrain3" Value="Select Train" />
+        </Control>
+        <table id="id5uJZqrrV4y" Type="Grid" Name="RailLineGrid" DataSource="RailLine.ConnectsWith" CssStyle="" GridButtons="" DeleteMultiRowPermitted="false" showMultiWarningPermitted="false" AddRowPermitted="true" DeleteRowPermitted="true" IncludeAlternateRowsStyle="true" IncludePaging="false" showWarningPermitted="true" IncludeNumbering="true" ReadOnly="false" isResponsive="true">
+          <colgroup>
+            <col CssStyle="" id="idmTNuhdwcvQ" />
+          </colgroup>
+          <thead id="idzAqAiMneWO">
+            <tr id="idI4hHHcqGi8" CssStyle="">
+              <td CssStyle="" id="idoKXyATvz05">
+                <Control id="idg5aARu39rS" Value="" DataSource="" Attribute="" ControlType="Label" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" Name="lbl" />
+              </td>
+            </tr>
+          </thead>
+          <tbody id="id3Czffhq5b5">
+            <tr id="idofuncdbrz9" CssStyle="">
+              <td CssStyle="" id="idQndQgCSXpN">
+                <Control id="idTfPF4aLsIR" Name="TextBox1" Value="" DataSource="RailLine.ConnectsWith.RailLine.Id" ControlType="TextBox" Required="false" ReadOnly="false" Src="" Href="" HrefType="http://" FormatString="" MaskString="" DataValidations="" ConditionalFormattings="" CalculatedExpressions="" LookupValues="" ButtonAction="" CssStyle="" TooltipPosition="Top" HrefTarget="_blank" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </FieldSetContainer>
+    </FieldSet>
+    <Control id="idhqNvH1BoWo" Name="cmdRailLineSave" IsDefaultButton="true" Value="Save" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;this&amp;quot; Action=&amp;quot;SaveRailLine&amp;quot; TargetFrame=&amp;quot;_self&amp;quot;&amp;gt; &amp;#xA; &amp;lt;Parameters&amp;gt; &amp;#xA; &amp;lt;/Parameters&amp;gt;&amp;lt;/ControllerAction&amp;gt;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" CausesValidation="true">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" id="idHB9g1FXXyT" Name="LabelcmdRailLineSave" Value="Save" TooltipPosition="Top" />
+    </Control>
+    <Control id="idFIGDV7Fdh1" Name="cmdDeleteRailLine" Value="Delete" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;this&amp;quot; Action=&amp;quot;DeleteRailLine&amp;quot; TargetFrame=&amp;quot;_self&amp;quot;&amp;gt; &amp;#xA; &amp;lt;Parameters&amp;gt; &amp;#xA; &amp;lt;/Parameters&amp;gt;&amp;lt;/ControllerAction&amp;gt;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" ShowConfirmation="true" CausesValidation="false">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="LabelcmdDeleteRailLine" Value="Delete" id="idHkTWRaPh9f" TooltipPosition="Top" />
+    </Control>
+    <Control id="id0d015MWiEp" Name="cmdExit" IsEscapeButton="true" Value="Exit" DataSourceType="" DataSource="" Attribute="" ControlType="Button" Required="false" ReadOnly="false" Src="" FormatString="" MaskString="" CalculatedExpressions="" LookupValues="" ButtonAction="&lt;Action ActionType=&quot;CLOSE&quot; ActionDescription=&quot;Close the form&quot; Controller-Action=&quot;&quot; ClientSide-SourceCode=&quot;&quot; ServerSide-SourceCode=&quot;&quot; PickList-PageTitle=&quot;&quot; PickList-Service=&quot;&quot; PickList-Filter=&quot;&quot; PickList-FillsDetails=&quot;false&quot; PickList-GroupBy=&quot;&quot;&gt;&lt;PickList /&gt;&lt;/Action&gt;" CssStyle="" CausesValidation="false">
+      <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="LabelcmdExit" Value="Exit" id="id3oupCOT9PA" TooltipPosition="Top" />
+    </Control>
+  </Body>
+  <Resources>
+    <Res Type="S" Key="RES_PAGETITLE_AddRailLine" en-us="Add Rail Line" />
+    <Res Type="S" Key="RES_PAGETITLE_EditRailLine" en-us="Edit Rail Line" />
+    <Res Type="S" Key="RES_PAGETITLE_SaveRailLine" en-us="Save Rail Line" />
+    <Res Type="S" Key="RES_PAGETITLE_DeleteRailLine" en-us="Delete Rail Line" />
+    <Res Type="S" Key="RES_GRID_TrainStationGrid_NoData" en-us="No records." />
+    <Res Type="S" Key="RES_GRID_RailLineGrid_NoData" en-us="No records." />
+    <Res Type="S" Key="RES_LABEL_lblRailLineDetails" en-us="Rail Line" />
+    <Res Type="S" Key="RES_LABEL_lblId" en-us="Id:" />
+    <Res Type="S" Key="RES_LABEL_lblId2" en-us="Price:" />
+    <Res Type="S" Key="RES_LABEL_lblTrainDetails" en-us="Train" />
+    <Res Type="S" Key="RES_LABEL_LabelbtnSelectTrain1" en-us="Select Train" />
+    <Res Type="S" Key="RES_LABEL_lblId1" en-us="Id:" />
+    <Res Type="S" Key="RES_LABEL_lblModel" en-us="Model:" />
+    <Res Type="S" Key="RES_LABEL_lblManifacturer" en-us="Manifacturer:" />
+    <Res Type="S" Key="RES_LABEL_lblCapacity" en-us="Capacity:" />
+    <Res Type="S" Key="RES_LABEL_lblName" en-us="Name:" />
+    <Res Type="S" Key="RES_LABEL_lblTrainStationsDetails" en-us="TrainStations" />
+    <Res Type="S" Key="RES_LABEL_Label1" en-us="Select" />
+    <Res Type="S" Key="RES_LABEL_lblName1" en-us="Name" />
+    <Res Type="S" Key="RES_LABEL_lblMapURI" en-us="Map URI" />
+    <Res Type="S" Key="RES_LABEL_lblISICRev4" en-us="ISIC Rev4" />
+    <Res Type="S" Key="RES_LABEL_lblTimezone" en-us="Timezone" />
+    <Res Type="S" Key="RES_LABEL_lblConnectsWithDetails" en-us="ConnectsWith" />
+    <Res Type="S" Key="RES_LABEL_LabelbtnSelectTrain3" en-us="Select Train" />
+    <Res Type="S" Key="RES_LABEL_lbl" en-us="" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdRailLineSave" en-us="Save" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdDeleteRailLine" en-us="Delete" />
+    <Res Type="S" Key="RES_LABEL_LabelcmdExit" en-us="Exit" />
+    <Res Type="S" Key="RES_TOOLTIP_lblRailLineDetails" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_Price" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_lblTrainDetails" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelbtnSelectTrain1" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_lblTrainStationsDetails" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_Button1" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_Label1" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_lblConnectsWithDetails" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelbtnSelectTrain3" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdRailLineSave" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdDeleteRailLine" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelcmdExit" en-us="" />
+    <Res Type="S" Key="RES_BUTTON_btnSelectTrain" en-us="Select Train" />
+    <Res Type="S" Key="RES_BUTTON_btnSelectTrain_NoRecordsFoundMessage" en-us="No Records found." />
+    <Res Type="S" Key="RES_BUTTON_Button1" en-us="Button1" />
+    <Res Type="S" Key="RES_BUTTON_Button1_NoRecordsFoundMessage" en-us="No Records found." />
+    <Res Type="S" Key="RES_BUTTON_btnSelectTrain2" en-us="Select Train" />
+    <Res Type="S" Key="RES_BUTTON_btnSelectTrain2_NoRecordsFoundMessage" en-us="No Records found." />
+    <Res Type="S" Key="RES_BUTTON_cmdRailLineSave" en-us="Save" />
+    <Res Type="S" Key="RES_BUTTON_cmdDeleteRailLine" en-us="Delete" />
+    <Res Type="S" Key="RES_BUTTON_cmdDeleteRailLine_ConfirmationMessage" en-us="Are you sure you want to execute this action?" />
+    <Res Type="S" Key="RES_BUTTON_cmdExit" en-us="Exit" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_PAGETITLE" en-us="Train List" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_COLUMN_[Id]" en-us="Id" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_COLUMN_[Model]" en-us="Model" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_COLUMN_[Manifacturer]" en-us="Manifacturer" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_COLUMN_[Capacity]" en-us="Capacity" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain_COLUMN_[Name]" en-us="Name" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_PAGETITLE" en-us="" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_COLUMN_[Id]" en-us="Id" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_COLUMN_[Name]" en-us="Name" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_COLUMN_[MapURI]" en-us="Map URI" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_COLUMN_[ISICRev4]" en-us="ISIC Rev4" />
+    <Res Type="S" Key="RES_PICKLIST_Button1_COLUMN_[Timezone]" en-us="Timezone" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_PAGETITLE" en-us="Train List" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_COLUMN_[Id]" en-us="Id" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_COLUMN_[Model]" en-us="Model" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_COLUMN_[Manifacturer]" en-us="Manifacturer" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_COLUMN_[Capacity]" en-us="Capacity" />
+    <Res Type="S" Key="RES_PICKLIST_btnSelectTrain2_COLUMN_[Name]" en-us="Name" />
+  </Resources>
+  <Logic>
+    <ConditionalFormattings id="idlX6VVXcbEP">
+      <ConditionalFormatting Name="HideIfNew" OnEvent="2" id="idqqOISaIE88">
+        <Condition id="idZWOtyTpiK3">
+          <Function Name="OnConditionalFormatting" Description="" id="id2GIzuSXTVX"><![CDATA[
+function bool OnConditionalFormatting() {
+	return Controller.AddRailLine.IsActive();
+}
+]]></Function>
+        </Condition>
+        <Actions id="idkuTpyCObMa">
+          <Action Controls="cmdDeleteRailLine" Type="HIDE" CssStyle="background-color: #8f2525;" CssAddClass="" CssRemoveClass="" id="id5J1GZD8DW1" />
+        </Actions>
+        <ElseActions id="idhtHBNTWON0" />
+      </ConditionalFormatting>
+    </ConditionalFormattings>
+    <DataValidations id="id3oiZOf3Zul" />
+  </Logic>
+</FormModel>

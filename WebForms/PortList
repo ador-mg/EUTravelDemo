@@ -1,0 +1,284 @@
+<FormModel id="idBNidIroUDy" Model_Name="PortList" Model_BasedOn="MarineTransport" Model_Description="" Model_DateTimeBuild="" idef0="" IsMasterPage="false" MasterPage="MasterPage" Model_Creator="ador">
+  <Controller id="idJD6ZhdKU0q">
+    <Action ActionMethod="GET" SubmitChanegs="false" Name="Retrieve" Title="LocalResources.RES_PAGETITLE_Retrieve" Roles="*" id="idoF3gHe0yfu" Permissions="" NoPermissionsRequired="true" IsPublic="false">
+      <ViewActionBody ViewActionType="RENDER_VIEW"><![CDATA[]]></ViewActionBody>
+      <ActionBody ActionType="none"><![CDATA[]]></ActionBody>
+    </Action>
+  </Controller>
+  <DataSource>
+    <Class level="1" Name="Port" PseydoName="Port" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="1" id="53d47cf828e4d180" _open="true">
+      <Attribute Name="Id" id="ffe1a82b406cd180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+      <Attribute id="99e8846a19ad180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+      <Attribute id="b1f70c9a9814d180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+      <Attribute id="5d7731aa3b48d180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+      <Attribute id="937dc68fa6fbb180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+      <Attribute id="35ca63cee6fdd180" Name="UNCTAD" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+      <Class Name="ShippingLines" PseydoName="ShippingLines" Stereotype="Collection" Model="MarineTransport" Multiplicity="1" id="fce4aef6e1e75180">
+        <Class level="3" Name="ShippingLine" PseydoName="ShippingLine" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="54d76c0e07a6f180">
+          <Attribute id="505021fb31bc1180" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Class level="5" Name="MarineAgency" PseydoName="Agency" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Organization" BaseClass="Organization" Multiplicity="1" id="b301a7e23d658980">
+            <Attribute Name="Id" id="e4b776f74134d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="4c62ce37e4f4d180" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="744801829170d180" Name="Description" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="c9aac5b38374d180" Name="Url" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Organization:Organization" />
+            <Attribute id="8c5ad976455d5180" Name="Code" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class Name="Ports" PseydoName="Ports" Stereotype="Collection" Model="MarineTransport" Multiplicity="1" id="56cbab4818bf4580">
+            <Class level="5" Name="Port" PseydoName="Port" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="*" id="37cfbbe03b74d180">
+              <Attribute Name="Id" id="3c8928bcedc4d180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="10f3f529c2d06180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="4fe731d05b445180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="72dc2d818ae79180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="edfd2aebe420d180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" IsInherited="true" BaseInfo="Location:Place" />
+              <Attribute id="1cfabde86a28d180" Name="UNCTAD" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            </Class>
+          </Class>
+          <Class Name="ConnectsWith" PseydoName="ConnectsWith" Stereotype="Collection" Model="MarineTransport" Multiplicity="1" id="c87873c609dbb180">
+            <Class level="5" Name="ShippingLine" PseydoName="ShippingLine" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="74a76ccf0cd39180">
+              <Attribute id="b854021a7041d180" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+          <Class level="5" Name="Ship" PseydoName="Ship" PK="Id" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="8e0852c40e5b5180">
+            <Attribute Name="Id" id="564e6e2ddf270180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="1963045466905180" Name="Model" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="e315482664f4d180" Name="Manifacturer" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="af062b5b8b3ec180" Name="Capacity" DataType="int" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" IsInherited="true" BaseInfo="Trip:Vehicle" />
+            <Attribute id="e46f07adf8fbd180" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="Place" PseydoName="ContainedIn" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="cc58a2d70cf4d180">
+        <Attribute Name="Id" id="55cbea87988ad180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+        <Attribute id="f405ad3e460cb3c0" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        <Attribute id="45949434ae764580" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="701162868d34d180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="3797cc2ebb66f180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        <Class level="5" Name="Place" PseydoName="ContainedIn" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="de6d7dad84fb1180">
+          <Attribute Name="Id" id="f383006886685980" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+          <Attribute id="41eacde4d467cf80" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Attribute id="8c1ad58859747180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="354ab331e6a4d180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="d552259a0f2cf180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="PostalAddress" PseydoName="PostalAddress" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="412b8788837eb180">
+          <Attribute Name="Id" id="6a1831641a0e5180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="5714da1604b4d180" Name="Country" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="3cea5cfb10ecd180" Name="CountryISO3166" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="61731bccf51ad180" Name="Province" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="9a001e1c2acf9180" Name="City" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="1201a9e6098bd80" Name="CityCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="2d324400a794d180" Name="Locality" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="523baa3509049180" Name="StreetAddress" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="f6d41ad6c8f4d180" Name="PostalCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="b042a2298a3cd180" Name="PostOfficeBoxNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="LocationType" PseydoName="LocationType" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="f76b313e89c88c80">
+          <Attribute Name="Id" id="ae3d3d907e74d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+          <Attribute Name="Value" id="722e2ea5b0c71640" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+        </Class>
+        <Class level="5" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="b142c14546781180">
+          <Attribute Name="Id" id="f53fba57a4671180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="4c805568cd522b80" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="163fbd1b2934d180" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="3bd9e3261074d180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="GeoBoundaries" PseydoName="Geoboundaries" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="fb5814eb6734d180">
+          <Attribute Name="Id" id="a3693b58f7fed180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        </Class>
+        <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Model="" Multiplicity="1" id="a9e857bde544d180">
+          <Class level="5" Name="Place" PseydoName="Place" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="b2858b691dd40180">
+            <Attribute Name="Id" id="a452c0b50b4dd180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+            <Attribute id="b6f7d8f0ec649180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="1d13c16a24839980" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="df0def3329f4d180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="3bfab4f34f6b9f80" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="PostalAddress" PseydoName="PostalAddress" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="41003fd9ab37e180">
+        <Attribute Name="Id" id="e8f85e4d4640d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        <Attribute id="c185961108ecd180" Name="Country" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="680545c1c4f4d180" Name="CountryISO3166" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="85953367757a7180" Name="Province" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="23a1f7f214f4d180" Name="City" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="2dc8d32267a04d80" Name="CityCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="5f9eab208f6d180" Name="Locality" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="8846af25216cd180" Name="StreetAddress" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="e9dc76a251f4d180" Name="PostalCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Attribute id="70b9b53df50ed180" Name="PostOfficeBoxNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        <Class Name="Place" PseydoName="Place" Stereotype="Collection" Model="" Multiplicity="1" id="df707735860d5180">
+          <Class level="5" Name="Place" PseydoName="Place" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="dd97920ff0610b80">
+            <Attribute Name="Id" id="31f9a868244ed180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+            <Attribute id="6351a03579a3f180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="54ab9b6cc469b180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="8569ac3e83235180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="7015d3f0ec712800" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+        </Class>
+      </Class>
+      <Class level="3" Name="LocationType" PseydoName="LocationType" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="fb222e76d22fb180">
+        <Attribute Name="Id" id="6e4054351269c580" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+        <Attribute Name="Value" id="d71450a3f109d880" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+      </Class>
+      <Class level="3" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="876c81970836d180">
+        <Attribute Name="Id" id="bf067f1bc8e8d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        <Attribute id="ed3f9f45c7bed180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+        <Attribute id="9525146a3d33d180" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+        <Attribute id="62866f05dd34d180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+      </Class>
+      <Class level="3" Name="GeoBoundaries" PseydoName="Geoboundaries" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="81200d2ccff05180">
+        <Attribute Name="Id" id="8daf81a81fbfd180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+        <Class level="5" Name="GeoCoordinates" PseydoName="NorthEast" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="bd0fb011c4749980">
+          <Attribute Name="Id" id="bddf8d716dcad180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="c3c6b58ec64e9180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="c83a5bab0419d180" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="e35242d2a040d180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="GeoCoordinates" PseydoName="NorthWest" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="a11b710f68c61180">
+          <Attribute Name="Id" id="40744ef7d0379700" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="2941d578080ad180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="9ca1ddcac06aad80" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="68077132031cd180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="GeoCoordinates" PseydoName="SouthEast" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="fb18a9329126e180">
+          <Attribute Name="Id" id="8947a3f15e20e180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="2110f365b974d180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="6cf8afdb98ecd180" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="3721b0118e855180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+        <Class level="5" Name="GeoCoordinates" PseydoName="SouthWest" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="df5dc5da94a8d180">
+          <Attribute Name="Id" id="851a9ef8000cd180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          <Attribute id="c04089d936f4d180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="ea9cef2c0c4fd180" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+          <Attribute id="8750b9a2fb19d180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Class>
+      </Class>
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Model="" Multiplicity="1" id="6a7b8086936bd180">
+        <Class level="3" Name="Place" PseydoName="Place" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="cbf6ad722b3eb180">
+          <Attribute Name="Id" id="252f864229345180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+          <Attribute id="4e9b233d2ac85180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Attribute id="f56adc13ef715e80" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="3b10a95b89b41180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="19f3cea118f4d180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          <Class level="5" Name="Place" PseydoName="ContainedIn" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="13a703ffc33cd180">
+            <Attribute Name="Id" id="2479a450b4ecd180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+            <Attribute id="547874a4ad74d180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            <Attribute id="d08fa0e71b98c180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="29a442b9bbb4d180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="ed085037ab082100" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="PostalAddress" PseydoName="PostalAddress" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="22df9b935d470d80">
+            <Attribute Name="Id" id="644d48dcc5c4d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="22f6a958274bd180" Name="Country" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="191e736686ffd180" Name="CountryISO3166" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="789a547296a8d180" Name="Province" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="ed005d8a3f72d180" Name="City" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="65da71db37c4d180" Name="CityCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="237769ee64884180" Name="Locality" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="b286ce63be14d180" Name="StreetAddress" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="d6bde17611bf5180" Name="PostalCode" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+            <Attribute id="5546bc7b5dafae40" Name="PostOfficeBoxNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="LocationType" PseydoName="LocationType" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="f1922a76705dc900">
+            <Attribute Name="Id" id="ca1f8aa8cb1f9980" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+            <Attribute Name="Value" id="34ea17fe10617980" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+          </Class>
+          <Class level="5" Name="GeoCoordinates" PseydoName="GeoCoordinates" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="dd4eef6264f4d180">
+            <Attribute Name="Id" id="9bdb4687c6c15980" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+            <Attribute id="a88b5dced0d8180" Name="Latitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+            <Attribute id="cfb4271cceb30b80" Name="Longitude" DataType="decimal" Length="100" IsRequired="false" Precision="9" InitValue="" Scale="6" ReadOnly="false" />
+            <Attribute id="6a9692051603e180" Name="Elevation" DataType="decimal" Length="8" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+          </Class>
+          <Class level="5" Name="GeoBoundaries" PseydoName="Geoboundaries" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="b47aef348851a580">
+            <Attribute Name="Id" id="8ee2269655a8d180" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" InitValue="" />
+          </Class>
+          <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Model="" Multiplicity="1" id="b18cdd98e684d180">
+            <Class level="5" Name="Place" PseydoName="Place" PK="Id" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="*" id="9a94ac34643fa980">
+              <Attribute Name="Id" id="d2a4f4a47f28d180" DataType="long" Length="100" IsRequired="false" Precision="8" Scale="2" InitValue="" />
+              <Attribute id="27b9d0819b34d180" Name="Name" DataType="string" Length="200" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+              <Attribute id="30381d6d0406d180" Name="MapURI" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="6637b5f111e25180" Name="ISICRev4" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+              <Attribute id="fc78caf38bb4d180" Name="Timezone" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+            </Class>
+          </Class>
+        </Class>
+      </Class>
+    </Class>
+  </DataSource>
+  <Body id="canvas" CssStyle="">
+    <List id="idEuvZVGEUh1" Type="List" Name="List1" PagerPosition="TOP" HasPaging="true" PageSize="25" DataSource="" LookupValues="&lt;LookupValues DataSource=&quot;BUSINESSOBJECT&quot; Model=&quot;Port&quot; Operation=&quot;GetAll&quot; DisplayMember=&quot;&quot; ValueMember=&quot;&quot; Sorting=&quot;&quot; Criteria=&quot;&quot; Grouping=&quot;undefined&quot; OnSelectSameWithOnChange=&quot;true&quot;&gt;&#xA;		      &lt;Arguments/&gt;&#xA;		      &lt;ManualOptions/&gt;     &#xA;		      &lt;DataBindings&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Name&quot; Member=&quot;[Name]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idPvWVtpyyCV&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;City&quot; Member=&quot;[PostalAddress.City]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idhug5FktrPo&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Country&quot; Member=&quot;[PostalAddress.Country]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idAW4AkrVwYR&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Latitude&quot; Member=&quot;[GeoCoordinates.Latitude]&quot; DestinationField=&quot;&quot; DataType=&quot;decimal&quot; id=&quot;idBHmiwxhEpz&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Longitude&quot; Member=&quot;[GeoCoordinates.Longitude]&quot; DestinationField=&quot;&quot; DataType=&quot;decimal&quot; id=&quot;id84hUXFmceT&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Locality&quot; Member=&quot;[PostalAddress.Locality]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idgKF9koPwgQ&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;Timezone&quot; Member=&quot;[Timezone]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idMJtRPB91vH&quot;/&gt;&lt;DataBinding Grouped=&quot;false&quot; CssStyle=&quot;&quot; Visible=&quot;true&quot; Searchable=&quot;true&quot; HasPredefinedFilter=&quot;false&quot; Importable=&quot;false&quot; FormatStr=&quot;&quot; ItemType=&quot;TEXTBOX&quot; Caption=&quot;UNCTAD&quot; Member=&quot;[UNCTAD]&quot; DestinationField=&quot;&quot; DataType=&quot;string&quot; id=&quot;idfKKA0xIrX8&quot;/&gt;&lt;/DataBindings&gt;           &#xA;	    &lt;/LookupValues&gt;" IncludeAlternateRowsStyle="true" CssStyle="" Grouping="true" Searchable="true" Multiselection="false" Export="true" UserPreferences="false" ResizableColumns="true" ReorderColumns="false" Tooltip="" TooltipPosition="TOP" StandAlone="true" DisplayRecordsInfoRow="true" HasHeader="false" WaitForPredefinedFilters="false" Import="false">
+      <ContextMenus>
+        <Command IsDefault="false" Action="" Type="ALWAYS">
+          <Control ControlType="Button" ButtonType="BUTTON" CssStyle="" Tooltip="" Name="AddNew" Value="Add New" id="idz5nImPvHty" TooltipPosition="TOP" CausesValidation="false" ValidationGroups="" ShowConfirmation="false" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;PortForm&amp;quot; Action=&amp;quot;AddPort&amp;quot; TargetFrame=&amp;quot;_self&amp;quot; OnUnauthorized=&amp;quot;HIDE&amp;quot;&amp;gt; &amp;lt;Parameters/&amp;gt; &amp;lt;/ControllerAction&amp;gt;&quot; PickList-PageTitle=&quot;&quot; PickList-AllowSel=&quot;true&quot; PickList-ShowModal=&quot;true&quot; PickList-Behaviour=&quot;&quot; PickList-LookupValues=&quot;&quot; /&gt;" ImageUrl="">
+            <Action ActionType="NONE" id="idLFBiMAjdy1" />
+            <Choices id="idjNJebIcRUp">
+              <OnSelect id="idnG6iMWCSp1" />
+            </Choices>
+            <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" id="idT4cUJtEodL" DataSource="" Name="LabelAddNew" Value="Add New" TooltipPosition="Top" />
+          </Control>
+        </Command>
+        <Command IsDefault="true" Action="" Type="SINGLE">
+          <Control ControlType="Button" ButtonType="BUTTON" CssStyle="" Tooltip="" Name="Modify" Value="Modify" id="idyJwU79dREJ" TooltipPosition="TOP" CausesValidation="false" ValidationGroups="" ShowConfirmation="false" ButtonAction="&lt;Action ActionType=&quot;CONTROLLERACTION&quot; ActionDescription=&quot;Execute a Controller Action&quot; Controller-Action=&quot;&amp;lt;ControllerAction ControllerType=&amp;quot;WEBFORM&amp;quot; Controller=&amp;quot;PortForm&amp;quot; Action=&amp;quot;EditPort&amp;quot; TargetFrame=&amp;quot;_self&amp;quot; OnCloseModalDialogAction=&amp;quot;&amp;quot; OnUnauthorized=&amp;quot;HIDE&amp;quot; ModalSize=&amp;quot;FULL&amp;quot;&amp;gt;&#xA;        &amp;lt;Parameters&amp;gt;&amp;lt;Parameter DataType=&amp;quot;long&amp;quot; Name=&amp;quot;Id&amp;quot; Value=&amp;quot;FormControls.List1.SelectedItem.Id&amp;quot;/&amp;gt;&amp;lt;/Parameters&amp;gt;&#xA;    &amp;lt;/ControllerAction&amp;gt;&quot; PickList-PageTitle=&quot;&quot; PickList-AllowSel=&quot;true&quot; PickList-ShowModal=&quot;true&quot; PickList-Behaviour=&quot;&quot; PickList-LookupValues=&quot;&quot;/&gt;" ImageUrl="">
+            <Action ActionType="NONE" id="idLFBiMAjdy1" />
+            <Choices id="idjNJebIcRUp">
+              <OnSelect id="idnG6iMWCSp1" />
+            </Choices>
+            <Control ControlType="Label" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" id="idTTT4AsG41C" DataSource="" Name="LabelModify" Value="Modify" TooltipPosition="Top" />
+          </Control>
+        </Command>
+      </ContextMenus>
+      <LookupValuesFilter>
+        <Function Name="Filter" _open="true" Description="" id="idYB6lABVsT2"><![CDATA[function bool Filter(
+	DomainModel.Port DataItem
+) {
+	return true;
+}]]></Function>
+      </LookupValuesFilter>
+      <AggregateFunctions />
+      <grouping Columns="" />
+      <QuickFilters>
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" TooltipPosition="TOP" Name="List1QuickFilter0" FilterForColumn="Name" id="idip4GiqMjDm" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="List1QuickFilter1" TooltipPosition="TOP" FilterForColumn="PostalAddress.City" id="idEcDzt8GUbk" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="List1QuickFilter2" TooltipPosition="TOP" FilterForColumn="PostalAddress.Country" id="id2QwZhX7rq9" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="List1QuickFilter3" TooltipPosition="TOP" FilterForColumn="GeoCoordinates.Latitude" id="idqO0gQfV6pr" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="List1QuickFilter4" TooltipPosition="TOP" FilterForColumn="GeoCoordinates.Longitude" id="idGe46ea8BAU" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" Name="List1QuickFilter5" TooltipPosition="TOP" FilterForColumn="PostalAddress.Locality" id="idLUqYrUKgR5" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" TooltipPosition="TOP" Name="List1QuickFilter6" FilterForColumn="Timezone" id="idlJThVYp5aD" />
+        <Control ControlType="TextBox" data-isListFilter="true" Required="false" ReadOnly="false" FormatString="" MaskString="" CssStyle="" Tooltip="" DataSource="" TooltipPosition="TOP" Name="List1QuickFilter7" FilterForColumn="UNCTAD" id="idvsnCrRTlby" />
+      </QuickFilters>
+    </List>
+  </Body>
+  <Resources>
+    <Res Type="S" Key="RES_PAGETITLE_Retrieve" en-us="Ports" el="" />
+    <Res Type="S" Key="RES_LABEL_LabelAddNew" en-us="Add New" />
+    <Res Type="S" Key="RES_LABEL_LabelModify" en-us="Modify" />
+    <Res Type="S" Key="RES_TOOLTIP_List1" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_AddNew" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelAddNew" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_Modify" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_LabelModify" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter0" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter1" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter2" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter3" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter4" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter5" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter6" en-us="" />
+    <Res Type="S" Key="RES_TOOLTIP_List1QuickFilter7" en-us="" />
+    <Res Type="S" Key="RES_LIST_List1_TITLE" en-us="List1" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[Name]" en-us="Name" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[PostalAddress.City]" en-us="City" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[PostalAddress.Country]" en-us="Country" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[GeoCoordinates.Latitude]" en-us="Latitude" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[GeoCoordinates.Longitude]" en-us="Longitude" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[PostalAddress.Locality]" en-us="Locality" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[Timezone]" en-us="Timezone" />
+    <Res Type="S" Key="RES_LIST_List1_COLUMN_[UNCTAD]" en-us="UNCTAD" />
+    <Res Type="S" Key="RES_BUTTON_AddNew" en-us="Add New" />
+    <Res Type="S" Key="RES_BUTTON_Modify" en-us="Modify" />
+  </Resources>
+  <Logic>
+    <ConditionalFormattings />
+    <DataValidations id="ideh4p0scOMb" />
+  </Logic>
+</FormModel>

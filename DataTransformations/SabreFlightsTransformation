@@ -1,0 +1,253 @@
+<DataTransformation Model_Name="SabreFlightsTransformation" Model_Creator="ador">
+  <Trees>
+    <Left>
+      <Class Name="FlightSegment" PseydoName="FlightSegment" Model_Name="SabreAPI" Source="Interfaces" id="idWu3SbRaNLF" Stereotype="null" Open="null" Multiplicity="1" Level="0" Length="null" Start="null" End="null" Format="null" OriginalDataType="null" DataType="Class" RecordType="null" ConstantMapping="null">
+        <Class Name="DepartureAirport" id="idwSAtN71P45" DataType="Class" OriginalDataType="null" PseydoName="DepartureAirport" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="LocationCode" id="idElx8rGNN9D" DataType="string" OriginalDataType="null" PseydoName="LocationCode" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="ArrivalAirport" id="idDPJ0Qf0fXS" DataType="Class" OriginalDataType="null" PseydoName="ArrivalAirport" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="LocationCode" id="id92nmJGFNwT" DataType="string" OriginalDataType="null" PseydoName="LocationCode" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="MarketingAirline" id="id8LeiNdrzSc" DataType="Class" OriginalDataType="null" PseydoName="MarketingAirline" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Code" id="id5RqU7WkOZl" DataType="string" OriginalDataType="null" PseydoName="Code" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="ArrivalTimeZone" id="idxOaDrpgTBV" DataType="Class" OriginalDataType="null" PseydoName="ArrivalTimeZone" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="GMTOffset" id="idWo05fegUTn" DataType="int" OriginalDataType="null" PseydoName="GMTOffset" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="TPA_Extensions" id="ideDd4nFk9RY" DataType="Class" OriginalDataType="null" PseydoName="TPA_Extensions" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Class Name="Equipment" id="idLPGahvkRKi" DataType="Class" OriginalDataType="null" PseydoName="Equipment" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="AirEquipType" id="idqhGWCURWgR" DataType="string" OriginalDataType="null" PseydoName="AirEquipType" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="OnTimePerformance" id="idWfYlnC93xq" DataType="Class" OriginalDataType="null" PseydoName="OnTimePerformance" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Level" id="idydgjcVJAwb" DataType="string" OriginalDataType="null" PseydoName="Level" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="OperatingAirline" id="idN5xFu0CzoJ" DataType="Class" OriginalDataType="null" PseydoName="OperatingAirline" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="FlightNumber" id="idfMQGwhtK5x" DataType="string" OriginalDataType="null" PseydoName="FlightNumber" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Code" id="idWFZMiVMPSG" DataType="string" OriginalDataType="null" PseydoName="Code" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="DepartureTimeZone" id="idO5sJ1UqQlL" DataType="Class" OriginalDataType="null" PseydoName="DepartureTimeZone" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="GMTOffset" id="idKTwjhN8FQN" DataType="string" OriginalDataType="null" PseydoName="GMTOffset" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Attribute Name="StopQuantity" id="idUk2UQ3VHoQ" DataType="int" OriginalDataType="null" PseydoName="StopQuantity" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="ElapsedTime" id="id0lagnmGxLa" DataType="int" OriginalDataType="null" PseydoName="ElapsedTime" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="ResBookDesigCode" id="id41CUjdFhXF" DataType="string" OriginalDataType="null" PseydoName="ResBookDesigCode" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="MarriageGrp" id="idLDQulSyhSq" DataType="string" OriginalDataType="null" PseydoName="MarriageGrp" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="DepartureDateTime" id="id0h4kLtTiKX" DataType="DateTime" OriginalDataType="null" PseydoName="DepartureDateTime" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="ArrivalDateTime" id="idt1JRcGQOIw" DataType="DateTime" OriginalDataType="null" PseydoName="ArrivalDateTime" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="FlightNumber" id="idfTvW0liiHv" DataType="int" OriginalDataType="null" PseydoName="FlightNumber" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+      </Class>
+    </Left>
+    <Right>
+      <Class Name="Flight" PseydoName="Flight" Model_Name="AirTransport" Source="DomainModel" id="idmWdoic3AAG" Stereotype="StateClass" Open="null" Multiplicity="1" Level="0" Length="null" Start="null" End="null" Format="null" OriginalDataType="null" DataType="Class" RecordType="null" ConstantMapping="null">
+        <Class Name="Fare" id="idEL3zulnJg7" DataType="Class" OriginalDataType="null" PseydoName="Fare" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="StateClass" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Id" id="idQxq9uQoDx7" DataType="int" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Price" id="idAb41l88zgS" DataType="decimal" OriginalDataType="null" PseydoName="Price" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Description" id="idMvTc45pbRV" DataType="string" OriginalDataType="null" PseydoName="Description" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="SeatNumber" id="idu46pwrFuTG" DataType="string" OriginalDataType="null" PseydoName="SeatNumber" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="Airport" id="idbyE2yDGERO" DataType="Class" OriginalDataType="null" PseydoName="Origin" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="StateClass" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Id" id="idgwxSRupSl1" DataType="long" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Name" id="idOUx5roZ1jD" DataType="string" OriginalDataType="null" PseydoName="Name" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="MapURI" id="idHdmYPNQUyf" DataType="string" OriginalDataType="null" PseydoName="MapURI" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="ISICRev4" id="idR26OTIDksv" DataType="string" OriginalDataType="null" PseydoName="ISICRev4" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Timezone" id="id6emzqvrGd0" DataType="string" OriginalDataType="null" PseydoName="Timezone" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="IATA" id="iddgt7QBJ8QY" DataType="string" OriginalDataType="null" PseydoName="IATA" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="ICAO" id="idFDKV3B4sxw" DataType="string" OriginalDataType="null" PseydoName="ICAO" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="Airport" id="idO7yJ7JBBSY" DataType="Class" OriginalDataType="null" PseydoName="Destination" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="StateClass" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Id" id="id09lsGCaOdU" DataType="long" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Name" id="idaZMtMAwl0Z" DataType="string" OriginalDataType="null" PseydoName="Name" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="MapURI" id="idjkqHFa3zBj" DataType="string" OriginalDataType="null" PseydoName="MapURI" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="ISICRev4" id="idHvCq2XW6L6" DataType="string" OriginalDataType="null" PseydoName="ISICRev4" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Timezone" id="idWHF8iuvhpA" DataType="string" OriginalDataType="null" PseydoName="Timezone" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="IATA" id="idgDGdrHKiMP" DataType="string" OriginalDataType="null" PseydoName="IATA" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="ICAO" id="idBWHl3jPc5O" DataType="string" OriginalDataType="null" PseydoName="ICAO" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="Airline" id="idemlabcdAan" DataType="Class" OriginalDataType="null" PseydoName="Airline" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="StateClass" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Id" id="idmVde6BGlWg" DataType="int" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Name" id="idMOBQDSrfSY" DataType="string" OriginalDataType="null" PseydoName="Name" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Description" id="idN0iAaXyMl1" DataType="string" OriginalDataType="null" PseydoName="Description" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Url" id="idnpAo8OqJoi" DataType="string" OriginalDataType="null" PseydoName="Url" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="CallSign" id="id0FhvtP8CG6" DataType="string" OriginalDataType="null" PseydoName="CallSign" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="IATA" id="idOmtbOs6Zlo" DataType="string" OriginalDataType="null" PseydoName="IATA" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="ICAO" id="iddtWg6WT0bb" DataType="string" OriginalDataType="null" PseydoName="ICAO" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Class Name="Aircraft" id="idECQcMkZgwc" DataType="Class" OriginalDataType="null" PseydoName="Aircraft" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="StateClass" Open="true" Multiplicity="1" Level="1">
+          <Attribute Name="Id" id="idonOic61sCA" DataType="int" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Model" id="idGuCgI1BBze" DataType="string" OriginalDataType="null" PseydoName="Model" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Manifacturer" id="idDRvr3mJq4B" DataType="string" OriginalDataType="null" PseydoName="Manifacturer" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="Capacity" id="idt8Rek8leyF" DataType="int" OriginalDataType="null" PseydoName="Capacity" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+          <Attribute Name="IATA" id="idPQWzdFb2ei" DataType="string" OriginalDataType="null" PseydoName="IATA" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="2" />
+        </Class>
+        <Attribute Name="Id" id="idBvXDTFY0S6" DataType="long" OriginalDataType="null" PseydoName="Id" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="Duration" id="idEUxb5JMkz8" DataType="int" OriginalDataType="null" PseydoName="Duration" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="Distance" id="idXwcVLNI6XU" DataType="string" OriginalDataType="null" PseydoName="Distance" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="Price" id="idkiowCsA6FB" DataType="decimal" OriginalDataType="null" PseydoName="Price" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="Departure" id="idSZLn8bKHpy" DataType="DateTime" OriginalDataType="null" PseydoName="Departure" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="Arrival" id="idYzeTWvNlaM" DataType="DateTime" OriginalDataType="null" PseydoName="Arrival" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="FlightNumber" id="idkiV02eYu7T" DataType="string" OriginalDataType="null" PseydoName="FlightNumber" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="OriginTerminal" id="id59mRKKScnu" DataType="string" OriginalDataType="null" PseydoName="OriginTerminal" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="DesrtinationTerminal" id="idhDqZP6ECXf" DataType="string" OriginalDataType="null" PseydoName="DesrtinationTerminal" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+        <Attribute Name="DataSource" id="idpY4TDIWvEk6OitaPm3MYHg" DataType="string" OriginalDataType="" PseydoName="DataSource" Length="null" Start="null" End="null" Format="null" RecordType="null" ConstantMapping="null" Stereotype="null" Open="true" Multiplicity="1" Level="1" />
+      </Class>
+    </Right>
+  </Trees>
+  <Mappings Name="Mappings">
+    <MappingNode Name="ElapsedTime_to_Duration" UID="id0lagnmGxLaidEUxb5JMkz8" ReverseMapping="true">
+      <FromFunction Name="ElapsedTime_to_DurationRTLid0lagnmGxLaidEUxb5JMkz8from" UID="id0lagnmGxLaidEUxb5JMkz8from" Signature="function void ElapsedTime_to_DurationRTLid0lagnmGxLaidEUxb5JMkz8from( int FlightSegmentElapsedTime,out int FlightDuration)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></FromFunction>
+      <ToFunction Name="ElapsedTime_to_DurationLTRid0lagnmGxLaidEUxb5JMkz8to" UID="id0lagnmGxLaidEUxb5JMkz8to" Signature="function void ElapsedTime_to_DurationLTRid0lagnmGxLaidEUxb5JMkz8to( int FlightDuration,out int FlightSegmentElapsedTime)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="id0lagnmGxLa" Description="ElapsedTime" DataType="int" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idEUxb5JMkz8" Description="Duration" DataType="int" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="ArrivalDateTime_to_Arrival" UID="idt1JRcGQOIwidYzeTWvNlaM" ReverseMapping="true">
+      <FromFunction Name="ArrivalDateTime_to_ArrivalRTLidt1JRcGQOIwidYzeTWvNlaMfrom" UID="idt1JRcGQOIwidYzeTWvNlaMfrom" Signature="function void ArrivalDateTime_to_ArrivalRTLidt1JRcGQOIwidYzeTWvNlaMfrom( DateTime FlightSegmentArrivalDateTime,out DateTime FlightArrival)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></FromFunction>
+      <ToFunction Name="ArrivalDateTime_to_ArrivalLTRidt1JRcGQOIwidYzeTWvNlaMto" UID="idt1JRcGQOIwidYzeTWvNlaMto" Signature="function void ArrivalDateTime_to_ArrivalLTRidt1JRcGQOIwidYzeTWvNlaMto( DateTime FlightArrival,out DateTime FlightSegmentArrivalDateTime)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="idt1JRcGQOIw" Description="ArrivalDateTime" DataType="DateTime" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idYzeTWvNlaM" Description="Arrival" DataType="DateTime" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="DepartureDateTime_to_Departure" UID="id0h4kLtTiKXidSZLn8bKHpy" ReverseMapping="true">
+      <FromFunction Name="DepartureDateTime_to_DepartureRTLid0h4kLtTiKXidSZLn8bKHpyfrom" UID="id0h4kLtTiKXidSZLn8bKHpyfrom" Signature="function void DepartureDateTime_to_DepartureRTLid0h4kLtTiKXidSZLn8bKHpyfrom( DateTime FlightSegmentDepartureDateTime,out DateTime FlightDeparture)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></FromFunction>
+      <ToFunction Name="DepartureDateTime_to_DepartureLTRid0h4kLtTiKXidSZLn8bKHpyto" UID="id0h4kLtTiKXidSZLn8bKHpyto" Signature="function void DepartureDateTime_to_DepartureLTRid0h4kLtTiKXidSZLn8bKHpyto( DateTime FlightDeparture,out DateTime FlightSegmentDepartureDateTime)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="id0h4kLtTiKX" Description="DepartureDateTime" DataType="DateTime" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idSZLn8bKHpy" Description="Departure" DataType="DateTime" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="FlightNumber_to_FlightNumber" UID="idfTvW0liiHvidkiV02eYu7T" ReverseMapping="true">
+      <FromFunction Name="FlightNumber_to_FlightNumberRTLidfTvW0liiHvidkiV02eYu7Tfrom" UID="idfTvW0liiHvidkiV02eYu7Tfrom" Signature="function void FlightNumber_to_FlightNumberRTLidfTvW0liiHvidkiV02eYu7Tfrom( int FlightSegmentFlightNumber,out string FlightFlightNumber)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></FromFunction>
+      <ToFunction Name="FlightNumber_to_FlightNumberLTRidfTvW0liiHvidkiV02eYu7Tto" UID="idfTvW0liiHvidkiV02eYu7Tto" Signature="function void FlightNumber_to_FlightNumberLTRidfTvW0liiHvidkiV02eYu7Tto( string FlightFlightNumber,out int FlightSegmentFlightNumber)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="idfTvW0liiHv" Description="FlightNumber" DataType="int" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idkiV02eYu7T" Description="FlightNumber" DataType="string" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="OperatingAirline_to_Airline" UID="idN5xFu0CzoJidemlabcdAan" ReverseMapping="true">
+      <FromFunction Name="OperatingAirline_to_AirlineRTLidN5xFu0CzoJidemlabcdAanfrom" UID="idN5xFu0CzoJidemlabcdAanfrom" Signature="function DomainModel.Airline OperatingAirline_to_AirlineRTLidN5xFu0CzoJidemlabcdAanfrom( Interfaces.SabreAPI.OperatingAirline FlightSegmentOperatingAirline,DomainModel.Airline FlightAirline)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="false"><![CDATA[{
+	return DomainModel.Airline.Find(a=>a.IATA == FlightSegmentOperatingAirline.Code).First();
+}]]></FromFunction>
+      <ToFunction Name="OperatingAirline_to_AirlineLTRidN5xFu0CzoJidemlabcdAanto" UID="idN5xFu0CzoJidemlabcdAanto" Signature="function Interfaces.SabreAPI.OperatingAirline OperatingAirline_to_AirlineLTRidN5xFu0CzoJidemlabcdAanto( DomainModel.Airline FlightAirline,Interfaces.SabreAPI.OperatingAirline FlightSegmentOperatingAirline)" Body="{&#xA;&#xA;&#xA;}" isUsed="false" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="idN5xFu0CzoJ" Description="OperatingAirline" DataType="Interfaces.SabreAPI.OperatingAirline" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idemlabcdAan" Description="Airline" DataType="DomainModel.Airline" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="DepartureAirport_to_Origin" UID="idwSAtN71P45idbyE2yDGERO" ReverseMapping="true">
+      <FromFunction Name="DepartureAirport_to_OriginRTLidwSAtN71P45idbyE2yDGEROfrom" UID="idwSAtN71P45idbyE2yDGEROfrom" Signature="function DomainModel.Airport DepartureAirport_to_OriginRTLidwSAtN71P45idbyE2yDGEROfrom( Interfaces.SabreAPI.DepartureAirport FlightSegmentDepartureAirport,DomainModel.Airport FlightOrigin)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="false"><![CDATA[{
+	DomainModel.Airport airport = DomainModel.Airport.Find(a=>a.IATA == FlightSegmentDepartureAirport.LocationCode).First();
+	if(airport != null) {
+		return airport;
+	}
+		
+	airport = DomainModel.Airport.Create();
+	airport.IATA = FlightSegmentDepartureAirport.LocationCode;
+	return airport;
+}]]></FromFunction>
+      <ToFunction Name="DepartureAirport_to_OriginLTRidwSAtN71P45idbyE2yDGEROto" UID="idwSAtN71P45idbyE2yDGEROto" Signature="function Interfaces.SabreAPI.DepartureAirport DepartureAirport_to_OriginLTRidwSAtN71P45idbyE2yDGEROto( DomainModel.Airport FlightOrigin,Interfaces.SabreAPI.DepartureAirport FlightSegmentDepartureAirport)" Body="{&#xA;&#xA;&#xA;}" isUsed="false" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="idwSAtN71P45" Description="DepartureAirport" DataType="Interfaces.SabreAPI.DepartureAirport" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idbyE2yDGERO" Description="Origin" DataType="DomainModel.Airport" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+    <MappingNode Name="ArrivalAirport_to_Destination" UID="idDPJ0Qf0fXSidO7yJ7JBBSY" ReverseMapping="true">
+      <FromFunction Name="ArrivalAirport_to_DestinationRTLidDPJ0Qf0fXSidO7yJ7JBBSYfrom" UID="idDPJ0Qf0fXSidO7yJ7JBBSYfrom" Signature="function DomainModel.Airport ArrivalAirport_to_DestinationRTLidDPJ0Qf0fXSidO7yJ7JBBSYfrom( Interfaces.SabreAPI.ArrivalAirport FlightSegmentArrivalAirport,DomainModel.Airport FlightDestination)" Body="{&#xA;&#xA;&#xA;}" isUsed="true" isAutoComplete="false"><![CDATA[{
+	DomainModel.Airport airport = DomainModel.Airport.Find(a=>a.IATA == FlightSegmentArrivalAirport.LocationCode).First();
+	if(airport != null) {
+		return airport;
+	}
+		
+	airport = DomainModel.Airport.Create();
+	airport.IATA = FlightSegmentArrivalAirport.LocationCode;
+	return airport;
+}]]></FromFunction>
+      <ToFunction Name="ArrivalAirport_to_DestinationLTRidDPJ0Qf0fXSidO7yJ7JBBSYto" UID="idDPJ0Qf0fXSidO7yJ7JBBSYto" Signature="function Interfaces.SabreAPI.ArrivalAirport ArrivalAirport_to_DestinationLTRidDPJ0Qf0fXSidO7yJ7JBBSYto( DomainModel.Airport FlightDestination,Interfaces.SabreAPI.ArrivalAirport FlightSegmentArrivalAirport)" Body="{&#xA;&#xA;&#xA;}" isUsed="false" isAutoComplete="true"><![CDATA[{
+
+}]]></ToFunction>
+      <FromItems>
+        <Item UID="idDPJ0Qf0fXS" Description="ArrivalAirport" DataType="Interfaces.SabreAPI.ArrivalAirport" BelongsTo="FlightSegment" PseydoName="" ConstantMapping="" />
+      </FromItems>
+      <ToItems>
+        <Item UID="idO7yJ7JBBSY" Description="Destination" DataType="DomainModel.Airport" BelongsTo="Flight" PseydoName="" ConstantMapping="" />
+      </ToItems>
+    </MappingNode>
+  </Mappings>
+  <Connections>
+    <Connection sourceId="id0lagnmGxLa" targetId="id0lagnmGxLaidEUxb5JMkz81" id="id0lagnmGxLaidEUxb5JMkz81" top="477px" left="50%">
+      <ConnectionParameters nodeId="id0lagnmGxLaidEUxb5JMkz8" fullPath="idEUxb5JMkz8" />
+    </Connection>
+    <Connection sourceId="id0lagnmGxLaidEUxb5JMkz81" targetId="idEUxb5JMkz8" id="id0lagnmGxLaidEUxb5JMkz81" top="477px" left="50%">
+      <ConnectionParameters nodeId="id0lagnmGxLaidEUxb5JMkz8" fullPath="id0lagnmGxLa" />
+    </Connection>
+    <Connection sourceId="idt1JRcGQOIw" targetId="idt1JRcGQOIwidYzeTWvNlaM1" id="idt1JRcGQOIwidYzeTWvNlaM1" top="565px" left="50%">
+      <ConnectionParameters nodeId="idt1JRcGQOIwidYzeTWvNlaM" fullPath="idYzeTWvNlaM" />
+    </Connection>
+    <Connection sourceId="idt1JRcGQOIwidYzeTWvNlaM1" targetId="idYzeTWvNlaM" id="idt1JRcGQOIwidYzeTWvNlaM1" top="565px" left="50%">
+      <ConnectionParameters nodeId="idt1JRcGQOIwidYzeTWvNlaM" fullPath="idt1JRcGQOIw" />
+    </Connection>
+    <Connection sourceId="id0h4kLtTiKX" targetId="id0h4kLtTiKXidSZLn8bKHpy1" id="id0h4kLtTiKXidSZLn8bKHpy1" top="543px" left="50%">
+      <ConnectionParameters nodeId="id0h4kLtTiKXidSZLn8bKHpy" fullPath="idSZLn8bKHpy" />
+    </Connection>
+    <Connection sourceId="id0h4kLtTiKXidSZLn8bKHpy1" targetId="idSZLn8bKHpy" id="id0h4kLtTiKXidSZLn8bKHpy1" top="543px" left="50%">
+      <ConnectionParameters nodeId="id0h4kLtTiKXidSZLn8bKHpy" fullPath="id0h4kLtTiKX" />
+    </Connection>
+    <Connection sourceId="idfTvW0liiHv" targetId="idfTvW0liiHvidkiV02eYu7T1" id="idfTvW0liiHvidkiV02eYu7T1" top="587px" left="50%">
+      <ConnectionParameters nodeId="idfTvW0liiHvidkiV02eYu7T" fullPath="idkiV02eYu7T" />
+    </Connection>
+    <Connection sourceId="idfTvW0liiHvidkiV02eYu7T1" targetId="idkiV02eYu7T" id="idfTvW0liiHvidkiV02eYu7T1" top="587px" left="50%">
+      <ConnectionParameters nodeId="idfTvW0liiHvidkiV02eYu7T" fullPath="idfTvW0liiHv" />
+    </Connection>
+    <Connection sourceId="idN5xFu0CzoJ" targetId="idN5xFu0CzoJidemlabcdAan1" id="idN5xFu0CzoJidemlabcdAan1" top="433px" left="50%">
+      <ConnectionParameters nodeId="idN5xFu0CzoJidemlabcdAan" fullPath="idemlabcdAan" />
+    </Connection>
+    <Connection sourceId="idN5xFu0CzoJidemlabcdAan1" targetId="idemlabcdAan" id="idN5xFu0CzoJidemlabcdAan1" top="433px" left="50%">
+      <ConnectionParameters nodeId="idN5xFu0CzoJidemlabcdAan" fullPath="idN5xFu0CzoJ" />
+    </Connection>
+    <Connection sourceId="idwSAtN71P45" targetId="idwSAtN71P45idbyE2yDGERO1" id="idwSAtN71P45idbyE2yDGERO1" top="114px" left="50%">
+      <ConnectionParameters nodeId="idwSAtN71P45idbyE2yDGERO" fullPath="idbyE2yDGERO" />
+    </Connection>
+    <Connection sourceId="idwSAtN71P45idbyE2yDGERO1" targetId="idbyE2yDGERO" id="idwSAtN71P45idbyE2yDGERO1" top="114px" left="50%">
+      <ConnectionParameters nodeId="idwSAtN71P45idbyE2yDGERO" fullPath="idwSAtN71P45" />
+    </Connection>
+    <Connection sourceId="idDPJ0Qf0fXS" targetId="idDPJ0Qf0fXSidO7yJ7JBBSY1" id="idDPJ0Qf0fXSidO7yJ7JBBSY1" top="224px" left="50%">
+      <ConnectionParameters nodeId="idDPJ0Qf0fXSidO7yJ7JBBSY" fullPath="idO7yJ7JBBSY" />
+    </Connection>
+    <Connection sourceId="idDPJ0Qf0fXSidO7yJ7JBBSY1" targetId="idO7yJ7JBBSY" id="idDPJ0Qf0fXSidO7yJ7JBBSY1" top="224px" left="50%">
+      <ConnectionParameters nodeId="idDPJ0Qf0fXSidO7yJ7JBBSY" fullPath="idDPJ0Qf0fXS" />
+    </Connection>
+  </Connections>
+</DataTransformation>

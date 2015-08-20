@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<QueryModel Model_Name="ShippingLines" Model_BasedOn="Database" Model_Description="" SQL="SELECT  ShippingLineId ,&#xD;&#xA;        OrganizationId ,&#xD;&#xA;        OrganizationName ,&#xD;&#xA;        CASE WHEN PortsSequence IS NULL THEN NULL&#xD;&#xA;             ELSE SUBSTRING(PortsSequence, 1, LEN(PortsSequence) - 5)&#xD;&#xA;        END AS PortsSequence&#xD;&#xA;FROM    ( SELECT    ShippingLines.Id AS ShippingLineId ,&#xD;&#xA;                    Organizations.Id AS OrganizationId ,&#xD;&#xA;                    Organizations.Name AS OrganizationName ,&#xD;&#xA;                    REPLACE(REPLACE(REPLACE(( SELECT    Places.Name + '&lt;br/&gt;' AS [text()]&#xD;&#xA;                                              FROM      ShippingLinesTblToPortsTbl&#xD;&#xA;                                                        INNER JOIN Places ON ShippingLinesTblToPortsTbl.PortsId = Places.Id&#xD;&#xA;                                              WHERE     ShippingLinesTblToPortsTbl.ShippingLinesId = ShippingLines.Id&#xD;&#xA;                                              GROUP BY  ShippingLinesTblToPortsTbl.ShippingLinesId ,&#xD;&#xA;                                                        Places.Name&#xD;&#xA;                                            FOR&#xD;&#xA;                                              XML PATH('')&#xD;&#xA;                                            ), '&amp;lt;', '&lt;'), '&amp;gt;', '&gt;'),&#xD;&#xA;                            '&amp;amp;nbsp;', '&amp;nbsp;') AS PortsSequence&#xD;&#xA;          FROM      ShippingLines&#xD;&#xA;                    INNER JOIN dbo.Organizations ON dbo.ShippingLines.AgencyId = dbo.Organizations.Id&#xD;&#xA;        ) AS d" Database="Database" SQLAutoGenerate="false" PK="ShippingLineId" Model_Creator="ador">
+  <Tables />
+  <Relations />
+  <Criteria />
+  <DesignerColumns />
+  <Columns>
+    <Column Name="ShippingLineId" DataType="bigint" Length="" KeyType="" Schema="" Table="ShippingLines" TableColumn="Id" />
+    <Column Name="OrganizationId" DataType="int" Length="" KeyType="" Schema="dbo" Table="Organizations" TableColumn="Id" />
+    <Column Name="OrganizationName" DataType="nvarchar" Length="100" KeyType="" Schema="dbo" Table="Organizations" TableColumn="Name" />
+    <Column Name="PortsSequence" DataType="nvarchar" Length="MAX" KeyType="" Schema="" Table="" TableColumn="PortsSequence" />
+  </Columns>
+  <QueryParameters />
+</QueryModel>

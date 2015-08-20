@@ -1,0 +1,311 @@
+<BusinessObjectModel Model_Name="AirTransport" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador" ShowExternalAssociations="false">
+  <SoftwareModel>
+    <Datastores>
+      <Database id="jpk0Z4FXg5" Name="Database" ModelName="AirTransport">
+        <Entity id="zb9PPy6dN1" Name="ItinerarySegments" Schema="dbo" Type="T" Value="ItinerarySegments" ModelName="AirTransport" open="false">
+          <Column id="idF7BW9XTxt0e9RcSfKHe3eQ" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idDZLa8V5KTUeajAXSPLqvNA" Name="Duration" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id4jl8AH10kkGFBw0aQ2ZS2w" Name="Distance" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idte1F7REZgkinQzwFKJOytA" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id6mMwFusXyEqSA7tAiKmfsg" Name="Type" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegmentTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpjNbHmM5aUSNK1gCCczSJw" Name="Departure" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idrAYuasBRtUi3aQEWKjdHlw" Name="Arrival" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idNWw3CIMx50Wc65A1HroQeA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idWcFnAitNA0KyJyYgwDVkWg" Name="PartOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Itineraries" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idGffUehT7bkyUTVAwSihWBQ" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id2CS9udEqhUOSxkTK1amZ6g" Name="BaseOriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idlKufoWzvt0AdS3pznGQGOg" Name="BaseDestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="jiBisBRE9E" Name="ContactInformationTbl" Schema="dbo" Type="T" Value="ContactInformationTbl" ModelName="AirTransport" open="false">
+          <Column id="id6ihwvLtRIkWjcSVt13XoNQ" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idNgohAvJAG0AaS1RZ30kEZA" Name="Phone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idvqjeIFSdIkq0AQ6DwKFPhw" Name="Fax" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idtWNamyPhc064RdUlrWEeNQ" Name="Email" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idEFnCkqCLQUSYr96TEJMmmQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idBWT9eaW5LUAo4toJegzyrg" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpMIAkHpSWk2sf0lljeBSWw" Name="PersonId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idWpAtt5FECkSjOA7ECIaqvQ" Name="AddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="SnXmCGX9JL" Name="Organizations" Schema="dbo" Type="T" Value="Organizations" ModelName="AirTransport" open="false">
+          <Column id="iddqEMuMFJ0EOszt2GNB4ITQ" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idNYNBa1B4mUODOjuicEMa0A" Name="Name" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idhwIPMQzQsUOmixFB1jRVRA" Name="Description" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idMevGXY8NqUAUhgjYxmf3qw" Name="Url" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id2KdgCPae40W4Yvvijt1i1A" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idtCI7c9Mx1kAx7AFAhnkE8Q" Name="DepartmentOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="Iya3QPpJr2" Name="OrganizationsToRepresentativesTbl" Schema="dbo" Type="T" Value="OrganizationsToRepresentativesTbl" ModelName="AirTransport" open="true">
+          <Column id="idaRHtXQsq6kKa42jwv5z5aw" Name="dbo.OrganizationsToRepresentativesTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idA0NVcoQOJkilquaVAcLqeA" Name="OrganizationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Organizations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idC7jsRkMExUmC0W7N96Fj5Q" Name="RepresentativesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.People" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="pb14TQABMH" Name="Vehicles" Schema="dbo" Type="T" Value="Vehicles" ModelName="AirTransport" open="false">
+          <Column id="idDtIrTAnLVkOjw8L7pKH0EA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idiemWxfp47EKR35qWIvgzhg" Name="Model" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idFFiAaB5Hi02m02G2tzJ3lA" Name="Manifacturer" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idElkYxiAEQ02ZAzpPZmRFew" Name="Capacity" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idTxaOikAMBEOlxMpMa5dfjQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="fqUTxfN0dh" Name="Airports" Schema="dbo" Type="T" Value="Airports" open="false" ModelName="AirTransport">
+          <Column id="id3ozwqCbizkAeXq6JSiyqSg" Name="IATA" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idJidayRA9OEGyQ1AfLgAocQ" Name="ICAO" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idmLrlvy7xdUCsaVppV7z1Vw" Name="AirportId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="hkQgAuXnIr" Name="Flights" Schema="dbo" Type="T" Value="Flights" open="false" ModelName="AirTransport">
+          <Column id="idJQX1W2SYE0yajUAAALXsrw" Name="FlightNumber" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idnkDfvjcMXU6BEAhCKsAEGw" Name="OriginTerminal" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id5sYlpZFAbEAoDNEiMrA76A" Name="DesrtinationTerminal" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idCJAYbagPRkORoDqdsICkkQ" Name="FlightId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idHroGyPPqAEmUX3iaMkpDvw" Name="PartOfId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Flights" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idrakjfFiiAESAlZuzJaCRFw" Name="OriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Airports" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idS6gX1ONVK06UgZBpWeU8sQ" Name="DestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Airports" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idAHd5NFA1RUezL8XnXKFEIA" Name="AirlineId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Airlines" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id83wAjcAhaEOUKAPt9WPPAg" Name="AircraftId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.AircraftTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idj8hH5IZJ0UmMrZLPIRUoAg" Name="Datasource" DataType="nvarchar" Length="500" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="wUkuaVms1m" Name="Airlines" Schema="dbo" Type="T" Value="Airlines" open="false" ModelName="AirTransport">
+          <Column id="idOMKJu8swTEWZNNtMof5jZA" Name="CallSign" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idvAkVnoA6KUinFaXOCfhoAQ" Name="IATA" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idoD1HkqJ1xES9gDiDB23WNw" Name="ICAO" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idli9Qr2pCH0ahByTzrFKntQ" Name="AirlineId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="w9DFhi9ztI" Name="AircraftTbl" Schema="dbo" Type="T" Value="AircraftTbl" open="false" ModelName="AirTransport">
+          <Column id="id4n9UK2BqMUibfb87SRbpoA" Name="IATA" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idqInCM6acSEGioxvEvKprrA" Name="AircraftId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="TrFUjZ4y4n" Name="Places" Schema="dbo" Type="T" Value="Places" ModelName="AirTransport" open="false">
+          <Column id="idAqpYYaZBSkCPxTnW2fRv6w" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idvTzLa2baC0A3yDEKvKEFLw" Name="MapURI" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idgViMVlJNuUCCRSaqpBzLQw" Name="ISICRev4" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idLPawFKtkaEik8wDaTIX6iQ" Name="LocationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LocationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idgfCaPMWa1k2ppOticxiFdA" Name="Timezone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idajhbg8WVcUyM8NxQv4Gj5A" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="id1P6Z3aORik2EDaeInRbmVA" Name="ContainedInId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Places" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idaEO3XS03kUuRvUyk4UKgCQ" Name="PostalAddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id4Psh3SQSxEy8zlHGjoMpoQ" Name="GeoCoordinatesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoCoordinatesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idtr1MLtaWC0SIejU5ARlSUA" Name="GeoboundariesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoBoundariesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ideFt5PMMsrUyiHAT9AVnOHg" Name="Name" DataType="nvarchar" Length="200" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="FQsY0SIKcQ" Name="GeoCoordinatesTbl" Schema="dbo" Type="T" Value="GeoCoordinatesTbl" ModelName="AirTransport" open="false">
+          <Column id="idSV0I481DL0AuHlVhZIZGyA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idW5q10b4swEOaSqJNVHncqg" Name="Latitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ideLXcobbxwEmLrmOFvROW6w" Name="Longitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idbbiv1ARao0eWOliaLq3VeQ" Name="Elevation" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idTyFVjd32SUeLtV9FZwHc9A" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="iddacLGTig20G5BD9RMNG9YA" Name="SegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegments" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id0I25DaDCUECLZftCiDGDBA" Name="tmplat" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idF0ARceDskkihbA0au4eahQ" Name="tmplong" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity Name="AirportsToRelatedAirports" Schema="dbo" Type="T" Value="AirportsToRelatedAirports" id="GUJ3S53hV7" open="true" ModelName="AirTransport">
+          <Column id="idnbZYMfiDvEKUisFNMYNgmw" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idC30VzBlW3keHjYc9ypf3mg" Name="SrcAirportId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idlRoMe3bH6UGhgzekWBAwLg" Name="DestAirportId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+      </Database>
+    </Datastores>
+    <Associations>
+      <Association Class1="Flight" Class2="Flight" Percent1="0.4983277591973244" Percent2="0.9832775919732442" Edge1="t" Edge2="b" Role1="PartOf" Role2="Legs" Navigable1="false" Navigable2="true" OnDelete1="delete" OnDelete2="disassociate" Multiplicity1="0..1" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="" id="LvrnAaZS5l" Path="M 994 95 L 994 60 L 800 60 L 800 630 L 1139 630 L 1139 587" ModelName="AirTransport" open="false">
+        <Mappings>
+          <Database id="bcwusvujfsv" Name="Database">
+            <Entity id="qu52rwiynqu" Name="Flights" Schema="dbo">
+              <Mapping id="53c2qf3qiag" Attribute="PartOf" Column="PartOfId" />
+              <Mapping id="wvl3qslkssp" Attribute="Legs" Column="FlightId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Flight" Class2="Airport" Percent1="0.2073170731707317" Percent2="0.35555555555555557" Edge1="l" Edge2="r" Role1="OutboundFlights" Role2="Origin" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="IE0cAmLlOF" Path="M 845 197 L 770 197 L 770 168 L 696 168" ModelName="AirTransport" open="false">
+        <Mappings>
+          <Database id="nbxfowyjnvc" Name="Database">
+            <Entity id="lmnrifv2yiq" Name="Flights" Schema="dbo">
+              <Mapping id="4fssvrlytj3" Attribute="OutboundFlights" Column="FlightId" />
+              <Mapping id="5pqiuvuiq1g" Attribute="Origin" Column="OriginId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Flight" Class2="Airport" Percent1="0.4166666666666667" Percent2="0.7142857142857143" Edge1="l" Edge2="r" Role1="InboundFlights" Role2="Destination" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="uI3GB3xNbN" Path="M 845 300 L 770 300 L 770 281 L 696 281" ModelName="AirTransport" open="false">
+        <Mappings>
+          <Database id="vvvdwd2llfh" Name="Database">
+            <Entity id="gbuaheny54r" Name="Flights" Schema="dbo">
+              <Mapping id="zoo0aw25kvh" Attribute="InboundFlights" Column="FlightId" />
+              <Mapping id="023kdddvdrt" Attribute="Destination" Column="DestinationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Flight" Class2="Airline" Percent1="0.9105691056910569" Percent2="0.9158878504672897" Edge1="l" Edge2="t" Role1="Flights" Role2="Airline" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="YaIbqzgoo8" Path="M 845 543 L 790 543 L 790 400 L 711 400 L 711 437" ModelName="AirTransport" open="false">
+        <Mappings>
+          <Database id="q5bk3fnzb0t" Name="Database">
+            <Entity id="za51nwdj4mz" Name="Flights" Schema="dbo" open="true">
+              <Mapping id="rtphq303a05" Attribute="Flights" Column="FlightId" />
+              <Mapping id="ong02zwdkoz" Attribute="Airline" Column="AirlineId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Flight" Class2="Aircraft" Percent1="0.3277591973244147" Percent2="0.5829787234042553" Edge1="b" Edge2="t" Role1="Flight" Role2="Aircraft" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="Pr3a0eA6Ox" Path="M 943 587 L 943 640 L 976 640 L 976 691" ModelName="AirTransport" open="false">
+        <Mappings>
+          <Database id="eyekuz4yok2" Name="Database">
+            <Entity id="rduix5peyfy" Name="Flights" Schema="dbo">
+              <Mapping id="q4upc13q5hk" Attribute="Flight" Column="FlightId" />
+              <Mapping id="x1aqxqbwpvl" Attribute="Aircraft" Column="AircraftId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Airport" Class2="Airport" Percent1="0.6412213740458015" Percent2="0.22857142857142856" Edge1="t" Edge2="l" Role1="Airport" Role2="RelatedAirports" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="tL0UamEQeJ" Path="M 602 56 L 602 0 L 390 0 L 390 128 L 434 128" open="false" ModelName="AirTransport">
+        <Mappings>
+          <Database id="idfwUJQBY8tY" Name="Database">
+            <Entity id="idbpzfpN8QQ7" Name="AirportsToRelatedAirports" Schema="dbo" open="true">
+              <Mapping id="TEvtHXOKtR" Attribute="Airport" Column="SrcAirportId" />
+              <Mapping id="qeVM0uO97K" Attribute="RelatedAirports" Column="DestAirportId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+    </Associations>
+    <Classes>
+      <Class BaseModel="Location" BaseClass="Place" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="262" Height="315" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Place;" ModelName="AirTransport" Stereotype="StateClass" Left="434" Top="56" Name="Airport" id="id7JbefEXNdkeeI7uzHvXN8w" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute id="EezqvPJJaE" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="o38sWYNQ1E" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="bl43gnrjj34" Name="Database">
+            <Entity id="lbloup0jdxb" Name="Airports" Schema="dbo" open="true">
+              <Mapping id="1chlfgn3et4" Attribute="IATA" Column="IATA" />
+              <Mapping id="ps45u3f5za0" Attribute="ICAO" Column="ICAO" />
+              <Mapping id="rJiIhC8LqA" Attribute="Id" Column="AirportId" />
+            </Entity>
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo" open="true">
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Trip" BaseClass="ItinerarySegment" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="299" Height="492" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="ItinerarySegment;" ModelName="AirTransport" Stereotype="StateClass" Left="845" Top="95" Name="Flight" id="idjCya0Y9NZkOHhA89N8WA8Q" HasMappings="true" open="true">
+        <Attributes>
+          <Attribute id="IuCq8apoyq" Name="FlightNumber" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="WSPAlvBifo" Name="OriginTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="RelJBtNLud" Name="DesrtinationTerminal" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="U0qroF0sDQ" Name="DataSource" DataType="string" Length="500" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="ojbrvqottib" Name="Database">
+            <Entity id="tblhfzodqah" Name="ItinerarySegments" Schema="dbo" open="true">
+            </Entity>
+            <Entity id="cuxlxnhcn1b" Name="Flights" Schema="dbo" open="true">
+              <Mapping id="2rjm1ngxowq" Attribute="Id" Column="FlightId" />
+              <Mapping id="mamezncavky" Attribute="FlightNumber" Column="FlightNumber" />
+              <Mapping id="g5xml0xvv4o" Attribute="OriginTerminal" Column="OriginTerminal" />
+              <Mapping id="nyiblkgy2dl" Attribute="DesrtinationTerminal" Column="DesrtinationTerminal" />
+              <Mapping id="OSlrH773OG" Attribute="DataSource" Column="Datasource" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Organization" BaseClass="Organization" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="321" Height="255" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Organization;" ModelName="AirTransport" Stereotype="StateClass" Left="417" Top="437" Name="Airline" id="idKAp8dxtkj0mrCwhNVwRY9g" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute id="SBh6bYHr6k" Name="CallSign" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="zznsOpOU3r" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+          <Attribute id="EWYPnzApvx" Name="ICAO" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="0dud3cah52c" Name="Database">
+            <Entity id="qgqabm0uaxm" Name="Organizations" Schema="dbo">
+            </Entity>
+            <Entity id="vg5gfzrrcsj" Name="Airlines" Schema="dbo">
+              <Mapping id="0y0buwelweo" Attribute="Id" Column="AirlineId" />
+              <Mapping id="ubk0gcit5mc" Attribute="CallSign" Column="CallSign" />
+              <Mapping id="lpp5qoawzfz" Attribute="IATA" Column="IATA" />
+              <Mapping id="55v0mfhmkys" Attribute="ICAO" Column="ICAO" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="Place" ShadowIsDependent="false" PK="Id" Width="250" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="57" Top="71" Name="Place" id="idqA2sXcZTKF" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="idqNqS794oJW">
+        </Attributes>
+        <Mappings id="idAVcEg7N86o">
+          <Database id="d2fz35yvrvz" Name="Database">
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo" open="true">
+              <Mapping id="5qdxaetv24k" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="hwc1sgzkoma" Attribute="MapURI" Column="MapURI" IsShadow="true" />
+              <Mapping id="xwynvtwunnc" Attribute="ISICRev4" Column="ISICRev4" IsShadow="true" />
+              <Mapping id="xpaees3wi4x" Attribute="Timezone" Column="Timezone" IsShadow="true" />
+              <Mapping id="akTgX39RFQ" Attribute="Name" Column="Name" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Organization" ShadowClass="Organization" ShadowIsDependent="false" PK="Id" Width="284" Height="258" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="49" Top="438" Name="Organization" id="id9on7mQ7sPJ" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="idQEX5bbyWLy">
+        </Attributes>
+        <Mappings id="idYuMl976hhc">
+          <Database id="lew0zqnddnj" Name="Database">
+            <Entity id="22uh53shg1u" Name="Organizations" Schema="dbo">
+              <Mapping id="c4it5ukr3ko" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="hdrs2gqzr5e" Attribute="Name" Column="Name" IsShadow="true" />
+              <Mapping id="xtmocdjyhy5" Attribute="Description" Column="Description" IsShadow="true" />
+              <Mapping id="zwzhzxnwfnb" Attribute="Url" Column="Url" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Trip" BaseClass="Vehicle" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="235" Height="119" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Vehicle;" ModelName="AirTransport" Stereotype="StateClass" Left="839" Top="691" Name="Aircraft" id="idyvHvFdqeG0mBnSnyslwv6A" HasMappings="true" open="false">
+        <Attributes>
+          <Attribute id="R3Ih1BR8QL" Name="IATA" DataType="string" Length="100" IsRequired="false" Precision="" InitValue="" Scale="" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="dlw2v3iccrk" Name="Database">
+            <Entity id="v0phg2twxr4" Name="Vehicles" Schema="dbo" open="true">
+            </Entity>
+            <Entity id="itjrkvdzpys" Name="AircraftTbl" Schema="dbo" open="true">
+              <Mapping id="0uwqgesiwvf" Attribute="Id" Column="AircraftId" />
+              <Mapping id="pgqrlcq3v1r" Attribute="IATA" Column="IATA" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="Vehicle" ShadowIsDependent="false" PK="Id" Width="190" Height="180" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="1273" Top="555" Name="Vehicle" id="idi9V45XGpoH" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="id1yyAPRPzho">
+        </Attributes>
+        <Mappings id="id6SdMvV2Qm7">
+          <Database id="kzpocb5sseq" Name="Database">
+            <Entity id="kyhxbvldx12" Name="Vehicles" Schema="dbo">
+              <Mapping id="xkq1iydkphu" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="sehqwezz3cw" Attribute="Model" Column="Model" IsShadow="true" />
+              <Mapping id="bpnsuhqwint" Attribute="Manifacturer" Column="Manifacturer" IsShadow="true" />
+              <Mapping id="haevl03zmac" Attribute="Capacity" Column="Capacity" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="ItinerarySegment" ShadowIsDependent="false" PK="Id" Width="259" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="1197" Top="79" Name="ItinerarySegment" id="idOKpDvJXiu5" HasMappings="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="idSBdYZiboUJ">
+        </Attributes>
+        <Mappings id="idVikIyfINmZ">
+          <Database id="id58bR3A38Xp" Name="Database">
+            <Entity id="idiO4cpMphHK" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="idWZpwkf4pge" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="idlc5H4xk4ve" Attribute="Duration" Column="Duration" IsShadow="true" />
+              <Mapping id="id4knA71tmxg" Attribute="Distance" Column="Distance" IsShadow="true" />
+              <Mapping id="idQqR8ybWyto" Attribute="Price" Column="Price" IsShadow="true" />
+              <Mapping id="2pbx0scsylg" Attribute="Departure" Column="Departure" IsShadow="true" />
+              <Mapping id="23uygy4faly" Attribute="Arrival" Column="Arrival" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+    </Classes>
+  </SoftwareModel>
+  <BusinessRules LocalReferences="" GlobalReferences="mscorlib.dll;System.dll;System.Xml.dll;System.Core.dll">
+    <Definitions />
+    <Vocabularies />
+    <RuleSet id="idOm6gONgDPECn4X62BVKa2Q" Class="Airport" Stereotype="StateClass" open="false" _open="false" ModelName="AirTransport" />
+    <RuleSet id="id3eLusrF7TkO9tDZuHLYWuA" Class="Flight" Stereotype="StateClass" open="false" _open="false" ModelName="AirTransport" />
+    <RuleSet id="idZlRZBfJFykS3KjEAdP6HNg" Class="Airline" Stereotype="StateClass" open="false" _open="false" ModelName="AirTransport" />
+    <RuleSet id="idqAgJTlPtV0qoA8CVg6XFag" Class="Aircraft" Stereotype="StateClass" open="false" _open="false" ModelName="AirTransport" />
+  </BusinessRules>
+  <Resources />
+</BusinessObjectModel>

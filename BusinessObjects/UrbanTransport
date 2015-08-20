@@ -1,0 +1,349 @@
+<BusinessObjectModel Model_Name="UrbanTransport" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" ShowExternalAssociations="false" Model_Creator="kfilippakos">
+  <SoftwareModel>
+    <Datastores>
+      <Database id="1kk4jmj3ftc" Name="Database" ModelName="UrbanTransport">
+        <Entity id="3sbywok3f5o" Name="ItinerarySegments" Schema="dbo" Type="T" Value="ItinerarySegments" ModelName="UrbanTransport">
+          <Column id="id2NCqY9orGk2QaMadEB7gQw" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id2jVliyD3HUinXjiaqPiWeg" Name="Duration" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idy2dd0ZJ90UuKr0kGAfAlCQ" Name="Distance" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpvHB1f5dWk25roZAV9ncaA" Name="Price" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idkkhrFJXkRkA0TPjwaaAAXQ" Name="Type" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegmentTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idLakEG70Pa0uyqYfyAKr98A" Name="Departure" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idJcHFda02rU6TmCf6KdZ4fw" Name="Arrival" DataType="datetime" Length="" Precision="23" Scale="3" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idbXDGy7nYL0axkuwrwpOTGg" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="id5XJeArh1fUq9qUKiyHKwag" Name="PartOfId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Itineraries" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idmXTF8XqxkEyxqxXEafpl3Q" Name="FareId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.Fares" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="3qtulg2111u" Name="Vehicles" Schema="dbo" Type="T" Value="Vehicles" ModelName="UrbanTransport">
+          <Column id="idYjy3VF2dhUuG6YMdXAmCIA" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idJwSN3xy7pEW1Naa2SPpWyA" Name="Model" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id2CLV9ohk102MBIPYWkERaQ" Name="Manifacturer" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idvovPatGzaEW8kMSJYY9StA" Name="Capacity" DataType="int" Length="" Precision="10" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idXeML5DdTt0AAmlPStqIwDA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="kxm5uhaszl0" Name="Stations" Schema="dbo" Type="T" Value="Stations" ModelName="UrbanTransport" open="true">
+          <Column id="idE62jkI65bEuiaVjE7Q7HBg" Name="StationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.StationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idslBjPflavEuzHjEbuAXYJQ" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="n0uav3zah5z" Name="LinesTblToStationsTbl" Schema="dbo" Type="T" Value="LinesTblToStationsTbl" ModelName="UrbanTransport">
+          <Column id="id2YkZ2LJyYEyhaYvTZarFhw" Name="dbo.LinesTblToStationsTblId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idYP702vHaA0edB44f91uhyA" Name="LinesId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.UrbanLinesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idRazqyYubU0WNOneJdb8kKQ" Name="StationsId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Stations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="rhks3ynrsij" Name="UrbanSegments" Schema="dbo" Type="T" Value="UrbanSegments" ModelName="UrbanTransport" open="true">
+          <Column id="idasy6DuPz3ECYIfZSd9PdqA" Name="Direction" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LineDirections" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idn2EhdzN3oEC3oGgKuTuezA" Name="UrbanSegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idOTfnFrIw2Eu54kRvFf3XnA" Name="OriginId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Stations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id9uxgVUT9OkWTqXwkoRhSRQ" Name="DestinationId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Stations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id9wASrfVclE6PvElODfGatQ" Name="UrbanLineId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.UrbanLinesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="hbya225p0k0" Name="UrbanTransportations" Schema="dbo" Type="T" Value="UrbanTransportations" ModelName="UrbanTransport" open="false">
+          <Column id="idt6stX8TYC0u2CsKn0pxZew" Name="Type" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.UrbanTransportationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idwkJ11Cf9w0WUpUmizImx8g" Name="Name" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idAOEw9zpEVEKbtT98frpJmw" Name="UrbanTransportationId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+        </Entity>
+        <Entity id="vmmv3tprz34" Name="UrbanLinesTbl" Schema="dbo" Type="T" Value="UrbanLinesTbl" ModelName="UrbanTransport">
+          <Column id="idBdcCuq0e3U6uU9ZSOZAjAw" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idH2fA1qldG0u5JHVBAUAejQ" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idrMeHgCIVWkqGcbEpJ0DvuQ" Name="TransportMeansId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.UrbanTransportations" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="ady2wgp01jp" Name="UrbanTransportationTypes" Schema="dbo" Type="T" Value="UrbanTransportationTypes" ModelName="UrbanTransport">
+          <Column id="idkwqgBrfUVUCJeMc6DLS3WQ" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idQmEMU45yDU2vXrDtKowGiA" Name="Value" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="fvfhlwdlmz4" Name="UrbanLinesTblToConnectsWiths" Schema="dbo" Type="T" Value="UrbanLinesTblToConnectsWiths" ModelName="UrbanTransport">
+          <Column id="idxwT9owx0Tk2ZGcxGDx2CYg" Name="dbo.UrbanLinesTblToConnectsWithsId" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="iduk5m6DmBvESWQciT7stK0Q" Name="UrbanLinesId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.UrbanLinesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idp4JduL1LpkCixPGc0aBeSw" Name="ConnectsWithId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.UrbanLinesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="3h0au3mii4k" Name="StationTypes" Schema="dbo" Type="T" Value="StationTypes" ModelName="UrbanTransport">
+          <Column id="idcV6NEZHbEEArt3G7uYbesw" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idyaR5Z8irfkqB63oxdBLk8A" Name="Value" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="0u5uhugtzv3" Name="LineDirections" Schema="dbo" Type="T" Value="LineDirections" ModelName="UrbanTransport">
+          <Column id="id1tCFjx3ySkKaDakVKhj0sg" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idg1zQrr6oLEm1D5SHlTGBrQ" Name="Value" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="zw0pqrx51lq" Name="Places" Schema="dbo" Type="T" Value="Places" ModelName="UrbanTransport">
+          <Column id="idDWA1fX24rUSNau2oWQc8Vg" Name="Id" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="id8ey6Ro7GBUKeZbBXuTI5Vg" Name="MapURI" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="id3LqbC5NJaUuANfe5AN8zEQ" Name="ISICRev4" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idu8aqQuxH30aUGon0AnTWKg" Name="LocationType" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.LocationTypes" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idZUwZIinnTESspJafygp4hw" Name="Timezone" DataType="nvarchar" Length="100" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idWKHAdMJcoESI60C2gja25w" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idvqGjPgz7RUek8yG2ppwHcA" Name="ContainedInId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.Places" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idqJv7xtcSe0uhA2a2aPr0RA" Name="PostalAddressId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.PostalAddresses" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idCHn1fVu17ku9YqUNvjiI0A" Name="GeoCoordinatesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoCoordinatesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idk9iFIlthtkAZtnUxbACdkQ" Name="GeoboundariesId" DataType="int" Length="" Precision="10" Scale="255" KeyType="FK" FKSource="dbo.GeoBoundariesTbl" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idpOGWu0bPNEqU3vthJygdxw" Name="Name" DataType="nvarchar" Length="200" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+        <Entity id="vmajl1bkeam" Name="GeoCoordinatesTbl" Schema="dbo" Type="T" Value="GeoCoordinatesTbl" ModelName="UrbanTransport" open="true">
+          <Column id="idZstLwi37r0yzncGv2aUvOQ" Name="Id" DataType="int" Length="" Precision="10" Scale="255" KeyType="PK" FKSource="" IsIdentity="True" IsAutoIncrement="True" AllowDBNull="False" />
+          <Column id="idButSswM2xUq0pD5MJnAcaw" Name="Latitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idnjeflzQhoEGgqUcxxAdLOQ" Name="Longitude" DataType="decimal" Length="" Precision="9" Scale="6" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="idI2XoxTy43EyvLn8QfxaALQ" Name="Elevation" DataType="decimal" Length="" Precision="8" Scale="2" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+          <Column id="ids2q1UgCiokCi6BkjdA2EsA" Name="DbTimestamp" DataType="timestamp" Length="" Precision="255" Scale="255" KeyType="" FKSource="" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="False" />
+          <Column id="idPJBnReerKkWkO3NnEvWKEQ" Name="SegmentId" DataType="bigint" Length="" Precision="19" Scale="255" KeyType="FK" FKSource="dbo.ItinerarySegments" IsIdentity="False" IsAutoIncrement="False" AllowDBNull="True" />
+        </Entity>
+      </Database>
+    </Datastores>
+    <Associations>
+      <Association Class1="UrbanLines" Class2="Station" Percent1="0.22340425531914893" Percent2="0.7450199203187251" Edge1="t" Edge2="b" Role1="Lines" Role2="Stations" Navigable1="true" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="HcT7xA560J" Path="M 525 366 L 525 308" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="dpvdsl2wzjb" Name="Database">
+            <Entity id="u0yo4yf2k5v" Name="LinesTblToStationsTbl" Schema="dbo">
+              <Mapping id="w5knfui4eis" Attribute="Lines" Column="LinesId" />
+              <Mapping id="jqf4sad4tci" Attribute="Stations" Column="StationsId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanLines" Class2="UrbanTransportation" Percent1="0.21910112359550563" Percent2="0.22633744855967078" Edge1="r" Edge2="b" Role1="UrbanLines" Role2="TransportMeans" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="LqDgK53TDT" Path="M 744 405 L 814 405 L 814 238" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="oothcvjk4vs" Name="Database">
+            <Entity id="05xosjnktn1" Name="UrbanLinesTbl" Schema="dbo">
+              <Mapping id="vdqsllx0ejn" Attribute="UrbanLines" Column="Id" />
+              <Mapping id="1zrjz5c0pa2" Attribute="TransportMeans" Column="TransportMeansId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanLines" Class2="UrbanLines" Percent1="0.723404255319149" Percent2="0.8262411347517731" Edge1="t" Edge2="b" Role1="UrbanLines" Role2="ConnectsWith" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="*" OrderByProperty2="" OrderByDirection2="ASC" OrderByProperty1="" OrderByDirection1="ASC" id="r6XEW3BzIX" Path="M 666 366 L 666 320 L 790 320 L 790 570 L 695 570 L 695 544" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="gwtg11qacvt" Name="Database">
+            <Entity id="vw3hxxrzcvi" Name="UrbanLinesTblToConnectsWiths" Schema="dbo">
+              <Mapping id="jmh5qgd35ag" Attribute="UrbanLines" Column="UrbanLinesId" />
+              <Mapping id="5525uya4oxp" Attribute="ConnectsWith" Column="ConnectsWithId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanSegment" Class2="Station" Percent1="0.19063545150501673" Percent2="0.26294820717131473" Edge1="t" Edge2="b" Role1="UrbanSegment" Role2="Origin" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="AlwmhpQ13k" Path="M 404 644 L 404 308" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="v12sta2vhql" Name="Database">
+            <Entity id="jia0fvlj3jc" Name="UrbanSegments" Schema="dbo">
+              <Mapping id="cjda0nwfztt" Attribute="UrbanSegment" Column="UrbanSegmentId" />
+              <Mapping id="acqp3cxs5ow" Attribute="Origin" Column="OriginId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanSegment" Class2="Station" Percent1="0.28762541806020064" Percent2="0.3784860557768924" Edge1="t" Edge2="b" Role1="UrbanSegment" Role2="Destination" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="j3fQ4M20Li" Path="M 433 644 L 433 308" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="oy3ep4anbmh" Name="Database">
+            <Entity id="oazwnoewipw" Name="UrbanSegments" Schema="dbo">
+              <Mapping id="vdpe10f12mi" Attribute="UrbanSegment" Column="UrbanSegmentId" />
+              <Mapping id="5uswl0xzs3n" Attribute="Destination" Column="DestinationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanSegment" Class2="UrbanLines" Percent1="0.6923076923076923" Percent2="0.3262411347517731" Edge1="t" Edge2="b" Role1="UrbanSegment" Role2="UrbanLine" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="disassociate" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="B04PFltkHI" Path="M 554 644 L 554 544" ModelName="UrbanTransport">
+        <Mappings>
+          <Database id="jpiwdcaocl1" Name="Database">
+            <Entity id="aiol5oxaqiy" Name="UrbanSegments" Schema="dbo">
+              <Mapping id="1vzzwdbfmit" Attribute="UrbanSegment" Column="UrbanSegmentId" />
+              <Mapping id="r0ckqvjdjw0" Attribute="UrbanLine" Column="UrbanLineId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="Station" Class2="StationType" Percent1="0.2857142857142857" Percent2="0.5" Edge1="r" Edge2="l" Role1="Station" Role2="StationType" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="deKT7QViOG" Path="M 589 123 L 680 123 L 680 300 L 780 300 L 780 363 L 869 363" ModelName="UrbanTransport" open="false">
+        <Mappings>
+          <Database id="idaQCJuLxDHA" Name="Database">
+            <Entity id="idOdvBAYj9yF" Name="Stations" Schema="dbo" open="true">
+              <Mapping id="DtUvkTCuFX" Attribute="StationType" Column="StationType" />
+              <Mapping id="I3EVRUHfVg" Attribute="Station" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanTransportation" Class2="UrbanTransportationType" Percent1="0.6277372262773723" Percent2="0.19285714285714287" Edge1="r" Edge2="l" Role1="UrbanTransportation" Role2="Type" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="wIm1Syigcd" Path="M 1002 187 L 1070 187 L 1070 393 L 1107 393" ModelName="UrbanTransport" open="false">
+        <Mappings>
+          <Database id="idOykC5Noabx" Name="Database">
+            <Entity id="idYKKQvavrrf" Name="UrbanTransportations" Schema="dbo">
+              <Mapping id="e3ReJFe2Gf" Attribute="Type" Column="Type" />
+              <Mapping id="P7uQ55V8Rx" Attribute="UrbanTransportation" Column="UrbanTransportationId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+      <Association Class1="UrbanSegment" Class2="LineDirection" Percent1="0.1087866108786611" Percent2="0.37857142857142856" Edge1="r" Edge2="l" Role1="UrbanSegment" Role2="LineDirection" Navigable1="false" Navigable2="true" OnDelete1="disassociate" OnDelete2="restricted" Multiplicity1="*" Multiplicity2="0..1" OrderByProperty2="" OrderByDirection2="" OrderByProperty1="" OrderByDirection1="ASC" id="NuQzicyMTv" Path="M 646 670 L 850 670 L 850 666 L 1050 666" ModelName="UrbanTransport" open="true">
+        <Mappings>
+          <Database id="id0cSk6rI3UV" Name="Database">
+            <Entity id="idCy2qG3NUKW" Name="UrbanSegments" Schema="dbo">
+              <Mapping id="t7hQqDT7qI" Attribute="UrbanSegment" Column="UrbanSegmentId" />
+              <Mapping id="fw61yhs8Lj" Attribute="LineDirection" Column="Direction" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Association>
+    </Associations>
+    <Classes>
+      <Class BaseModel="Location" BaseClass="Place" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="251" Height="259" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Place;" ModelName="UrbanTransport" Stereotype="StateClass" Left="338" Top="49" Name="Station" id="idYdVpGyMMP0mpdaIkjORUVg" HasMappings="true" open="false">
+        <Attributes>
+        </Attributes>
+        <Mappings>
+          <Database id="dojwpmvjas3" Name="Database">
+            <Entity id="5hen40ivcli" Name="Stations" Schema="dbo" open="true">
+              <Mapping id="cjdoklu51ny" Attribute="Id" Column="Id" />
+            </Entity>
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo" open="true">
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Location" ShadowClass="Place" ShadowIsDependent="false" PK="Id" Width="250" Height="318" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="" Stereotype="StateClass" Left="44" Top="47" Name="Place" id="idfPKtzkrnBl" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="" open="false">
+        <Attributes id="idgggNXCa65z">
+        </Attributes>
+        <Mappings id="idLVz68ydAmB">
+          <Database id="d2fz35yvrvz" Name="Database">
+            <Entity id="s2ipu3iay50" Name="Places" Schema="dbo" open="true">
+              <Mapping id="5qdxaetv24k" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="hwc1sgzkoma" Attribute="MapURI" Column="MapURI" IsShadow="true" />
+              <Mapping id="xwynvtwunnc" Attribute="ISICRev4" Column="ISICRev4" IsShadow="true" />
+              <Mapping id="xpaees3wi4x" Attribute="Timezone" Column="Timezone" IsShadow="true" />
+              <Mapping id="akTgX39RFQ" Attribute="Name" Column="Name" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="Trip" BaseClass="Vehicle" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="243" Height="137" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="Vehicle;" ModelName="UrbanTransport" Stereotype="StateClass" Left="759" Top="101" Name="UrbanTransportation" id="idq0yxAKGSQUKqzUjABEeTRw" HasMappings="true">
+        <Attributes>
+          <Attribute id="OfpzEObvPI" Name="Name" DataType="string" Length="100" IsRequired="false" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="jlmsfzlufec" Name="Database">
+            <Entity id="cdkera4nzcb" Name="Vehicles" Schema="dbo">
+            </Entity>
+            <Entity id="13ym5yqq2lu" Name="UrbanTransportations" Schema="dbo">
+              <Mapping id="kz4e5cgk315" Attribute="Id" Column="UrbanTransportationId" />
+              <Mapping id="2uanqyp2r31" Attribute="Name" Column="Name" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="Vehicle" ShadowIsDependent="false" PK="Id" Width="190" Height="180" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="1129" Top="84" Name="Vehicle" id="idUsrjWm6Gic" HasMappings="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="idt4QIdJvpwn">
+        </Attributes>
+        <Mappings id="idRiowqhb7V5">
+          <Database id="kzpocb5sseq" Name="Database">
+            <Entity id="kyhxbvldx12" Name="Vehicles" Schema="dbo">
+              <Mapping id="xkq1iydkphu" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="sehqwezz3cw" Attribute="Model" Column="Model" IsShadow="true" />
+              <Mapping id="bpnsuhqwint" Attribute="Manifacturer" Column="Manifacturer" IsShadow="true" />
+              <Mapping id="haevl03zmac" Attribute="Capacity" Column="Capacity" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="232" Height="140" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="UrbanTransport" Stereotype="StateClass" Left="1107" Top="366" Name="UrbanTransportationType" id="idzkDj0VVDSkG93i5CRMAIKg" HasMappings="true">
+        <Attributes>
+          <Attribute Name="Id" id="ez8h1AJix9" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+          <Attribute Name="Value" id="LYtUts3Brb" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+        </Attributes>
+        <Mappings>
+          <Database id="i5pgarkbhqc" Name="Database">
+            <Entity id="5qy0x5l42fk" Name="UrbanTransportationTypes" Schema="dbo">
+              <Mapping id="5nmqinxvk0t" Attribute="Id" Column="Id" />
+              <Mapping id="0rkq4dc0aey" Attribute="Value" Column="Value" />
+            </Entity>
+          </Database>
+        </Mappings>
+        <Literals>
+          <Literal id="edxuuph0jw" Name="Bus" />
+          <Literal id="AM0ltsAgF5" Name="Tram" />
+          <Literal id="Pwq4ZJa1d7" Name="Metro" />
+          <Literal id="PVJTn9NZDK" Name="CableCar" />
+        </Literals>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="282" Height="178" ShowInherited="" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="UrbanTransport" Stereotype="StateClass" Left="462" Top="366" Name="UrbanLines" id="idxSdPdc5BBEKJIgveEubLDw" HasMappings="true">
+        <Attributes>
+          <Attribute id="KcJEkcZ5jg" Name="Id" DataType="long" Length="100" IsRequired="true" Precision="8" InitValue="" Scale="2" ReadOnly="false" />
+        </Attributes>
+        <Mappings>
+          <Database id="qnqprzw5lmg" Name="Database">
+            <Entity id="jlu4eozu34x" Name="UrbanLinesTbl" Schema="dbo">
+              <Mapping id="sygyb4c05pf" Attribute="Id" Column="Id" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="Trip" ShadowClass="ItinerarySegment" ShadowIsDependent="false" PK="Id" Width="259" Height="278" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="Trip" Stereotype="StateClass" Left="26" Top="389" Name="ItinerarySegment" id="idbNaz5vhban" HasMappings="false" Persisted="" ConcurencyControl="" AutoAssignPrimaryKey="">
+        <Attributes id="iddz1f6p8ULo">
+        </Attributes>
+        <Mappings id="id7dMnfjAioC">
+          <Database id="skuvftmvusp" Name="Database">
+            <Entity id="nbeixt5tmee" Name="ItinerarySegments" Schema="dbo">
+              <Mapping id="sz2yyt1sjot" Attribute="Id" Column="Id" IsShadow="true" />
+              <Mapping id="sn5ru2mimfs" Attribute="Duration" Column="Duration" IsShadow="true" />
+              <Mapping id="0mhtyacrnb0" Attribute="Distance" Column="Distance" IsShadow="true" />
+              <Mapping id="1jnnppgm00l" Attribute="Price" Column="Price" IsShadow="true" />
+              <Mapping id="2pbx0scsylg" Attribute="Departure" Column="Departure" IsShadow="true" />
+              <Mapping id="23uygy4faly" Attribute="Arrival" Column="Arrival" IsShadow="true" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="190" Height="140" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="UrbanTransport" Stereotype="StateClass" Left="869" Top="293" Name="StationType" id="idPVukz5ur4U2cNaw3ftb40g" HasMappings="true">
+        <Attributes>
+          <Attribute Name="Id" id="lXPFFLLCZw" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+          <Attribute Name="Value" id="W0WtWU6LL9" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+        </Attributes>
+        <Mappings>
+          <Database id="l1gst3cawgb" Name="Database">
+            <Entity id="q4w5pfdme00" Name="StationTypes" Schema="dbo">
+              <Mapping id="f25kggzlm1j" Attribute="Id" Column="Id" />
+              <Mapping id="4yryignfeqp" Attribute="Value" Column="Value" />
+            </Entity>
+          </Database>
+        </Mappings>
+        <Literals>
+          <Literal id="USStvcOvw2" Name="BusStation" />
+          <Literal id="Oez0msQ38B" Name="MetroStation" />
+          <Literal id="se4w0x807S" Name="TramStation" />
+        </Literals>
+      </Class>
+      <Class BaseModel="Trip" BaseClass="ItinerarySegment" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="299" Height="239" ShowInherited="false" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="ItinerarySegment;" ModelName="UrbanTransport" Stereotype="StateClass" Left="347" Top="644" Name="UrbanSegment" id="idPzwMHPuYMUiHDcdKxcI7wg" HasMappings="true">
+        <Attributes>
+        </Attributes>
+        <Mappings>
+          <Database id="2cnovh3mk4x" Name="Database">
+            <Entity id="1flksdpjia5" Name="ItinerarySegments" Schema="dbo">
+            </Entity>
+            <Entity id="prnuakfhbhu" Name="UrbanSegments" Schema="dbo">
+              <Mapping id="rp3gnk3vo3u" Attribute="Id" Column="UrbanSegmentId" />
+            </Entity>
+          </Database>
+        </Mappings>
+      </Class>
+      <Class BaseModel="" BaseClass="" ShadowModel="" ShadowClass="" ShadowIsDependent="" PK="Id" Width="190" Height="140" ShowInherited="true" IsExpanded="true" IsAttributesExpanded="true" Description="" BaseClasses="" ModelName="UrbanTransport" Stereotype="StateClass" Left="1050" Top="613" Name="LineDirection" id="idyjOsW7bajk2QxIDhbFLWaw" HasMappings="true">
+        <Attributes>
+          <Attribute Name="Id" id="HVptXMay2j" DataType="int" Length="100" IsRequired="false" Precision="" Scale="" />
+          <Attribute Name="Value" id="ZRofFn5VLB" DataType="string" Length="100" IsRequired="false" Precision="" Scale="" />
+        </Attributes>
+        <Mappings>
+          <Database id="vkthsmnbfua" Name="Database">
+            <Entity id="h2kvcdwiks5" Name="LineDirections" Schema="dbo">
+              <Mapping id="lnizmhkg5n5" Attribute="Id" Column="Id" />
+              <Mapping id="uxndtbbxekg" Attribute="Value" Column="Value" />
+            </Entity>
+          </Database>
+        </Mappings>
+        <Literals>
+          <Literal id="N11ooKXEfr" Name="Inbound" />
+          <Literal id="bXdY5wribB" Name="Outbound" />
+        </Literals>
+      </Class>
+    </Classes>
+  </SoftwareModel>
+  <BusinessRules LocalReferences="" GlobalReferences="mscorlib.dll;System.dll;System.Xml.dll;System.Core.dll">
+    <Definitions />
+    <Vocabularies />
+    <RuleSet id="idn2wtbMwLA0uXAz2X6UgrTQ" Class="Station" Stereotype="StateClass" open="false" _open="false" ModelName="UrbanTransport" />
+    <RuleSet id="idm7FfHajMwEW3t9Uj2edfIw" Class="UrbanTransportation" Stereotype="StateClass" open="false" _open="false" ModelName="UrbanTransport" />
+    <RuleSet id="idnoNkf5uLeUuMG2S5ZSz7CQ" Class="UrbanLines" Stereotype="StateClass" open="false" _open="false" ModelName="UrbanTransport" />
+    <RuleSet id="idoN4YToqdREeRnSXXnTXGMQ" Class="UrbanSegment" Stereotype="StateClass" open="false" _open="false" ModelName="UrbanTransport" />
+  </BusinessRules>
+  <Resources />
+</BusinessObjectModel>

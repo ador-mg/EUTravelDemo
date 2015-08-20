@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DatabaseModel Model_Name="Database" Model_BasedOn="" Model_Description="" Model_DateTimeBuild="" Model_Creator="ador" id="idVvM6JBvPtj" _open="true">
+  <Tables id="id32WmGnbzzw" _open="true">
+    <Table Name="Ports" Schema="dbo" id="idFLSW3K2iqL" />
+    <Table Name="ApplicationClients" Schema="security" id="id8w7EsAKnkk" />
+    <Table Name="ApplicationOperations" Schema="security" id="idX2qGAPJ9j2" />
+    <Table Name="ApplicationPermissions" Schema="security" id="idHv10kw5GC7" />
+    <Table Name="MarineAgencies" Schema="dbo" id="idcv2rzcjElV" />
+    <Table Name="RailLines" Schema="dbo" id="idnNjZQzaOID" />
+    <Table Name="ApplicationRoles" Schema="security" id="idkEB6TBg7E3" />
+    <Table Name="Organizations" Schema="dbo" id="id70m6GxJFUC" />
+    <Table Name="ApplicationUserClaims" Schema="security" id="idbY2K1MHhnO" />
+    <Table Name="People" Schema="dbo" id="idHV2QzptMZE" />
+    <Table Name="RailLinesToConnectsWiths" Schema="dbo" id="idoBiPLtCezB" />
+    <Table Name="Ships" Schema="dbo" id="idBtwgNpK9HU" />
+    <Table Name="ApplicationUserLogins" Schema="security" id="idTjbIZosGMu" />
+    <Table Name="ContactInformationTbl" Schema="dbo" id="idnECs26gKdY" />
+    <Table Name="ApplicationUsers" Schema="security" id="idt0xj03Hc33" />
+    <Table Name="OrganizationsToRepresentativesTbl" Schema="dbo" id="idfYtSF8gxF7" />
+    <Table Name="PermissionsTblToOperationsTbl" Schema="security" id="id2roLRBOtfL" />
+    <Table Name="Profiles" Schema="security" id="idaoXmc4CvQE" />
+    <Table Name="ProfileSettings" Schema="security" id="idjZOwuI47Ku" />
+    <Table Name="Vehicles" Schema="dbo" id="idqgirRlYo6W" />
+    <Table Name="RolesTblToPermissionsTbl" Schema="security" id="idGiIdI7Gee4" />
+    <Table Name="Itineraries" Schema="dbo" id="idN1XP1xyzWe" />
+    <Table Name="UsersTblToPermissionsTbl" Schema="security" id="idW4NSn9qxUz" />
+    <Table Name="ItinerarySegments" Schema="dbo" id="idTuXcERx9YH" />
+    <Table Name="Fares" Schema="dbo" id="ida2OinhFncX" />
+    <Table Name="UsersTblToRolesTbl" Schema="security" id="idokywiQYkJ8" />
+    <Table Name="ItinerarySegmentTypes" Schema="dbo" id="idtyOrehIO8P" />
+    <Table Name="GeoCoordinatesTbl" Schema="dbo" id="idUn47WaFuiN" />
+    <Table Name="FaresToTaxesTbl" Schema="dbo" id="idkvpEzG0orl" />
+    <Table Name="GTFS_TripDirections" Schema="dbo" id="idgk2G4luHGb" />
+    <Table Name="GTFS_ShapesTbl" Schema="dbo" id="idhR6BGthkNk" />
+    <Table Name="IncomingRequest" Schema="wf" id="idIW3n6WTJ3O" />
+    <Table Name="RailAgencies" Schema="dbo" id="idyJqScLXgFR" />
+    <Table Name="GTFS_Accessibilities" Schema="dbo" id="idosPG4av79W" />
+    <Table Name="WFTrace" Schema="wf" id="idDRqMNr14pg" />
+    <Table Name="GTFS_StopTypes" Schema="dbo" id="id6CSpibxO6m" />
+    <Table Name="ProcessInstance" Schema="wf" id="idky5XZagpf1" />
+    <Table Name="Trains" Schema="dbo" id="idt4YGRYeBC8" />
+    <Table Name="GTFS_StopTimesTbl" Schema="dbo" id="id2KSEY5sUCh" />
+    <Table Name="ProcessInstanceTrace" Schema="wf" id="idb00MfEHa38" />
+    <Table Name="GTFS_FareTransfers" Schema="dbo" id="idFzSBfQms2D" />
+    <Table Name="PendingJob" Schema="wf" id="idD2gKuX8GDx" />
+    <Table Name="GTFS_FarePaymentMethodsTbl" Schema="dbo" id="id0pdo2qFkxp" />
+    <Table Name="Flights" Schema="dbo" id="idYRUr1bwuoP" />
+    <Table Name="PendingJobDetail" Schema="wf" id="idrsGa8o7d5O" />
+    <Table Name="GTFS_Timepoints" Schema="dbo" id="idAFfnyd7xC3" />
+    <Table Name="WFScheduledActivities" Schema="wf" id="ida3fQqYUyH2" />
+    <Table Name="GTFS_FareAttributesTbl" Schema="dbo" id="idlEWxi7kue4" />
+    <Table Name="GTFS_ZonesTbl" Schema="dbo" id="id51M8ndLsGz" />
+    <Table Name="GTFS_FareRulesTbl" Schema="dbo" id="idGjq0mkKYDk" />
+    <Table Name="GTFS_FrequencyBasedTripSchedules" Schema="dbo" id="idcUgMmdydGK" />
+    <Table Name="GTFS_FrequenciesTbl" Schema="dbo" id="idSCKWgktWyr" />
+    <Table Name="GTFS_TransfersTbl" Schema="dbo" id="idsEo3pymPQk" />
+    <Table Name="Stations" Schema="dbo" id="idaoHgXFT5zv" />
+    <Table Name="GTFS_TripsTbl" Schema="dbo" id="idFJDH47VOcW" />
+    <Table Name="GTFS_TransferTypesTbl" Schema="dbo" id="idz79w48OAHh" />
+    <Table Name="GTFS_CalendarExceptionTypesTbl" Schema="dbo" id="idhwhwIBQw8B" />
+    <Table Name="GTFS_Calendars" Schema="dbo" id="idbzVGUsGMnW" />
+    <Table Name="GTFS_CalendarDatesTbl" Schema="dbo" id="idme1ynxQLZB" />
+    <Table Name="GTFS_Agencies" Schema="dbo" id="idJl8vwgDdNi" />
+    <Table Name="GTFS_LocationTypes" Schema="dbo" id="idDvWW7Qre86" />
+    <Table Name="TrainStations" Schema="dbo" id="idYKjkFXwmR4" />
+    <Table Name="GTFS_Stops" Schema="dbo" id="idzeeaUXuHc4" />
+    <Table Name="RailSegments" Schema="dbo" id="idmVS14BkHv6" />
+    <Table Name="UrbanTransportations" Schema="dbo" id="idmI9zyU8Cwv" />
+    <Table Name="GTFS_RouteTypes" Schema="dbo" id="idh2uAXOWqb7" />
+    <Table Name="GTFS_RoutesTbl" Schema="dbo" id="idgfFTc3ijfd" />
+    <Table Name="UrbanTransportationTypes" Schema="dbo" id="idfrbo9POK9g" />
+    <Table Name="GTFS_FeedInfoes" Schema="dbo" id="idPPVY2C2UhI" />
+    <Table Name="RailLinesTblToTrainStationsTbl" Schema="dbo" id="idJZrHIxAFOT" />
+    <Table Name="StationTypes" Schema="dbo" id="idLIYB8ZjCG1" />
+    <Table Name="ShippingLines" Schema="dbo" id="idBL0bTvRGUH" />
+    <Table Name="LineDirections" Schema="dbo" id="idD8hyqOWYpx" />
+    <Table Name="MarineSegments" Schema="dbo" id="idNg0pDo3dqk" />
+    <Table Name="ShippingLinesToConnectsWiths" Schema="dbo" id="idSr9zlKbrF6" />
+    <Table Name="ShippingLinesTblToPortsTbl" Schema="dbo" id="id7tBsZYZeDy" />
+    <Table Name="UrbanLinesTbl" Schema="dbo" id="idS2U0CpdPQP" />
+    <Table Name="UrbanLinesTblToConnectsWiths" Schema="dbo" id="id5ykp2aT8z0" />
+    <Table Name="Places" Schema="dbo" id="id15SfbI8exQ" />
+    <Table Name="UrbanSegments" Schema="dbo" id="idZLSqL5Gg2M" />
+    <Table Name="PostalAddresses" Schema="dbo" id="idaUf8Vp1rJn" />
+    <Table Name="Airports" Schema="dbo" id="idQUJkIqcKAL" />
+    <Table Name="Airlines" Schema="dbo" id="idvqYnNBGDow" />
+    <Table Name="LinesTblToStationsTbl" Schema="dbo" id="id5Z9Fbpo4Eq" />
+    <Table Name="GeoBoundariesTbl" Schema="dbo" id="ida3F6uWAjjI" />
+    <Table Name="LocationTypes" Schema="dbo" id="id5WQAUbSy1D" />
+    <Table Name="AircraftTbl" Schema="dbo" id="idFLWVEvDXQj" />
+  </Tables>
+  <Views id="idxjGna8n0fd" />
+  <Schemas id="idtvrKIUAGOV">
+    <Schema Name="dbo" id="idnJKLv96cN4" />
+    <Schema Name="guest" id="idhoTskyWy13" />
+    <Schema Name="INFORMATION_SCHEMA" id="idpn2iOGh1L7" />
+    <Schema Name="sys" id="idhswc9AXXVC" />
+    <Schema Name="security" id="idirgVDkBJFr" />
+    <Schema Name="wf" id="idR4gFcppYO8" />
+    <Schema Name="db_owner" id="id7sCjUYpjpq" />
+    <Schema Name="db_accessadmin" id="idn1J2bESlLB" />
+    <Schema Name="db_securityadmin" id="idbYR0pX7EZP" />
+    <Schema Name="db_ddladmin" id="idB7FYvsXh25" />
+    <Schema Name="db_backupoperator" id="idxVZEwO748B" />
+    <Schema Name="db_datareader" id="idZwzr3xJsXT" />
+    <Schema Name="db_datawriter" id="id79Qan0p5Ub" />
+    <Schema Name="db_denydatareader" id="idJjjc84LuuA" />
+    <Schema Name="db_denydatawriter" id="idZg0I8TTX7j" />
+  </Schemas>
+  <StoredProcedures id="id7TUCPZADzV">
+    <StoredProcedure Name="DeleteAll" Schema="wf" id="idxQCu4yWtrx" />
+    <StoredProcedure Name="spGetExpiredAndDelayedPendingJobs" Schema="wf" id="idvYiZqVAbMf" />
+    <StoredProcedure Name="spGetNumberOfPendingJobs" Schema="wf" id="idqG7UQG8oBE" />
+    <StoredProcedure Name="spGetPendingJob" Schema="wf" id="idEaOIO3fzmL" />
+    <StoredProcedure Name="spGetPendingJobDetail" Schema="wf" id="id1D2TxtD1uJ" />
+    <StoredProcedure Name="spGetPendingJobsByServiceId" Schema="wf" id="idavtr7dUBur" />
+    <StoredProcedure Name="spGetPendingJobsPageByServiceId" Schema="wf" id="idEhrzVr9zxB" />
+    <StoredProcedure Name="spGetProcessInstance" Schema="wf" id="idkadQgka8Bj" />
+    <StoredProcedure Name="spGetSchedules" Schema="wf" id="idxA6oKSx7xC" />
+    <StoredProcedure Name="spIncomingRequest_Request" Schema="wf" id="idmBucGmhyyA" />
+    <StoredProcedure Name="spIncomingRequest_Response" Schema="wf" id="idkjSHgteSgN" />
+    <StoredProcedure Name="spPendingJobDelete" Schema="wf" id="idvjsIfUW4TQ" />
+    <StoredProcedure Name="spPendingJobDetailDelete" Schema="wf" id="id0J2MekpCtO" />
+    <StoredProcedure Name="spPendingJobDetailExists" Schema="wf" id="idapoWnTiuWD" />
+    <StoredProcedure Name="spPendingJobDetailInsert" Schema="wf" id="idVF7A6Mq9qE" />
+    <StoredProcedure Name="spPendingJobDetailUpdate" Schema="wf" id="idhAZCyqPbfn" />
+    <StoredProcedure Name="spPendingJobInsert" Schema="wf" id="iduHnTwsRJ5Y" />
+    <StoredProcedure Name="spPendingJobUpdate" Schema="wf" id="idT9VkDduaKX" />
+    <StoredProcedure Name="spProcessInstanceDelete" Schema="wf" id="idnIXYS5GFr6" />
+    <StoredProcedure Name="spProcessInstanceInsert" Schema="wf" id="idy0kczDA9oZ" />
+    <StoredProcedure Name="spProcessInstanceTrace_Request" Schema="wf" id="idajeZxKWEfj" />
+    <StoredProcedure Name="spProcessInstanceTrace_Response" Schema="wf" id="idiq65Nsfk09" />
+    <StoredProcedure Name="spProcessInstanceUpdate" Schema="wf" id="id0yh4pR8kf2" />
+    <StoredProcedure Name="spWFScheduledActivityInsert" Schema="wf" id="iduJROtv7tNs" />
+    <StoredProcedure Name="spWFScheduledActivityUpdate" Schema="wf" id="idZFnYF5Oo5o" />
+  </StoredProcedures>
+  <Diagrams id="idgqLNJ5qo6V" />
+</DatabaseModel>

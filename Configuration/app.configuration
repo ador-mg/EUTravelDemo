@@ -1,0 +1,81 @@
+<Application Model_Name="app.configuration" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador">
+  <ID>18f3e206-ec75-480e-a0aa-f270e498dcc9</ID>
+  <Name>EUTravelDemo</Name>
+  <Description>EUTravel Demo app</Description>
+  <BasedOn>SYSTEM|Empty Application Design Project</BasedOn>
+  <AssembliesNamespace>CLMS.EUTravel</AssembliesNamespace>
+  <ApplicationType>Advanced</ApplicationType>
+  <Architecture>BASIC</Architecture>
+  <Title>EUTravel</Title>
+  <References />
+  <ImplementationStrategy Id="MVP" Name="MVP" Description="" Url="http://localhost/CodingFacilityMVP/Services/CodingFacilityDuplexServices.svc" ReferencesPath="WebSite\Bin" TracePath="WebSite\App_Data\WorkflowTrace" IsDefault="true">
+    <Settings>
+      <Setting Name="Run Unit Tests on Build" Value="false" />
+    </Settings>
+  </ImplementationStrategy>
+  <BinPath />
+  <ReferencesPath />
+  <RevisionOfReferencedBO>-1</RevisionOfReferencedBO>
+  <Authentication>
+    <Type>1</Type>
+  </Authentication>
+  <Authorization>
+    <Roles>
+      <Role Name="Administrator" Description="Administrator" Permissions="ManageUsers;ManageRoles;ManagePermissions;ManageOperations" />
+    </Roles>
+    <Permissions>
+      <Permission Name="ManageUsers" Description="Can Manage Users" PermanentId="764650520" />
+      <Permission Name="ManageRoles" Description="Can Manage Roles" PermanentId="592647620" />
+      <Permission Name="ManagePermissions" Description="Can Manage Permissions" PermanentId="898003211" />
+      <Permission Name="ManageOperations" Description="Can Manage Operations" PermanentId="719339385" />
+    </Permissions>
+  </Authorization>
+  <Globalization>
+    <Locales DefaultLocale="en-us" DefaultRegionalFormatting="el">
+      <Locale LCID="1033" LCString="en-us" LCDescription="English-United States" />
+      <Locale LCID="1032" LCString="el" LCDescription="Greek" />
+    </Locales>
+    <Resources>
+      <!-- Site Titles -->
+      <Res Type="S" Key="RES_SITE_ApplicationTitle" en-us="EUTravel" el="EUTravel" />
+      <Res Type="S" Key="RES_SITE_ApplicationDescription" en-us="EUTravel Demo app" el="EUTravel Demo app" />
+      <Res Type="S" Key="RES_SITE_WindowTitle" en-us="EUTravel" el="EUTravel" />
+      <Res Type="S" Key="RES_SITE_HeaderText" en-us="EUTravel" el="EUTravel" />
+      <Res Type="S" Key="RES_SITE_FooterTextLeft" en-us="Copyright © 2015" el="Copyright © 2015" />
+      <Res Type="S" Key="RES_SITE_FooterTextRight" en-us="EUProjects" el="EUProjects" />
+    </Resources>
+  </Globalization>
+  <DefaultPages>
+    <Default>
+      <ControllerAction ControllerType="WEBFORM" Controller="HomePage" Action="Render" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </Default>
+    <Error>
+      <ControllerAction ControllerType="WEBFORM" Controller="ErrorPage" Action="Render" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </Error>
+    <Unauthorized>
+      <ControllerAction ControllerType="WEBFORM" Controller="Unauthorized" Action="Render" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </Unauthorized>
+    <NotFound>
+      <ControllerAction ControllerType="WEBFORM" Controller="NotFoundPage" Action="Render" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </NotFound>
+    <SignIn>
+      <ControllerAction ControllerType="WEBFORM" Controller="SignInPage" Action="Load" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </SignIn>
+    <FirstAdminSetup>
+      <ControllerAction ControllerType="WEBFORM" Controller="FirstAdminSetup" Action="Render" TargetFrame="_self" OnUnauthorized="HIDE">
+        <Parameters />
+      </ControllerAction>
+    </FirstAdminSetup>
+  </DefaultPages>
+  <Events />
+</Application>

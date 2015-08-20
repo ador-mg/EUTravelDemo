@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<InterfaceModel Model_Name="Planning" Model_Description="" Model_BasedOn="" Model_DateTimeBuild="" Model_Creator="ador" Model_RefApplication="" Model_RefVersion="">
+  <ImplementationDetails APIType="EXPOSE_REST" />
+  <Classes />
+  <Methods>
+    <Function DataType="Collection[DomainModel.Itinerary]" Name="ReturnItinerary" Description="" id="idOcUlNQN1vn">
+      <Arguments id="idk4veSQrR2Y">
+        <ArgumentPair Name="fromLat" DataType="decimal" id="idCJVUNeQgVo" />
+        <ArgumentPair Name="fromLong" DataType="decimal" id="idflrClsvEFI" />
+        <ArgumentPair Name="toLat" DataType="decimal" id="idL3hNTlLg4T" />
+        <ArgumentPair Name="toLong" DataType="decimal" id="idVVUOrm11wE" />
+      </Arguments>
+      <ImplementationDetails Path="" HttpType="GET" ExecutionType="CUSTOM" ExecutingClass="" ExecutingMethod="" ExecutingIdef="" ExecutingActivity="">
+        <Implementation><![CDATA[function Collection[DomainModel.Itinerary] Function(
+	decimal fromLat,
+	decimal fromLong,
+	decimal toLat,
+	decimal toLong
+)
+{
+    DomainModel.GeoCoordinates from;
+    from.Latitude = fromLat;
+    from.Longitude = fromLong;
+
+    DomainModel.GeoCoordinates to;
+    to.Latitude = toLat;
+    to.Longitude = toLong;
+	
+	Collection[DomainModel.Itinerary] itineraries;
+	
+	DomainModel.Itinerary it = DomainModel.Itinerary.FindItinerary(from, to);
+	itineraries.Add(it);
+	return itineraries;
+	//CommonLib.Serializer[DomainModel.Itinerary] ser;
+	//return ser.ToJson(it);
+
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+    <Function DataType="Collection[DomainModel.Flight]" Name="GetFlights" Description="" id="ideR3mCEDrHq">
+      <Arguments id="idQ9jx5dViFq">
+        <ArgumentPair Name="originAirport" DataType="string" id="idwpUB5yO0IW" />
+        <ArgumentPair Name="destinationAirport" DataType="string" id="idRFH3nr8JmX" />
+        <ArgumentPair Name="departureDate" DataType="string" id="idzWQgSh5xfr" />
+        <ArgumentPair Name="returnDate" DataType="string" id="idQI58JB2vB0" />
+      </Arguments>
+      <ImplementationDetails Path="flights" HttpType="GET" ExecutionType="IDEF0" ExecutingClass="" ExecutingMethod="" ExecutingIdef="SabreAPIOrchestration" ExecutingActivity="RetrieveFlights">
+        <Implementation><![CDATA[function Collection[DomainModel.Flight] GetFlights(
+	string originAirport,
+	string destinationAirport,
+	string departureDate,
+	string returnDate
+)
+{
+	IDEF0.SabreAPIOrchestration.RetrieveFlights.Execute(originAirport, destinationAirport, departureDate, returnDate);
+ 	
+}]]></Implementation>
+      </ImplementationDetails>
+    </Function>
+  </Methods>
+  <DataContracts id="id0RS2BHJ09t">
+    <DataContract editMode="true" Type="DomainModel.Itinerary" id="iddDmNUShwxF" open="false" serverRefreshed="true">
+      <Attribute id="idOHxAs8Tyal" Name="Id" IsRequired="false" checked="true" Type="int" />
+      <Class Name="Segments" PseydoName="Segments" Stereotype="Collection" Multiplicity2="1" id="idIyfWF9d6PT" checked="true" Type="DomainModel.ItinerarySegment" />
+    </DataContract>
+    <DataContract Type="DomainModel.ItinerarySegment" id="id6jwIpIGYAD" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idv6KLQovAmg" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="ideZ5uq14a1U" Name="Duration" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idbEBqBsunDK" Name="Distance" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idPQGqYhfmBT" Name="Price" IsRequired="false" Length="8" Precision="8" Scale="2" checked="true" Type="decimal" />
+      <Attribute id="idkqMDtj9Cuw" Name="Departure" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="DateTime" />
+      <Attribute id="idFoIQclEGm8" Name="Arrival" IsRequired="false" Length="100" checked="true" Type="DateTime" />
+      <Class Name="Type" PseydoName="Type" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idBCTPYWgRpq" checked="true" Type="DomainModel.ItinerarySegmentType" />
+      <Class Name="BaseOrigin" PseydoName="BaseOrigin" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idwLAe1IMeKX" checked="true" Type="DomainModel.Place" />
+      <Class Name="BaseDestination" PseydoName="BaseDestination" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id55ipMBt4uY" checked="true" Type="DomainModel.Place" />
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Multiplicity1="1" id="id03Q0gDJloW" checked="false" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idrO7GYchmWq" checked="true" Type="DomainModel.Fare" />
+    </DataContract>
+    <DataContract Type="DomainModel.GeoCoordinates" id="idm6MFzu2xrq" editMode="false" open="false" serverRefreshed="true">
+      <Attribute id="idbYDUky3qB9" Name="Id" IsRequired="false" checked="true" Type="int" />
+      <Attribute id="idSxoX7SrkTK" Name="Latitude" IsRequired="false" checked="true" Type="decimal" />
+      <Attribute id="idZaP8nEmd4t" Name="Longitude" IsRequired="false" checked="true" Type="decimal" />
+      <Attribute id="idoqsbHIXbMI" Name="Elevation" IsRequired="false" checked="true" Type="decimal" />
+    </DataContract>
+    <DataContract Type="DomainModel.Fare" id="idGwUW2uv8iQ" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idyEZtdxXNvo" Name="Id" IsRequired="false" checked="true" Type="int" />
+      <Attribute id="idTcJsJ9RqNV" Name="Price" IsRequired="false" checked="true" Type="decimal" />
+      <Attribute id="iduopsmfFpwU" Name="Description" IsRequired="false" checked="true" Type="string" />
+      <Attribute id="idr7VYZdiHEd" Name="SeatNumber" IsRequired="false" checked="true" Type="string" />
+      <Class Name="Taxes" PseydoName="Taxes" Stereotype="Collection" Multiplicity2="1" id="idDhogZ0ahsK" checked="false" Type="DomainModel.Fare" />
+    </DataContract>
+    <DataContract Type="DomainModel.Flight" editMode="true" open="false" serverRefreshed="true" id="idOifjnRuPNq">
+      <Attribute id="idkKNQ7seUmf" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="long" />
+      <Attribute id="idjnDepu95JC" Name="Duration" IsRequired="false" Length="100" checked="false" Type="int" />
+      <Attribute id="idTZSpFpnq6Z" Name="Distance" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idfQY41BTruz" Name="Price" IsRequired="false" Length="8" Precision="8" Scale="2" checked="true" Type="decimal" />
+      <Attribute id="idwKwoppRRJh" Name="Departure" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="DateTime" />
+      <Attribute id="iduVMr5q00Td" Name="Arrival" IsRequired="false" Length="100" checked="false" Type="DateTime" />
+      <Attribute id="idiZ9eD7qpLl" Name="FlightNumber" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idGBvbtKqwOs" Name="OriginTerminal" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idnRZuWwNsmg" Name="DesrtinationTerminal" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Class Name="Type" PseydoName="Type" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id6xhl4Syzr7" checked="false" Type="DomainModel.ItinerarySegmentType" />
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Multiplicity1="1" id="idH7uodTfuWB" checked="false" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idg5r4MK54TO" checked="false" Type="DomainModel.Fare" />
+      <Class Name="Legs" PseydoName="Legs" Stereotype="Collection" Multiplicity2="1" id="idBQ0GCPAMe6" checked="false" Type="DomainModel.Flight" />
+      <Class Name="Origin" PseydoName="Origin" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idwHlrPwlsY2" checked="true" Type="DomainModel.Airport" />
+      <Class Name="Destination" PseydoName="Destination" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idIpD4xVpUEm" checked="true" Type="DomainModel.Airport" />
+      <Class Name="Airline" PseydoName="Airline" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Organization" BaseClass="Organization" Multiplicity="1" id="id58o9kzToT5" checked="true" Type="DomainModel.Airline" />
+      <Class Name="Aircraft" PseydoName="Aircraft" Stereotype="StateClass" Model="AirTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="idSPg9ZmjqvE" checked="false" Type="DomainModel.Aircraft" />
+    </DataContract>
+    <DataContract Type="DomainModel.Airport" id="idfg4yrLCePb" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idsity1icmYm" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="long" />
+      <Attribute id="idPjljrKcSku" Name="Name" IsRequired="false" Length="200" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="idVEwdLLC8Va" Name="MapURI" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idCIi6xi8Hr5" Name="ISICRev4" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="id4t2hAiLn4D" Name="Timezone" IsRequired="false" Length="100" Precision="8" Scale="2" checked="false" Type="string" />
+      <Attribute id="id7kqyP28AwI" Name="IATA" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idYal7AIfwSo" Name="ICAO" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Class Name="ContainedIn" PseydoName="ContainedIn" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idyrlFFMdEY7" checked="false" Type="DomainModel.Place" />
+      <Class Name="PostalAddress" PseydoName="PostalAddress" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idzNeQ6U0iJf" checked="false" Type="DomainModel.PostalAddress" />
+      <Class Name="LocationType" PseydoName="LocationType" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idzy52MRWGQj" checked="false" Type="DomainModel.LocationType" />
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Multiplicity1="1" id="idoY9fGjTYw7" checked="false" Type="DomainModel.Place" />
+      <Class Name="GeoCoordinates" PseydoName="GeoCoordinates" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idSXm6IV3DQS" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Geoboundaries" PseydoName="Geoboundaries" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idP0CBiFUqss" checked="false" Type="DomainModel.GeoBoundaries" />
+      <Class Name="OutboundFlights" PseydoName="OutboundFlights" Stereotype="Collection" Multiplicity1="1" id="idXsyZICSXP5" checked="false" Type="DomainModel.Flight" />
+      <Class Name="InboundFlights" PseydoName="InboundFlights" Stereotype="Collection" Multiplicity1="1" id="idFBQNvUkyN3" checked="false" Type="DomainModel.Flight" />
+    </DataContract>
+    <DataContract Type="DomainModel.ShippingLine" editMode="true" open="true" serverRefreshed="true" id="id5wgWFd0KgD">
+      <Attribute id="id6b44cVrme8" Name="Id" IsRequired="true" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Class Name="Agency" PseydoName="Agency" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Organization" BaseClass="Organization" Multiplicity="1" id="id2uewsXlOjw" checked="true" Type="DomainModel.MarineAgency" />
+      <Class Name="Ports" PseydoName="Ports" Stereotype="Collection" Multiplicity2="1" id="id0xGSYVi5dq" checked="false" Type="DomainModel.Port" />
+      <Class Name="ConnectsWith" PseydoName="ConnectsWith" Stereotype="Collection" Multiplicity2="1" id="idByHhUKhpkG" checked="false" Type="DomainModel.ShippingLine" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idEVAQFfN8Ha" checked="true" Type="DomainModel.Fare" />
+      <Class Name="Ship" PseydoName="Ship" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="idVcrGt3NRkg" checked="true" Type="DomainModel.Ship" />
+    </DataContract>
+    <DataContract Type="DomainModel.Port" editMode="true" open="false" serverRefreshed="true" id="idVjXHkeRXRd">
+      <Attribute id="idrqN7BENDOH" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="id9gxbLHKc9r" Name="Name" IsRequired="false" Length="200" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="idrwJM81OMBn" Name="MapURI" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idk0780nq8fn" Name="ISICRev4" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idoT9RpXW5KV" Name="Timezone" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="id68T99K3PMN" Name="UNCTAD" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Class Name="ContainedIn" PseydoName="ContainedIn" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idxY1U9fC5Ca" checked="false" Type="DomainModel.Place" />
+      <Class Name="PostalAddress" PseydoName="PostalAddress" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idA1hxdJ1Owx" checked="false" Type="DomainModel.PostalAddress" />
+      <Class Name="LocationType" PseydoName="LocationType" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idnqkJ4QjwXz" checked="false" Type="DomainModel.LocationType" />
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Multiplicity1="1" id="idrMbagwSFkv" checked="false" Type="DomainModel.Place" />
+      <Class Name="GeoCoordinates" PseydoName="GeoCoordinates" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idk9ZAhwxdbV" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Geoboundaries" PseydoName="Geoboundaries" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idoPNY7HB4LR" checked="false" Type="DomainModel.GeoBoundaries" />
+      <Class Name="ShippingLines" PseydoName="ShippingLines" Stereotype="Collection" Multiplicity1="1" id="idydfD3z4ycS" checked="false" Type="DomainModel.ShippingLine" />
+    </DataContract>
+    <DataContract Type="DomainModel.Ship" editMode="false" open="false" serverRefreshed="true" id="idnv9QfoGv5V">
+      <Attribute id="idDC1uNHrdUs" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idEhyT04BVm5" Name="Model" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idROflNcrlcP" Name="Manifacturer" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idMV3uYJacRq" Name="Capacity" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idb0F59eWc1K" Name="Name" IsRequired="false" Length="100" checked="true" Type="string" />
+    </DataContract>
+    <DataContract Type="DomainModel.MarineSegment" editMode="true" open="true" serverRefreshed="true" id="id6MD6jlTldG">
+      <Attribute id="idJZXPZUD6IV" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="idqmWo92IfiN" Name="Duration" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idvVuNUnXAqJ" Name="Distance" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idGCPwOnH5Iq" Name="Price" IsRequired="false" Length="8" Precision="8" Scale="2" checked="true" Type="decimal" />
+      <Attribute id="iduMd4U6nKfG" Name="Departure" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="DateTime" />
+      <Attribute id="idZ31IIJXAyu" Name="Arrival" IsRequired="false" Length="100" checked="true" Type="DateTime" />
+      <Class Name="Type" PseydoName="Type" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id202dOPJxsG" checked="false" Type="DomainModel.ItinerarySegmentType" />
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Multiplicity1="1" id="idd2W6dqBJy8" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idukVrOxsLCn" checked="true" Type="DomainModel.Fare" />
+      <Class Name="Line" PseydoName="Line" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idDE6X8bYnRI" checked="true" Type="DomainModel.ShippingLine" />
+      <Class Name="Origin" PseydoName="Origin" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="id8nKgi6vqf8" checked="true" Type="DomainModel.Port" />
+      <Class Name="Destination" PseydoName="Destination" Stereotype="StateClass" Model="MarineTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idEBvxmYUSVt" checked="true" Type="DomainModel.Port" />
+    </DataContract>
+    <DataContract Type="DomainModel.UrbanSegment" editMode="true" open="false" serverRefreshed="true" id="idKX8jBgyvPW">
+      <Attribute id="id4zDJGn61Uu" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="iduUmiR6bdNS" Name="Duration" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idLMIHDHy4ZH" Name="Distance" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idNyOvDASpJ2" Name="Price" IsRequired="false" Length="8" Precision="8" Scale="2" checked="false" Type="decimal" />
+      <Attribute id="idqz8ZAmf1Wo" Name="Departure" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="DateTime" />
+      <Attribute id="idJdW2odsVzH" Name="Arrival" IsRequired="false" Length="100" checked="true" Type="DateTime" />
+      <Class Name="Type" PseydoName="Type" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idJszEHSGJmH" checked="false" Type="DomainModel.ItinerarySegmentType" />
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Multiplicity1="1" id="idh0KmQL7sWm" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="ididVwBr4r1P" checked="false" Type="DomainModel.Fare" />
+      <Class Name="Origin" PseydoName="Origin" Stereotype="StateClass" Model="UrbanTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idvKk1oTOlbD" checked="false" Type="DomainModel.Station" />
+      <Class Name="Destination" PseydoName="Destination" Stereotype="StateClass" Model="UrbanTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="id2X6KoiASiM" checked="false" Type="DomainModel.Station" />
+      <Class Name="UrbanLine" PseydoName="UrbanLine" Stereotype="StateClass" Model="UrbanTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id3GmW3YvV59" checked="false" Type="DomainModel.UrbanLines" />
+      <Class Name="LineDirection" PseydoName="LineDirection" Stereotype="StateClass" Model="UrbanTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="ida3iP0lp9vJ" checked="false" Type="DomainModel.LineDirection" />
+    </DataContract>
+    <DataContract Type="DomainModel.Place" id="id1HFMuULEJS" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idcxFd8jMcmC" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="idljMZ4dR9nj" Name="Name" IsRequired="false" Length="200" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="idsUrnYyNmK5" Name="MapURI" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idLRDeBpVSOD" Name="ISICRev4" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idKqgk4y56dJ" Name="Timezone" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="string" />
+      <Class Name="ContainedIn" PseydoName="ContainedIn" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idRKBh7kpI32" checked="false" Type="DomainModel.Place" />
+      <Class Name="PostalAddress" PseydoName="PostalAddress" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idGukMsY9WCN" checked="true" Type="DomainModel.PostalAddress" />
+      <Class Name="LocationType" PseydoName="LocationType" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idEzkuzVaJVv" checked="true" Type="DomainModel.LocationType" />
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Multiplicity1="1" id="idY0sv8n9Pdj" checked="false" Type="DomainModel.Place" />
+      <Class Name="GeoCoordinates" PseydoName="GeoCoordinates" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="ideC96extFhb" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Geoboundaries" PseydoName="Geoboundaries" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idGMJ92dhBJQ" checked="false" Type="DomainModel.GeoBoundaries" />
+    </DataContract>
+    <DataContract Type="DomainModel.PostalAddress" id="id0V9ORG5gVk" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idUGhZd8dcKW" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idyjvZX5kGnJ" Name="Country" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idjYqp1OiUTr" Name="CountryISO3166" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="id7Whxop19f4" Name="Province" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idv69pMGOsMa" Name="City" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idFcnm60ldnQ" Name="CityCode" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="id67J8KGuXQh" Name="Locality" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idOnMy84PJ1J" Name="StreetAddress" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idTr6SuVdRu3" Name="PostalCode" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idxevyU3K2gx" Name="PostOfficeBoxNumber" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Class Name="Place" PseydoName="Place" Stereotype="Collection" Multiplicity1="1" id="idvPDN6DAqbU" checked="false" Type="DomainModel.Place" />
+    </DataContract>
+    <DataContract Type="DomainModel.ItinerarySegmentType" id="id5Tb152U3rp" editMode="false" open="false" serverRefreshed="true">
+      <Attribute id="idxIQVp8R5Mo" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idnJrp85NpMl" Name="Value" IsRequired="false" Length="100" checked="true" Type="string" />
+    </DataContract>
+    <DataContract Type="DomainModel.LocationType" id="idGOgc12R2hX" editMode="false" open="false" serverRefreshed="true">
+      <Attribute id="idJsqHbmSZ99" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="id1YjswUzAVG" Name="Value" IsRequired="false" Length="100" checked="true" Type="string" />
+    </DataContract>
+    <DataContract Type="DomainModel.RailLine" editMode="true" open="false" serverRefreshed="true" id="idfoyp2TmStI">
+      <Attribute id="idaGXPdNnJkD" Name="Id" IsRequired="true" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Class Name="Train" PseydoName="Train" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Trip" BaseClass="Vehicle" Multiplicity="1" id="idbbmqf6rKyw" checked="true" Type="DomainModel.Train" />
+      <Class Name="TrainStations" PseydoName="TrainStations" Stereotype="Collection" Multiplicity2="1" id="idN3JDiBQF7k" checked="true" Type="DomainModel.TrainStation" />
+      <Class Name="ConnectsWith" PseydoName="ConnectsWith" Stereotype="Collection" Multiplicity2="1" id="idRb69ssN2EK" checked="false" Type="DomainModel.RailLine" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idFqvlExP4Mb" checked="true" Type="DomainModel.Fare" />
+    </DataContract>
+    <DataContract Type="DomainModel.Train" id="idDc3UOf06M7" editMode="false" open="false" serverRefreshed="true">
+      <Attribute id="idT16tWfAq30" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idSNqmVhJ8zZ" Name="Model" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idXJZotZSdtz" Name="Manifacturer" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idd2YjVYnt2c" Name="Capacity" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idW6ImG9AVLc" Name="Name" IsRequired="false" Length="100" checked="true" Type="string" />
+    </DataContract>
+    <DataContract Type="DomainModel.TrainStation" id="idZ1fRxiD4Rn" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="ide8LfkVvVNm" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="idyYHSNHvLVY" Name="Name" IsRequired="false" Length="200" Precision="8" Scale="2" checked="true" Type="string" />
+      <Attribute id="idoDujiy006e" Name="MapURI" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idyUM8TElUpj" Name="ISICRev4" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idASb5GOyMGI" Name="Timezone" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="string" />
+      <Class Name="ContainedIn" PseydoName="ContainedIn" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idkqgAo9q01h" checked="false" Type="DomainModel.Place" />
+      <Class Name="PostalAddress" PseydoName="PostalAddress" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id1p0BDekcFe" checked="true" Type="DomainModel.PostalAddress" />
+      <Class Name="LocationType" PseydoName="LocationType" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id4rHTw2BcA2" checked="true" Type="DomainModel.LocationType" />
+      <Class Name="Contains" PseydoName="Contains" Stereotype="Collection" Multiplicity1="1" id="idUVCnHpheu0" checked="false" Type="DomainModel.Place" />
+      <Class Name="GeoCoordinates" PseydoName="GeoCoordinates" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idsZjGkyGFj5" checked="true" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Geoboundaries" PseydoName="Geoboundaries" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idtuPelpxbaL" checked="false" Type="DomainModel.GeoBoundaries" />
+      <Class Name="RailLines" PseydoName="RailLines" Stereotype="Collection" Multiplicity1="1" id="idpJpdw1RWV8" checked="false" Type="DomainModel.RailLine" />
+    </DataContract>
+    <DataContract Type="DomainModel.RailSegment" editMode="true" open="false" serverRefreshed="true" id="idJct1gFK7ia">
+      <Attribute id="idCfEkqyNAUU" Name="Id" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="long" />
+      <Attribute id="id1yUH4bDQq7" Name="Duration" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idiRuS27Aqku" Name="Distance" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idJU8GhG9s7P" Name="Price" IsRequired="false" Length="8" Precision="8" Scale="2" checked="true" Type="decimal" />
+      <Attribute id="idVhBxmK3PqT" Name="Departure" IsRequired="false" Length="100" Precision="8" Scale="2" checked="true" Type="DateTime" />
+      <Attribute id="id8dcRzBIuMQ" Name="Arrival" IsRequired="false" Length="100" checked="true" Type="DateTime" />
+      <Class Name="Type" PseydoName="Type" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="iduxDISh6UkC" checked="true" Type="DomainModel.ItinerarySegmentType" />
+      <Class Name="BaseOrigin" PseydoName="BaseOrigin" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idgVN5QVbWip" checked="false" Type="DomainModel.Place" />
+      <Class Name="BaseDestination" PseydoName="BaseDestination" Stereotype="StateClass" Model="Location" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idGmu1gIb9WQ" checked="false" Type="DomainModel.Place" />
+      <Class Name="Route" PseydoName="Route" Stereotype="Collection" Multiplicity1="1" id="idgisBHjpCrP" checked="false" Type="DomainModel.GeoCoordinates" />
+      <Class Name="Fare" PseydoName="Fare" Stereotype="StateClass" Model="Trip" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idv3bpGfbGjG" checked="true" Type="DomainModel.Fare" />
+      <Class Name="Line" PseydoName="Line" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id7cPqDqZOeZ" checked="false" Type="DomainModel.RailLine" />
+      <Class Name="Origin" PseydoName="Origin" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idVewkRNClx3" checked="true" Type="DomainModel.TrainStation" />
+      <Class Name="Destination" PseydoName="Destination" Stereotype="StateClass" Model="RailTransport" ShadowModel="" ShadowClass="" BaseModel="Location" BaseClass="Place" Multiplicity="0..1" id="idvlnX2P8ZVk" checked="true" Type="DomainModel.TrainStation" />
+    </DataContract>
+    <DataContract Type="DomainModel.Airline" id="idEULQ2hFuFM" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="iduAuGbcWO1S" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idzFU1ndvlzv" Name="Name" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idmVFcj14HbG" Name="Description" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idFW2MQgXhtq" Name="Url" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idAwwxYTUaGM" Name="CallSign" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idsKHB5CSk3q" Name="IATA" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idx6zwbSgRNp" Name="ICAO" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Class Name="DepartmentOf" PseydoName="DepartmentOf" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idNtLerQokmE" checked="false" Type="DomainModel.Organization" />
+      <Class Name="Representatives" PseydoName="Representatives" Stereotype="Collection" Multiplicity2="1" id="idv0m8up7XYL" checked="false" Type="DomainModel.Person" />
+      <Class Name="Contact" PseydoName="Contact" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idW5VvcKdPln" checked="false" Type="DomainModel.ContactInformation" />
+      <Class Name="Departments" PseydoName="Departments" Stereotype="Collection" Multiplicity1="1" id="idt8Qk3oypWK" checked="false" Type="DomainModel.Organization" />
+      <Class Name="Flights" PseydoName="Flights" Stereotype="Collection" Multiplicity1="1" id="idcD6jPeqMj6" checked="false" Type="DomainModel.Flight" />
+    </DataContract>
+    <DataContract Type="DomainModel.MarineAgency" id="idMJmZd2e8DC" editMode="true" open="false" serverRefreshed="true">
+      <Attribute id="idDCYVv6tYVV" Name="Id" IsRequired="false" Length="100" checked="true" Type="int" />
+      <Attribute id="idHgLrBoIX3v" Name="Name" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Attribute id="idHj1w445Tbs" Name="Description" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idtUoAjm6CUn" Name="Url" IsRequired="false" Length="100" checked="false" Type="string" />
+      <Attribute id="idZ6LBHCdMnm" Name="Code" IsRequired="false" Length="100" checked="true" Type="string" />
+      <Class Name="DepartmentOf" PseydoName="DepartmentOf" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="id4QYnKaQIYp" checked="false" Type="DomainModel.Organization" />
+      <Class Name="Representatives" PseydoName="Representatives" Stereotype="Collection" Multiplicity2="1" id="ideEPAlULCNf" checked="false" Type="DomainModel.Person" />
+      <Class Name="Contact" PseydoName="Contact" Stereotype="StateClass" Model="Organization" ShadowModel="" ShadowClass="" BaseModel="" BaseClass="" Multiplicity="0..1" id="idil6NhjhrPC" checked="false" Type="DomainModel.ContactInformation" />
+      <Class Name="Departments" PseydoName="Departments" Stereotype="Collection" Multiplicity1="1" id="idKlk0rdDxyP" checked="false" Type="DomainModel.Organization" />
+      <Class Name="ShippingLines" PseydoName="ShippingLines" Stereotype="Collection" Multiplicity1="1" id="ide0oudmLUR9" checked="false" Type="DomainModel.ShippingLine" />
+    </DataContract>
+  </DataContracts>
+</InterfaceModel>
